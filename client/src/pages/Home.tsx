@@ -3,5 +3,9 @@ import React from "react";
 type Props = {};
 
 export default function Home({}: Props) {
-  return <div>Home</div>;
+  return (
+    <>
+      <h1>test</h1>
+    </>
+  );
 }
