@@ -6,3 +6,25 @@
   @apply min-h-[100vh]
   dark:text-white dark:bg-gray-800;
 }
+
+.nav-btn {
+  @apply relative
+  px-1 py-1
+  hover:text-white text-white md:text-gray-300
+   transition-all duration-200 ease-in-out;
+}
+.nav-btn::after {
+  @apply content-[''] absolute bg-white 
+  h-1 md:w-[0%] w-[100%]
+  left-0 -bottom-1
+  rounded-xl
+  transition-all duration-200 ease-in-out;
+}
+
+.nav-btn:hover::after {
+  @apply w-[100%];
+}
+
+.nav-hide {
+  @apply hidden md:inline;
+}
