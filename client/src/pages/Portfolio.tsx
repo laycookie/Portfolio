@@ -1,7 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 type Props = {};
 
 export default function Portfolio({}: Props) {
-  return <div>Portfolio</div>;
+  return (<>
+      <Helmet>
+        <title>Portfolio</title>
+      </Helmet>
+      <h1>test</h1>
+      </>);
 }

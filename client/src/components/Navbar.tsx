@@ -1,10 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 type Props = {};
 
 export default function Navbar({}: Props) {
-  const [homeButton, setHomeButton] = React.useState("test");
+  const location = useLocation();
+  const [dropDown, setDropDown] = React.useState<boolean>(false);
+
   return (
     <nav
       className="py-6 bg-black 
@@ -18,12 +20,13 @@ export default function Navbar({}: Props) {
           <Link to="/" className="nav-btn md:inline hidden">
             Home
           </Link>
-          <Link to="/" className="nav-btn md:hidden">
-            {homeButton}
+          <Link to={location.pathname} className="nav-btn md:hidden">
+            {document.title}
           </Link>
         </li>
         <li>
           <ul className="flex space-x-4">
+
             <li>
               <Link to="/blog" className="nav-btn nav-hide">
                 Blog
@@ -40,38 +43,39 @@ export default function Navbar({}: Props) {
               </Link>
             </li>
             <li>
-              <button className="md:hidden">
-                <svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 21 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19 19L2 19"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M19 9.93332L2 9.93332"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M19 2L2 2"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                  />
-                </svg>
+              <button className="md:hidden" onClick={() => {
+                setDropDown(!dropDown)
+                }}>
+X
               </button>
             </li>
           </ul>
         </li>
       </ul>
+      
+      <ul className={dropDown ? "grid justify-center" : "hidden"}>
+        <li>
+              <Link to="/" className="nav-btn-minimized">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" className="nav-btn-minimized">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link to="/portfolio" className="nav-btn-minimized">
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="nav-btn-minimized">
+                Contact
+              </Link>
+            </li>
+        </ul>
+     
     </nav>
   );
 }

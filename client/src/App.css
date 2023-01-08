@@ -7,12 +7,22 @@
   dark:text-white dark:bg-gray-800;
 }
 
+
+
 .nav-btn {
   @apply relative
   px-1 py-1
   hover:text-white text-white md:text-gray-300
    transition-all duration-200 ease-in-out;
 }
+
+.nav-btn-minimized {
+  @apply relative
+  px-1 py-1
+  hover:text-white text-white md:text-gray-300
+   transition-all duration-200 ease-in-out;
+}
+
 .nav-btn::after {
   @apply content-[''] absolute bg-white 
   h-1 md:w-[0%] w-[100%]
