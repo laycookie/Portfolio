@@ -2,36 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+body::-webkit-scrollbar-track {
+  background: #888;
+}
+body::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
 .Defaults {
   @apply min-h-[100vh]
   dark:text-white dark:bg-gray-800;
 }
 
-
-
 .nav-btn {
   @apply relative
-  px-1 py-1
+  px-1
   hover:text-white text-white md:text-gray-300
    transition-all duration-200 ease-in-out;
+}
+.nav-btn::after {
+  @apply content-[''] absolute bg-white 
+  h-1 md:w-[0%] w-[100%]
+  left-0 -bottom-2
+  rounded-xl
+  transition-all duration-200 ease-in-out;
+}
+.nav-btn:hover::after {
+  @apply w-[100%];
 }
 
 .nav-btn-minimized {
   @apply relative
-  px-1 py-1
-  hover:text-white text-white md:text-gray-300
+  hover:text-white text-gray-200
    transition-all duration-200 ease-in-out;
 }
-
-.nav-btn::after {
+.nav-btn-minimized::after {
   @apply content-[''] absolute bg-white 
-  h-1 md:w-[0%] w-[100%]
-  left-0 -bottom-1
+  h-1 w-[0%]
+  left-0 -bottom-2
   rounded-xl
   transition-all duration-200 ease-in-out;
 }
-
-.nav-btn:hover::after {
+.nav-btn-minimized:hover::after {
   @apply w-[100%];
 }
 

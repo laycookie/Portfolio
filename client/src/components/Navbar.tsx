@@ -29,14 +29,16 @@ export default function Navbar({}: Props) {
 
   return (
     <nav
-      className="py-6 bg-black 
-    text-xl font-semibold"
+      className="
+    text-xl font-semibold transition-all"
     >
       <ul
-        className="flex justify-between 
-      px-16"
+        className="flex justify-between
+        py-6 bg-black 
+        px-16 relative z-30"
       >
         <li>
+          {/* Those elements might be not probably align please check */}
           <Link to="/" className="nav-btn md:inline hidden">
             Home
           </Link>
@@ -69,18 +71,33 @@ export default function Navbar({}: Props) {
         </li>
       </ul>
 
-      <ul className={dropDown ? "grid justify-center md:hidden" : "hidden"}>
-        <li className="nav-btn-minimized">
-          <Link to="/">Home</Link>
+      <ul
+        className={`bg-black
+        grid justify-center
+        md:hidden
+        space-y-6 pb-8
+        transition-all ease-in-out duration-300
+        relative -translate-y-[${dropDown ? "0%" : "100%"}] z-0`}
+      >
+        <li>
+          <Link to="/" className="nav-btn-minimized">
+            Home
+          </Link>
         </li>
-        <li className="nav-btn-minimized">
-          <Link to="/blog">Blog</Link>
+        <li>
+          <Link to="/blog" className="nav-btn-minimized transition">
+            Blog
+          </Link>
         </li>
-        <li className="nav-btn-minimized">
-          <Link to="/portfolio">Portfolio</Link>
+        <li>
+          <Link to="/portfolio" className="nav-btn-minimized">
+            Portfolio
+          </Link>
         </li>
-        <li className="nav-btn-minimized">
-          <Link to="/contact">Contact</Link>
+        <li>
+          <Link to="/contact" className="nav-btn-minimized">
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>

@@ -8,5 +8,9 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    ({ addVariant }) => {
+      addVariant("child", "& > *");
+    },
+  ],
 };
