@@ -6,6 +6,7 @@ type Props = {};
 export default function Navbar({}: Props) {
   const location = useLocation();
   const [dropDown, setDropDown] = React.useState<boolean>(false);
+  const dropDownRef = React.useRef<HTMLUListElement>(null);
   const [pageTitle, setPageTitle] = React.useState<string>("");
 
   useEffect(() => {
@@ -72,30 +73,55 @@ export default function Navbar({}: Props) {
       </ul>
 
       <ul
+        ref={dropDownRef}
         className={`bg-black
         grid justify-center
         md:hidden
         space-y-6 pb-8
-        transition-all ease-in-out duration-300
-        relative -translate-y-[${dropDown ? "0%" : "100%"}] z-0`}
+        transition-all ease-in-out duration-200 ${
+          dropDown ? "delay-200" : "delay-0"
+        }
+        relative -mt-[${
+          dropDown ? `${dropDownRef?.current?.clientHeight}px` : "0"
+        }] z-0`}
       >
         <li>
-          <Link to="/" className="nav-btn-minimized">
+          <Link
+            to="/"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/blog" className="nav-btn-minimized transition">
+          <Link
+            to="/blog"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
             Blog
           </Link>
         </li>
         <li>
-          <Link to="/portfolio" className="nav-btn-minimized">
+          <Link
+            to="/portfolio"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
             Portfolio
           </Link>
         </li>
         <li>
-          <Link to="/contact" className="nav-btn-minimized">
+          <Link
+            to="/contact"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
             Contact
           </Link>
         </li>
