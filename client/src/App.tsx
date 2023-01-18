@@ -5,7 +5,6 @@ import Blog from "./pages/Blog";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contacts";
 
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -14,12 +13,11 @@ function App() {
   return (
     <div className={"App " + (isDark ? "dark" : "")}>
       <div className="Defaults">
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home title="Home" />} />
+          <Route path="/blog" element={<Blog title="Blog" />} />
+          <Route path="/portfolio" element={<Portfolio title="Portfolio" />} />
+          <Route path="/contact" element={<Contact title="Contact" />} />
         </Routes>
       </div>
       <Footer />

@@ -1,14 +1,16 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 import { Helmet } from "react-helmet-async";
 
-type Props = {};
+type Props = { title: string };
 
-export default function Home({}: Props) {
+export default function Home({ title }: Props) {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>{title}</title>
       </Helmet>
+      <Navbar pageTitle={title} />
       <h1>test</h1>
     </>
   );

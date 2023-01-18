@@ -1,32 +1,12 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-type Props = {};
+type Props = { pageTitle: string };
 
-export default function Navbar({}: Props) {
+export default function Navbar({ pageTitle }: Props) {
   const location = useLocation();
   const [dropDown, setDropDown] = React.useState<boolean>(false);
   const dropDownRef = React.useRef<HTMLUListElement>(null);
-  const [pageTitle, setPageTitle] = React.useState<string>("");
-
-  useEffect(() => {
-    switch (location.pathname) {
-      case "/":
-        setPageTitle("Home");
-        break;
-      case "/blog":
-        setPageTitle("Blog");
-        break;
-      case "/portfolio":
-        setPageTitle("Portfolio");
-        break;
-      case "/contact":
-        setPageTitle("Contact");
-        break;
-      default:
-        setPageTitle("Error");
-    }
-  }, [location.pathname]);
 
   return (
     <nav
@@ -34,16 +14,15 @@ export default function Navbar({}: Props) {
     text-xl font-semibold transition-all"
     >
       <ul
-        className="flex justify-between
-        py-6 bg-black 
-        px-16 relative z-30"
+        className="flex justify-between py-6 holder bg-black
+        relative z-30"
       >
         <li>
           {/* Those elements might be not probably align please check */}
-          <Link to="/" className="nav-btn md:inline hidden">
+          <Link to="/" className="nav-btn sm:inline hidden">
             Home
           </Link>
-          <Link to={location.pathname} className="nav-btn md:hidden">
+          <Link to={location.pathname} className="nav-btn sm:hidden">
             {pageTitle}
           </Link>
         </li>
@@ -60,7 +39,7 @@ export default function Navbar({}: Props) {
             </li>
             <li className="">
               <button
-                className="md:hidden"
+                className="sm:hidden"
                 onClick={() => {
                   setDropDown(!dropDown);
                 }}
@@ -76,7 +55,7 @@ export default function Navbar({}: Props) {
         ref={dropDownRef}
         className={`bg-black
         grid justify-center
-        md:hidden
+        sm:hidden
         space-y-6 pb-8
         transition-all ease-in-out duration-200 ${
           dropDown ? "delay-200" : "delay-0"

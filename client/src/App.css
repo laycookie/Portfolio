@@ -20,12 +20,12 @@ body::-webkit-scrollbar-thumb {
 .nav-btn {
   @apply relative
   px-1
-  hover:text-white text-white md:text-gray-300
+  hover:text-white text-white sm:text-gray-300
    transition-all duration-200 ease-in-out;
 }
 .nav-btn::after {
   @apply content-[''] absolute bg-white 
-  h-1 md:w-[0%] w-[100%]
+  h-1 sm:w-[0%] w-[100%]
   left-0 -bottom-2
   rounded-xl
   transition-all duration-200 ease-in-out;
@@ -51,5 +51,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav-hide {
-  @apply hidden md:inline;
+  @apply hidden sm:inline;
+}
+
+.holder {
+  @apply px-24;
 }
