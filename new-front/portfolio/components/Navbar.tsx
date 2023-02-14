@@ -1,0 +1,113 @@
+"use client";
+
+import React, { useEffect, useState, useRef } from "react";
+import Link from "next/link";
+import "./Navbar.css";
+
+type Props = { pageTitle: string };
+
+export default function Navbar({ pageTitle }: Props) {
+  const [dropDown, setDropDown] = useState<boolean>(false);
+  const dropDownRef = useRef<HTMLUListElement>(null);
+
+  return (
+    <nav
+      className="
+    text-xl font-semibold transition-all"
+    >
+      <ul
+        className="flex justify-between py-6 holder bg-black
+        relative z-30"
+      >
+        <li>
+          {/* Those elements might be not probably align please check */}
+          <Link href="/" className="nav-btn sm:inline hidden">
+            Home
+          </Link>
+          <h1 className="nav-btn sm:hidden">{pageTitle}</h1>
+        </li>
+        <li>
+          <ul className="flex space-x-4">
+            <li className="nav-btn nav-hide">
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li className="nav-btn nav-hide">
+              <Link href="/portfolio">Portfolio</Link>
+            </li>
+            <li className="nav-btn nav-hide">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className="">
+              <button
+                className="sm:hidden"
+                onClick={() => {
+                  setDropDown(!dropDown);
+                }}
+              >
+                X
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul
+        ref={dropDownRef}
+        className={`bg-black
+        grid justify-center
+        sm:hidden
+        space-y-6 pb-8
+        transition-all ease-in-out duration-200 ${
+          dropDown ? "delay-200" : "delay-0"
+        }
+        relative z-0`}
+        style={{
+          marginTop: dropDown
+            ? `-${dropDownRef?.current?.clientHeight}px`
+            : "0px",
+        }}
+      >
+        <li>
+          <Link
+            href="/"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/blog"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
+            Blog
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/portfolio"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
+            Portfolio
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/contact"
+            className={`nav-btn-minimized ${
+              dropDown ? "opacity-0" : "opacity-100 delay-200"
+            }`}
+          >
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}

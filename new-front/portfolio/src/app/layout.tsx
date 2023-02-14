@@ -1,18 +1,17 @@
-import './globals.css'
+"use client";
+
+import { useState } from "react";
+import "./globals.css";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  const [isDark, setIsDark] = useState(true);
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
+    <html lang="en" className={"Defaults " + (isDark ? "dark" : "")}>
       <body>{children}</body>
     </html>
-  )
+  );
 }
