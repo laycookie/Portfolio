@@ -5,8 +5,9 @@ type Props = {};
 
 export default async function page({}: Props) {
   return (
-    <div>
+    <main className="defaults">
       <Navbar pageTitle="Portfolio" />
-    </div>
+      <h1>Portfolio</h1>
+    </main>
   );
 }

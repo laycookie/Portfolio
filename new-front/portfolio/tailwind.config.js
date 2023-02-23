@@ -13,7 +13,23 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        white: "#FFFFFF",
+        black: "#000000",
+
+        "dark-main": "#28252C",
+        "dark-secondary": "#232127",
+        "dark-tertiary": "#19171C",
+
+        main: "#FFFFFF",
+        secondary: "#FFFFFF",
+        tertiary: "#EBEBEB",
+      },
+      opacity: {
+        glass: 0.25,
+      },
+    },
   },
   plugins: [
     ({ addVariant }) => {

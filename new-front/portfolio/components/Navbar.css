@@ -1,12 +1,14 @@
 .nav-btn {
   @apply relative
       px-1
-      hover:text-white text-white sm:text-gray-300
+      hover:text-black text-black md:text-gray-700
+      hover:dark:text-white dark:text-white dark:md:text-gray-300
        transition-all duration-200 ease-in-out;
 }
 .nav-btn::after {
-  @apply content-[''] absolute bg-white 
-      h-1 sm:w-[0%] w-[100%]
+  @apply content-[''] absolute
+     bg-black dark:bg-white 
+      h-1 md:w-[0%] w-[100%]
       left-0 -bottom-2
       rounded-xl
       transition-all duration-200 ease-in-out;
@@ -17,11 +19,12 @@
 
 .nav-btn-minimized {
   @apply relative
-      hover:text-white text-gray-200
+      hover:text-black text-gray-800
+      dark:hover:text-white dark:text-gray-300
        transition-all duration-200 ease-in-out;
 }
 .nav-btn-minimized::after {
-  @apply content-[''] absolute bg-white 
+  @apply content-[''] absolute bg-black dark:bg-white
       h-1 w-[0%]
       left-0 -bottom-2
       rounded-xl
@@ -32,5 +35,5 @@
 }
 
 .nav-hide {
-  @apply hidden sm:inline;
+  @apply hidden md:inline;
 }

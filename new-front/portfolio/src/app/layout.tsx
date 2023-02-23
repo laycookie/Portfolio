@@ -17,7 +17,7 @@ export default function RootLayout({
     } else if (isDarkL === "false") {
       setIsDark(false);
     } else if (isDarkL === null) {
-      // check if the user has os set to dark mode
+      // check if the user has os set to dark mode if no theme was chosen before
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         setIsDark(true);
         localStorage.setItem("isDark", "true");
@@ -29,7 +29,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en" className={isDark ? " dark" : ""}>
+    <html lang="en" className={isDark ? "dark" : ""}>
       <body>{children}</body>
     </html>
   );

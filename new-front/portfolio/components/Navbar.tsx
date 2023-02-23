@@ -16,15 +16,15 @@ export default function Navbar({ pageTitle }: Props) {
     text-xl font-semibold transition-all"
     >
       <ul
-        className="flex justify-between py-6 holder bg-black
+        className="flex justify-between py-6 holder bg-tertiary dark:bg-dark-tertiary
         relative z-30"
       >
         <li>
           {/* Those elements might be not probably align please check */}
-          <Link href="/" className="nav-btn sm:inline hidden">
+          <Link href="/" className="nav-btn md:inline hidden">
             Home
           </Link>
-          <h1 className="nav-btn sm:hidden">{pageTitle}</h1>
+          <h1 className="nav-btn md:hidden">{pageTitle}</h1>
         </li>
         <li>
           <ul className="flex space-x-4">
@@ -39,7 +39,7 @@ export default function Navbar({ pageTitle }: Props) {
             </li>
             <li className="">
               <button
-                className="sm:hidden"
+                className="md:hidden"
                 onClick={() => {
                   setDropDown(!dropDown);
                 }}
@@ -53,9 +53,9 @@ export default function Navbar({ pageTitle }: Props) {
 
       <ul
         ref={dropDownRef}
-        className={`bg-black
+        className={`bg-tertiary dark:bg-dark-tertiary
         grid justify-center
-        sm:hidden
+        md:hidden
         space-y-6 pb-8
         transition-all ease-in-out duration-200 ${
           dropDown ? "delay-200" : "delay-0"
