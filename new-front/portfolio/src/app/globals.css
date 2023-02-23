@@ -12,8 +12,9 @@ body::-webkit-scrollbar-thumb {
   background: #000;
 }
 
-.Defaults {
+.defaults {
   @apply min-h-[100vh]
+  text-black
   dark:text-white dark:bg-gray-800;
 }
 
