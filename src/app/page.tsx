@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "components/Navbar";
+import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Navbar pageTitle="Home" />
-      <main className="container mx-auto px-4 ">
+      <main className="container mx-auto px-4">
         <h1 className="font-semibold text-7xl text-stroke-2 pt-[20vh]">
           Hello, my name is{" "}
           <Link

@@ -37,3 +37,7 @@ body::-webkit-scrollbar-thumb {
 .holder {
   @apply px-24;
 }
+
+.input-field {
+  @apply bg-transparent border-2 border-white rounded-lg pl-2;
+}

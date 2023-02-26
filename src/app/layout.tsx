@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useState } from "react";
+import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
 import "./globals.css";
 
 export default function RootLayout({
@@ -30,7 +31,10 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={isDark ? "dark" : ""}>
-      <body className="defaults">{children}</body>
+      <body className="defaults">
+        {children}
+        <AnalyticsWrapper />
+      </body>
     </html>
   );
 }
