@@ -30,7 +30,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={isDark ? "dark" : ""}>
-      <body>{children}</body>
+      <body className="defaults">{children}</body>
     </html>
   );
 }
