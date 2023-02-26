@@ -40,7 +40,9 @@ export default function page({}: Props) {
             <button type="submit">Send</button>
           </div>
         </form>
-        <p>*Contact form is still in development and doesn't work currently</p>
+        <p>
+          *Contact form is still in development and doesn{"'"}t work currently
+        </p>
       </main>
     </>
   );
