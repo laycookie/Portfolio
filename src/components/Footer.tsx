@@ -40,7 +40,7 @@ export default function Footer({}: Props) {
                 rel="noreferrer"
               >
                 <Image
-                  src={"/social-Icons/LinkedIn-icon.svg"}
+                  src={"/social-Icons/Linkedin-icon.svg"}
                   alt="LinkedIn"
                   width={50}
                   height={50}
