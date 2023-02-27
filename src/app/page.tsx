@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WriteInTxt from "@/components/WriteInTxt";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -12,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Navbar pageTitle="Home" />
-      <main className="container mx-auto px-4">
+      <main className="contain">
         <h1 className="font-semibold text-7xl text-stroke-2 pt-[20vh]">
           Hello, my name is{" "}
           <Link
@@ -24,10 +26,15 @@ export default function Home() {
             Dennis Lonoshchuk
           </Link>
         </h1>
-        <p className="text-lg pt-4 ">
-          I’m a front-end web developer based in California.
-        </p>
+        <WriteInTxt
+          text="I’m a front-end web developer based in California."
+          className="h-10 w-full mt-4
+           text-2xl font-light
+           stroke-1 stroke-black fill-black
+            dark:stroke-white dark:fill-white"
+        />
       </main>
+      <Footer />
     </>
   );
 }

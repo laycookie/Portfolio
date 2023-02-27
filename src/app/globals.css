@@ -34,6 +34,10 @@ body::-webkit-scrollbar-thumb {
   dark:text-white dark:bg-dark-main;
 }
 
+.contain {
+  @apply container mx-auto px-4;
+}
+
 .holder {
   @apply px-24;
 }

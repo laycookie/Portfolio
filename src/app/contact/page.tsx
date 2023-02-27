@@ -14,7 +14,7 @@ export default function page({}: Props) {
   return (
     <>
       <Navbar pageTitle="Contact" />
-      <main className="container mx-auto px-4">
+      <main className="contain">
         <h1>Ways to contact me</h1>
         <div>
           <h2>Email: Dennis@Lonoshchuk.com</h2>

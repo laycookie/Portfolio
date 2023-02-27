@@ -1,0 +1,23 @@
+.text-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  fill-opacity: 0;
+  animation: dash 8s linear forwards, filling 2s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes filling {
+  0%,
+  90% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
