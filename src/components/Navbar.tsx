@@ -13,7 +13,7 @@ export default function Navbar({ pageTitle }: Props) {
   return (
     <nav
       className="
-    text-xl font-semibold transition-all"
+    text-xl font-semibold transition-all w-full fixed top-0"
     >
       <ul
         className="flex justify-between py-6 holder bg-tertiary dark:bg-dark-tertiary

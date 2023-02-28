@@ -15,25 +15,28 @@ export default function Home() {
     <>
       <Navbar pageTitle="Home" />
       <main className="contain">
-        <h1 className="font-semibold text-7xl text-stroke-2 pt-[20vh]">
-          Hello, my name is{" "}
-          <Link
-            href="/contact"
-            className="text-transparent dark:text-stroke-white text-stroke-black text-stroke-2
+        <section className="h-[100vh]">
+          <h1 className="font-semibold text-7xl text-stroke-2 pt-[32vh]">
+            Hello, my name is{" "}
+            <Link
+              href="/contact"
+              className="text-transparent dark:text-stroke-white text-stroke-black text-stroke-2
             dark:hover:text-white hover:text-black
           transition-all ease-in-out duration-300"
-          >
-            Dennis Lonoshchuk
-          </Link>
-        </h1>
-        <WriteInTxt
-          text="I’m a front-end web developer based in California."
-          className="h-10 w-full mt-4
+            >
+              Dennis Lonoshchuk
+            </Link>
+          </h1>
+          <WriteInTxt
+            text="I’m a front-end web developer based in California."
+            className="h-10 w-full mt-4
            text-2xl font-light
            stroke-1 stroke-black fill-black
             dark:stroke-white dark:fill-white"
-        />
+          />
+        </section>
       </main>
+
       <Footer />
     </>
   );
