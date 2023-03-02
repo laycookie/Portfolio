@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import "./Navbar.css";
 
-type Props = { pageTitle: string; hideUntil: number };
+type Props = { pageTitle: string; hideUntil?: number };
 
 export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
