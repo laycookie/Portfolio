@@ -15,7 +15,7 @@ export default function page({}: Props) {
     <>
       <Navbar pageTitle="Contact" />
       <main className="contain">
-        <h1>Ways to contact me</h1>
+        <h1 className="mt-[max(76px,15vh)]">Ways to contact me</h1>
         <div>
           <h2>Email: Dennis@Lonoshchuk.com</h2>
           <h2>Phone: +1(747)273-9768</h2>
