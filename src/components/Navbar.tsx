@@ -4,20 +4,38 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import "./Navbar.css";
 
-type Props = { pageTitle: string };
+type Props = { pageTitle: string; hideUntil?: number };
 
-export default function Navbar({ pageTitle }: Props) {
-  const [dropDown, setDropDown] = useState<boolean>(false);
+export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
+  const navRef = useRef<HTMLDivElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
+
+  const [isNavHidden, setIsNavHidden] = useState<boolean>(false);
+  const [dropDown, setDropDown] = useState<boolean>(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > hideUntil) {
+        setIsNavHidden(true);
+      } else {
+        setIsNavHidden(false);
+      }
+    });
+  }, []);
 
   return (
     <nav
-      className="
-    text-xl font-semibold transition-all w-full fixed top-0"
+      ref={navRef}
+      className={`
+    text-xl font-semibold transition-all w-full fixed`}
+      style={{
+        top: `${isNavHidden ? "-" + navRef?.current?.clientHeight : 0}px`,
+      }}
     >
       <ul
-        className="flex justify-between py-6 holder bg-tertiary dark:bg-dark-tertiary
-        relative z-30"
+        className="flex justify-between py-6 bg-tertiary dark:bg-dark-tertiary
+        relative z-30 
+        holder"
       >
         <li>
           {/* Those elements might be not probably align please check */}
