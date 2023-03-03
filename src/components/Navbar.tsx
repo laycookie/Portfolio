@@ -33,8 +33,9 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
       }}
     >
       <ul
-        className="flex justify-between py-6 holder bg-tertiary dark:bg-dark-tertiary
-        relative z-30"
+        className="flex justify-between py-6 bg-tertiary dark:bg-dark-tertiary
+        relative z-30 
+        holder"
       >
         <li>
           {/* Those elements might be not probably align please check */}

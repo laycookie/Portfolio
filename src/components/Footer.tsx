@@ -8,11 +8,11 @@ export default function Footer({}: Props) {
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
     sticky top-[100vh]
-     py-8"
+    holder py-8"
     >
       <ul
         className="flex justify-between items-center
-      container mx-auto px-4"
+       mx-auto "
       >
         <li>
           <button>Theme mode</button>
