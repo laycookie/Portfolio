@@ -29,21 +29,21 @@ export default function page({}: Props) {
           <h2>Discord: LAYTORT#0325</h2>
         </div>
         <h3
-          className="sm:text-lg md:text-xl
+          className="sm:text-lg md:text-xl font-light
         mt-1 sm:mt-2 md:mt-4"
         >
-          If you want to quickly fire me a message here is a form you can fill
-          out.
-        </h3>
-        <Link
-          href="/contact"
-          className="font-semibold sm:text-lg md:text-xl
+          If you want to quickly fire me a message here is a{" "}
+          <Link
+            href="/contact"
+            className="font-semibold
           dark:text-gray-300 dark:hover:text-white
           text-gray-700 hover:text-black
           transition-all ease-in-out duration-200"
-        >
-          Fill out the form.
-        </Link>
+          >
+            form
+          </Link>{" "}
+          you can fill out.
+        </h3>
       </main>
       <Footer />
     </>
