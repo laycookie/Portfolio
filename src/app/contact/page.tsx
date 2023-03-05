@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,36 +16,36 @@ export default function page({}: Props) {
   return (
     <>
       <Navbar pageTitle="Contact" />
-      <main className="contain">
-        <h1 className="mt-[max(76px,15vh)]">Ways to contact me</h1>
-        <div>
+      <main className="contain pt-[max(76px,20vh)]">
+        <h1 className="font-semibold text-4xl sm:text-6xl md:text-7xl">
+          Contact information
+        </h1>
+        <div
+          className="text-lg sm:text-xl md:text-2xl
+        mt-4 sm:mt-8 md:mt-10"
+        >
           <h2>Email: Dennis@Lonoshchuk.com</h2>
           <h2>Phone: +1(747)273-9768</h2>
           <h2>Discord: LAYTORT#0325</h2>
         </div>
-        <h1>Feel free to quickly ask me a question here!</h1>
-        <form action="">
-          <input
-            type="text"
-            placeholder="First and last name"
-            className="input-field"
-          />
-          <input type="text" placeholder="Email" className="input-field" />
-          <div>
-            <input type="text" placeholder="Subject" className="input-field" />
-            <textarea
-              name="Contents"
-              id="Contents"
-              className="input-field block"
-            ></textarea>
-
-            <button type="submit">Send</button>
-          </div>
-        </form>
-        <p>
-          *Contact form is still in development and doesn{"'"}t work currently
-        </p>
+        <h3
+          className="sm:text-lg md:text-xl
+        mt-1 sm:mt-2 md:mt-4"
+        >
+          If you want to quickly fire me a message here is a form you can fill
+          out.
+        </h3>
+        <Link
+          href="/contact"
+          className="font-semibold sm:text-lg md:text-xl
+          dark:text-gray-300 dark:hover:text-white
+          text-gray-700 hover:text-black
+          transition-all ease-in-out duration-200"
+        >
+          Fill out the form.
+        </Link>
       </main>
+      <Footer />
     </>
   );
 }
