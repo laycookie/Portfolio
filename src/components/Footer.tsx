@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+import { useContext } from "react";
+import { ThemeContext } from "@/context/ThemeContext";
 import Image from "next/image";
 
 type Props = {};
 
 export default function Footer({}: Props) {
+  const { isDark, setIsDark } = useContext(ThemeContext);
   return (
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
@@ -15,7 +18,14 @@ export default function Footer({}: Props) {
        mx-auto "
       >
         <li>
-          <button>Theme mode</button>
+          <button
+            onClick={() => {
+              setIsDark(!isDark);
+              localStorage.setItem("isDark", `${!isDark}`);
+            }}
+          >
+            Theme mode
+          </button>
         </li>
         <li>
           <ul className="flex items-center space-x-4">

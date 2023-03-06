@@ -16,7 +16,10 @@ export default function Home() {
       <Navbar pageTitle="Home" />
       <main className="contain">
         <section className="h-[100vh]">
-          <h1 className="font-semibold text-4xl sm:text-6xl md:text-7xl text-stroke-2 mt-[max(76px,32vh)]">
+          <h1
+            className="font-semibold text-4xl sm:text-6xl md:text-7xl
+           text-stroke-2 pt-[max(76px,32vh)]"
+          >
             Hello, my name is{" "}
             <Link
               href="/contact"
