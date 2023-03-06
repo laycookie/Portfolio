@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
+import { ThemeContext } from "@/context/ThemeContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,9 +10,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // type themeObj = {
+  //   isDark: boolean | null;
+  //   setIsDark: (isDark: boolean) => void;
+  // };
+  // const ThemeContext = createContext({
+  //   isDark: false,
+  //   setIsDark: (isDark: boolean) => {},
+  // } as themeObj);
+  // const ThemeContext = useContext(ThemeContext)
+
   const [isDark, setIsDark] = useState<boolean | null>(null);
   // sets the theme to dark or light
-  useLayoutEffect(() => {
+  useEffect(() => {
     const isDarkL = localStorage.getItem("isDark");
     if (isDarkL === "true") {
       setIsDark(true);
@@ -32,7 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={isDark ? "dark" : ""}>
       <body className="defaults">
-        {children}
+        <ThemeContext.Provider value={{ isDark, setIsDark }}>
+          {children}
+        </ThemeContext.Provider>
         <AnalyticsWrapper />
       </body>
     </html>
