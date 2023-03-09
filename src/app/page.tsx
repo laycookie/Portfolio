@@ -38,6 +38,55 @@ export default function Home() {
             dark:stroke-white dark:fill-white"
           />
         </section>
+        <section>
+          {/* WARNING REFACTOR BEFORE PUSHING TO MAIN */}
+          <div
+            className="grid grid-cols-2 grid-rows-4 gap-y-8
+           "
+          >
+            <h2>Familiar technologies</h2>
+            <h2>Fun demos</h2>
+
+            <div className="flex">
+              <h3 className="w-32 my-auto">Lang.</h3>
+              <div className="pl-32 my-auto">
+                <p>Python</p>
+                <p>Node </p>
+                <p>C</p>
+                <p>C# </p>
+                <p>JavaScript</p>
+                <p>Typescript</p>
+              </div>
+            </div>
+            <div className="row-span-3"></div>
+            <div>
+              <div className="flex">
+                <h3 className="w-32 my-auto">Front-end</h3>
+                <div className="pl-32 my-auto">
+                  <p>React</p>
+                  <p>Three.js</p>
+                  <p>TailwindCSS</p>
+                </div>
+              </div>
+              <div className="flex">
+                <h3 className="w-32 my-auto">Back-end</h3>
+                <div className="pl-32 my-auto">
+                  <p>Express</p>
+                  <p>Flask</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="flex">
+                <h3 className="w-32 my-auto">Misc</h3>
+                <div className="pl-32 ">
+                  <p>Prisma</p>
+                  <p>SQL</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
