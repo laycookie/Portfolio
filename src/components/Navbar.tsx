@@ -36,14 +36,15 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
     <nav
       ref={navRef}
       className={`
-    text-xl font-semibold transition-all w-full fixed`}
+    text-xl font-semibold transition-all w-full fixed 
+    backdrop-blur-sm`}
       style={{
         top: `${isNavHidden ? "-" + navRef?.current?.clientHeight : 0}px`,
       }}
     >
       <ul
-        className="flex justify-between py-6 bg-tertiary dark:bg-dark-tertiary
-        relative z-30 
+        className=" bg-tertiary/50 dark:bg-dark-tertiary/50
+        relative flex justify-between py-4 z-30 
         holder"
       >
         <li>
@@ -80,7 +81,7 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
 
       <ul
         ref={dropDownRef}
-        className={`bg-tertiary dark:bg-dark-tertiary
+        className={`bg-tertiary/50 dark:bg-dark-tertiary/50
         grid justify-center
         md:hidden
         space-y-6 pb-8
