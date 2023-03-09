@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 type Props = { pageTitle: string; hideUntil?: number };
 
-export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
+export default function Navbar({ pageTitle, hideUntil = 50 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
 
