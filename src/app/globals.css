@@ -46,9 +46,17 @@ body::-webkit-scrollbar-thumb {
   @apply bg-transparent border-2 border-white rounded-lg pl-2;
 }
 
-/* Temp place for page.module.css components */
+.grid_hover_effect {
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 35%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  opacity: 1;
+}
 
-.grid-hover-effect {
+.dark .dark\:grid_hover_effect {
   background: radial-gradient(
     circle at var(--mouse-x) var(--mouse-y),
     rgba(255, 255, 255, 1) 0%,
