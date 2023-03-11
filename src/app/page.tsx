@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SkillGrid from "./SkillGrid";
 import WriteInTxt from "@/components/WriteInTxt";
 import Link from "next/link";
 
@@ -40,52 +41,7 @@ export default function Home() {
         </section>
         <section>
           {/* WARNING REFACTOR BEFORE PUSHING TO MAIN */}
-          <div className="">
-            <div
-              className="grid grid-cols-2 grid-rows-4
-           "
-            >
-              <h2 className="border-2">Familiar technologies</h2>
-              <h2 className="border-2">Fun demos</h2>
-
-              <div className="flex py-4 border-2">
-                <h3 className="w-32 my-auto">Lang.</h3>
-                <div className="pl-32 my-auto">
-                  <p>Python</p>
-                  <p>Node </p>
-                  <p>C</p>
-                  <p>C# </p>
-                  <p>JavaScript</p>
-                  <p>Typescript</p>
-                </div>
-              </div>
-              <div className="row-span-3 py-4 border-2"></div>
-              <div className="border-2">
-                <div className="flex py-4">
-                  <h3 className="w-32 my-auto">Front-end</h3>
-                  <div className="pl-32 my-auto">
-                    <p>React</p>
-                    <p>Three.js</p>
-                    <p>TailwindCSS</p>
-                  </div>
-                </div>
-                <div className="flex py-4">
-                  <h3 className="w-32 my-auto">Back-end</h3>
-                  <div className="pl-32 my-auto">
-                    <p>Express</p>
-                    <p>Flask</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex py-4 border-2">
-                <h3 className="w-32 my-auto">Misc</h3>
-                <div className="pl-32 my-auto">
-                  <p>Prisma</p>
-                  <p>SQL</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SkillGrid />
         </section>
       </main>
 

@@ -45,3 +45,15 @@ body::-webkit-scrollbar-thumb {
 .input-field {
   @apply bg-transparent border-2 border-white rounded-lg pl-2;
 }
+
+/* Temp place for page.module.css components */
+
+.grid-hover-effect {
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.6) 35%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  opacity: 1;
+}
