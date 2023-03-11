@@ -6,12 +6,12 @@ import "./Navbar.css";
 
 type Props = { pageTitle: string; hideUntil?: number };
 
-export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
+export default function Navbar({ pageTitle, hideUntil = 50 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
 
   const [isNavHidden, setIsNavHidden] = useState<boolean>(false);
-  const [dropDown, setDropDown] = useState<boolean>(false);
+  const [isDropDownVis, setIsDropDownVis] = useState<boolean>(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -23,18 +23,28 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
     });
   }, []);
 
+  const [dropOffSet, setDropOffSet] = useState(0);
+  useEffect(() => {
+    setDropOffSet(
+      dropDownRef?.current?.clientHeight
+        ? dropDownRef?.current?.clientHeight
+        : 0
+    );
+  }, [dropDownRef?.current?.clientHeight]);
+
   return (
     <nav
       ref={navRef}
       className={`
-    text-xl font-semibold transition-all w-full fixed`}
+    text-xl font-semibold transition-all w-full fixed 
+    backdrop-blur-sm`}
       style={{
         top: `${isNavHidden ? "-" + navRef?.current?.clientHeight : 0}px`,
       }}
     >
       <ul
-        className="flex justify-between py-6 bg-tertiary dark:bg-dark-tertiary
-        relative z-30 
+        className=" bg-tertiary/50 dark:bg-dark-tertiary/50
+        relative flex justify-between py-4 z-30 
         holder"
       >
         <li>
@@ -59,7 +69,7 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
               <button
                 className="md:hidden"
                 onClick={() => {
-                  setDropDown(!dropDown);
+                  setIsDropDownVis(!isDropDownVis);
                 }}
               >
                 X
@@ -71,25 +81,23 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
 
       <ul
         ref={dropDownRef}
-        className={`bg-tertiary dark:bg-dark-tertiary
+        className={`bg-tertiary/50 dark:bg-dark-tertiary/50
         grid justify-center
         md:hidden
         space-y-6 pb-8
         transition-all ease-in-out duration-200 ${
-          dropDown ? "delay-200" : "delay-0"
+          isDropDownVis ? "delay-0" : "delay-200"
         }
         relative z-0`}
         style={{
-          marginTop: dropDown
-            ? `-${dropDownRef?.current?.clientHeight}px`
-            : "0px",
+          marginTop: isDropDownVis ? `0px` : `-${dropOffSet}px`,
         }}
       >
         <li>
           <Link
             href="/"
             className={`nav-btn-minimized ${
-              dropDown ? "opacity-0" : "opacity-100 delay-200"
+              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
             }`}
           >
             Home
@@ -99,7 +107,7 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
           <Link
             href="/blog"
             className={`nav-btn-minimized ${
-              dropDown ? "opacity-0" : "opacity-100 delay-200"
+              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
             }`}
           >
             Blog
@@ -109,7 +117,7 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
           <Link
             href="/portfolio"
             className={`nav-btn-minimized ${
-              dropDown ? "opacity-0" : "opacity-100 delay-200"
+              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
             }`}
           >
             Portfolio
@@ -119,7 +127,7 @@ export default function Navbar({ pageTitle, hideUntil = 35 }: Props) {
           <Link
             href="/contact"
             className={`nav-btn-minimized ${
-              dropDown ? "opacity-0" : "opacity-100 delay-200"
+              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
             }`}
           >
             Contact

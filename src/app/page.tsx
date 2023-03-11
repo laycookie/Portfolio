@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SkillGrid from "./SkillGrid";
 import WriteInTxt from "@/components/WriteInTxt";
 import Link from "next/link";
 
@@ -37,6 +38,10 @@ export default function Home() {
            stroke-1 stroke-black fill-black
             dark:stroke-white dark:fill-white"
           />
+        </section>
+        <section>
+          {/* WARNING REFACTOR BEFORE PUSHING TO MAIN */}
+          <SkillGrid />
         </section>
       </main>
 

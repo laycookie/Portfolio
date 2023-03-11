@@ -35,7 +35,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contain {
-  @apply container mx-auto px-4;
+  @apply container mx-auto px-16;
 }
 
 .holder {
@@ -44,4 +44,24 @@ body::-webkit-scrollbar-thumb {
 
 .input-field {
   @apply bg-transparent border-2 border-white rounded-lg pl-2;
+}
+
+.grid_hover_effect {
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 35%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  opacity: 1;
+}
+
+.dark .dark\:grid_hover_effect {
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.6) 35%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  opacity: 1;
 }
