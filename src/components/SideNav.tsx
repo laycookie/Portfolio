@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, Children, isValidElement } from "react";
 import "./SideNav.css";
 
 type Props = { children: React.ReactNode };
@@ -13,7 +13,9 @@ export default function SideNav({ children }: Props) {
   useEffect(() => {
     const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
     if (!children) return;
-    for (const child of children.props.children) {
+    const childrenVer = Children.only(children);
+    if (!React.isValidElement(childrenVer)) return;
+    for (const child of childrenVer.props.children) {
       if (child.type === "section") {
         /* Takes position of the section using getBoundingClientRect,
          * and adds vertical window scroll to negate the effect of user scrolling.
