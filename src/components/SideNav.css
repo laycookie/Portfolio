@@ -10,9 +10,9 @@
 
 .side-btn > div {
   @apply absolute left-full
-   bg-black dark:bg-white
-          h-1 w-0
-          rounded-xl
+  flex items-center
+          h-full w-0
+          
           transition-all duration-200 ease-in-out;
 }
 

@@ -43,10 +43,13 @@ export default function SideNav({ children }: Props) {
               onClick={() => {
                 scrollTo(0, section.position);
               }}
-              className="side-btn"
+              className="side-btn text-sm sm:text-lg"
             >
               {section.name}
-              <div />
+              <div>
+                {" "}
+                <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
+              </div>
             </button>
           </li>
         ))}
