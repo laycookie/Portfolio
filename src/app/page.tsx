@@ -44,6 +44,9 @@ export default function Home() {
           <section id="Skills" className="h-[100vh] flex justify-center">
             <SkillGrid />
           </section>
+          <section id="About me" className="h-[100vh] flex justify-center">
+            <h1>Test</h1>
+          </section>
         </main>
       </SideNav>
       <Footer />

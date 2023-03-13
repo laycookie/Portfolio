@@ -55,7 +55,7 @@ export default function SideNav({ children }: Props) {
     <>
       <ul
         className="fixed right-6
-      flex flex-col h-[100vh] justify-center"
+      flex flex-col h-[100vh] justify-center "
       >
         {sections.map((section, index) => (
           <li key={index} className="mt-2">
@@ -63,9 +63,9 @@ export default function SideNav({ children }: Props) {
               onClick={() => {
                 scrollTo(0, section.position);
               }}
-              className="side-btn text-sm sm:text-lg"
+              className="side-btn text-sm sm:text-lg w-full "
             >
-              {section.name}
+              <p className="w-full text-right">{section.name}</p>
               <div>
                 {" "}
                 <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
