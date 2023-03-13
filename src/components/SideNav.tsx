@@ -22,26 +22,33 @@ export default function SideNav({ children }: Props) {
     [] as SectionPrepNav[]
   );
   useEffect(() => {
-    const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
-    if (!children) return;
-    const childrenVer = Children.only(children);
-    if (!React.isValidElement(childrenVer)) return;
-    for (const child of childrenVer.props.children) {
-      if (child.type === "section") {
-        /* Takes position of the section using getBoundingClientRect,
-         * and adds vertical window scroll to negate the effect of user scrolling.
-         */
-        const sectionPosition =
-          (document.getElementById(child.props.id)?.getBoundingClientRect()
-            .y as number) + window.scrollY;
+    const handleResize = () => {
+      const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
+      if (!children) return;
+      const childrenVer = Children.only(children);
+      if (!React.isValidElement(childrenVer)) return;
+      for (const child of childrenVer.props.children) {
+        if (child.type === "section") {
+          /* Takes position of the section using getBoundingClientRect,
+           * and adds vertical window scroll to negate the effect of user scrolling.
+           */
+          const sectionPosition =
+            (document.getElementById(child.props.id)?.getBoundingClientRect()
+              .y as number) + window.scrollY;
 
-        sectionsCli.push({
-          name: child.props.id,
-          position: sectionPosition,
-        } as SectionPrepNav);
+          sectionsCli.push({
+            name: child.props.id,
+            position: sectionPosition,
+          } as SectionPrepNav);
+        }
       }
-    }
-    setSections(sectionsCli);
+      setSections(sectionsCli);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (

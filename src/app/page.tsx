@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar pageTitle="Home" />
       <SideNav>
         <main className="contain">
-          <section className="h-[100vh]" id="Intro.">
+          <section id="Intro." className="h-[100vh]">
             <h1
               className="font-semibold text-4xl sm:text-6xl md:text-7xl
            text-stroke-2 pt-[max(76px,32vh)]"
@@ -41,7 +41,7 @@ export default function Home() {
             dark:stroke-white dark:fill-white"
             />
           </section>
-          <section id="Skills">
+          <section id="Skills" className="h-[100vh] flex justify-center">
             <SkillGrid />
           </section>
         </main>
