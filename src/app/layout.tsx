@@ -41,7 +41,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en" className={isDark ? "dark" : ""}>
+    <html lang="en" className={(isDark ? "dark" : "") + " scroll-smooth"}>
       <body className="defaults">
         <ThemeContext.Provider value={{ isDark, setIsDark }}>
           {children}

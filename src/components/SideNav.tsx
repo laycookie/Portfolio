@@ -6,6 +6,17 @@ type Props = { children: React.ReactNode };
 
 type SectionPrepNav = { name: string; position: number };
 
+// Looks inside the first chilled and searches for sections which it than lists in the side nav with the name if there id.
+// WARNING: You are expected to have one child inside of it that stores all the sections
+/* EX:
+<SideNav>
+  <main>
+    <section id="FirstNavElement"></section>
+    <section id="SecondNavElement"></section>
+  </main>
+<SideNav>
+*/
+
 export default function SideNav({ children }: Props) {
   const [sections, setSections] = React.useState<SectionPrepNav[]>(
     [] as SectionPrepNav[]
