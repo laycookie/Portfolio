@@ -1,13 +1,62 @@
-import React from "react";
+"use client";
+import React, { useEffect, Children, isValidElement } from "react";
+import "./SideNav.css";
 
-type Props = {};
+type Props = { children: React.ReactNode };
 
-export default function SideNav({}: Props) {
+type SectionPrepNav = { name: string; position: number };
+
+export default function SideNav({ children }: Props) {
+  const [sections, setSections] = React.useState<SectionPrepNav[]>(
+    [] as SectionPrepNav[]
+  );
+  useEffect(() => {
+    const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
+    if (!children) return;
+    const childrenVer = Children.only(children);
+    if (!React.isValidElement(childrenVer)) return;
+    for (const child of childrenVer.props.children) {
+      if (child.type === "section") {
+        /* Takes position of the section using getBoundingClientRect,
+         * and adds vertical window scroll to negate the effect of user scrolling.
+         */
+        const sectionPosition =
+          (document.getElementById(child.props.id)?.getBoundingClientRect()
+            .y as number) + window.scrollY;
+
+        sectionsCli.push({
+          name: child.props.id,
+          position: sectionPosition,
+        } as SectionPrepNav);
+      }
+    }
+    setSections(sectionsCli);
+  }, []);
+
   return (
-    <nav>
-      <ul>
-        <li>test</li>
+    <>
+      <ul
+        className="fixed right-6
+      flex flex-col h-[100vh] justify-center"
+      >
+        {sections.map((section, index) => (
+          <li key={index} className="mt-2">
+            <button
+              onClick={() => {
+                scrollTo(0, section.position);
+              }}
+              className="side-btn text-sm sm:text-lg"
+            >
+              {section.name}
+              <div>
+                {" "}
+                <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
+              </div>
+            </button>
+          </li>
+        ))}
       </ul>
-    </nav>
+      {children}
+    </>
   );
 }
