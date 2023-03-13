@@ -1,0 +1,21 @@
+.side-btn {
+  @apply relative flex items-center
+        px-1
+         text-black dark:text-white
+         transition-all duration-200 ease-in-out;
+}
+.side-btn:hover {
+  @apply -translate-x-4;
+}
+
+.side-btn > div {
+  @apply absolute left-full
+   bg-black dark:bg-white
+          h-1 w-0
+          rounded-xl
+          transition-all duration-200 ease-in-out;
+}
+
+.side-btn:hover > div {
+  @apply w-6;
+}
