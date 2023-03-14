@@ -45,8 +45,35 @@ export default function Home() {
           <section id="Skills" className="h-[100vh] flex justify-center">
             <SkillGrid />
           </section>
-          <section id="About me" className="h-[100vh] flex">
-            <h1>Test</h1>
+          <section id="About me" className="h-[100vh]">
+            <div>
+              <h2 className="text-5xl pt-36 pb-24 font-bold text-center">
+                About me
+              </h2>
+              <h3 className="text-lg pb-12 w-[65%]">
+                Hello there! My name is Dennis Lonoshchuk, and I am a front-end
+                web developer based in California. I am passionate about
+                creating beautiful, responsive, and user-friendly websites that
+                help businesses and individuals achieve their goals.
+              </h3>
+              <div className="w-full flex justify-end">
+                <h3 className="text-lg pb-12 w-[65%]">
+                  As a web developer, I constantly strive to learn new
+                  technologies and keep up with the latest trends in web design
+                  and development. I love experimenting with new tools and
+                  frameworks, and I am always looking for ways to improve my
+                  skills and deliver better results to my clients.
+                </h3>
+              </div>
+              <h3 className="text-lg pb-12 w-[65%]">
+                Tools I have experimented with includes React, Tailwind,
+                Three.js, Pixi.js, Websocket, and other front-end technologies.
+                I have experience working with a variety of content management
+                systems (CMS) such as WordPress, Shopify, and Squarespace. I
+                also have a good understanding of back-end technologies such as
+                Node.js, Express, and MongoDB.
+              </h3>
+            </div>
           </section>
           <section id="Edu." className="h-[100vh] flex justify-center">
             <div className="my-16">
