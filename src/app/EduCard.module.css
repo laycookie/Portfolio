@@ -1,0 +1,6 @@
+.neumorphic_card {
+  @apply rounded-xl border-2 border-dark-tertiary p-8 mb-16;
+  box-shadow: -4px -4px 4px #2d2a32, 0px 40px 60px -17px #141316,
+    inset -2px -2px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.25);
+}

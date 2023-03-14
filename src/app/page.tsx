@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 import SkillGrid from "./SkillGrid";
+import EduCard from "./EduCard";
 import WriteInTxt from "@/components/WriteInTxt";
 import Link from "next/link";
 
@@ -52,25 +53,18 @@ export default function Home() {
               <h3 className="text-5xl text-center mb-16 font-bold">
                 My coding related education
               </h3>
-              <div
-                className="rounded-xl p-8"
-                style={{
-                  boxShadow:
-                    "-4px -4px 4px #2D2A32, 0px 40px 60px -17px #141316, inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 8px rgba(0, 0, 0, 0.25)",
-                }}
-              >
-                <h4 className="mb-4 text-3xl font-semibold">
-                  CS50X Certificate
-                </h4>
-                <h5 className="mb-2 text-xl">
-                  CS50x is a self-paced online computer science course that
+              <EduCard
+                title="CS50X Certificate"
+                description="CS50x is a self-paced online computer science course that
                   covers a wide range of topics, including algorithms, data
-                  structures, internet technologies, and more.
-                </h5>
-                <p className="text-sm">
-                  Certificate ID: 218d13be-02e7-4a50-81da-355c991e4609
-                </p>
-              </div>
+                  structures, internet technologies, and more."
+                certID="Certificate ID: 218d13be-02e7-4a50-81da-355c991e4609"
+                link="https://certificates.cs50.io/218d13be-02e7-4a50-81da-355c991e4609.pdf?size=letter"
+              />
+              <EduCard
+                title="AP computer science"
+                description="AP Computer Science is a college-level course that covers fundamentals of computer science; Course uses Java programming language and involves the development of a variety of programs to solve problems."
+              />
             </div>
           </section>
         </main>
