@@ -42,10 +42,10 @@ export default function Home() {
             dark:stroke-white dark:fill-white"
             />
           </section>
-          <section id="Skills" className="h-[100vh] flex justify-center">
+          <section id="Skills" className="min-h-[100vh] flex justify-center">
             <SkillGrid />
           </section>
-          <section id="About me" className="h-[100vh]">
+          <section id="About me" className="min-h-[100vh]">
             <div>
               <h2 className="text-5xl pt-36 pb-24 font-bold text-center">
                 About me
@@ -75,7 +75,7 @@ export default function Home() {
               </h3>
             </div>
           </section>
-          <section id="Edu." className="h-[100vh] flex justify-center">
+          <section id="Edu." className="min-h-[100vh] flex justify-center">
             <div className="my-16">
               <h3 className="text-5xl text-center mb-16 font-bold">
                 My coding related education

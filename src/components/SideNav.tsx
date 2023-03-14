@@ -7,7 +7,7 @@ type Props = { children: React.ReactNode };
 type SectionPrepNav = { name: string; position: number };
 
 // Looks inside the first chilled and searches for sections which it than lists in the side nav with the name if there id.
-// WARNING: You are expected to have one child inside of it that stores all the sections
+// IMPORTANT: You are expected to have one child inside of it that stores all the sections
 /* EX:
 <SideNav>
   <main>
@@ -18,11 +18,19 @@ type SectionPrepNav = { name: string; position: number };
 */
 
 export default function SideNav({ children }: Props) {
+  const [visible, setVisible] = React.useState(false);
   const [sections, setSections] = React.useState<SectionPrepNav[]>(
     [] as SectionPrepNav[]
   );
   useEffect(() => {
     const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+
+      // Changes position cord of sections
       const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
       if (!children) return;
       const childrenVer = Children.only(children);
@@ -51,30 +59,33 @@ export default function SideNav({ children }: Props) {
     };
   }, []);
 
-  return (
-    <>
-      <ul
-        className="fixed right-6
+  if (!visible) return <>{children}</>;
+  else {
+    return (
+      <>
+        <ul
+          className="fixed right-6
       flex flex-col h-[100vh] justify-center "
-      >
-        {sections.map((section, index) => (
-          <li key={index} className="mt-2">
-            <button
-              onClick={() => {
-                scrollTo(0, section.position);
-              }}
-              className="side-btn text-sm sm:text-lg w-full "
-            >
-              <p className="w-full text-right">{section.name}</p>
-              <div>
-                {" "}
-                <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
-              </div>
-            </button>
-          </li>
-        ))}
-      </ul>
-      {children}
-    </>
-  );
+        >
+          {sections.map((section, index) => (
+            <li key={index} className="mt-2">
+              <button
+                onClick={() => {
+                  scrollTo(0, section.position);
+                }}
+                className="side-btn text-sm sm:text-lg w-full "
+              >
+                <p className="w-full text-right">{section.name}</p>
+                <div>
+                  {" "}
+                  <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
+                </div>
+              </button>
+            </li>
+          ))}
+        </ul>
+        {children}
+      </>
+    );
+  }
 }
