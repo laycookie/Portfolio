@@ -24,7 +24,7 @@ export default function page({}: Props) {
           className="text-lg sm:text-xl md:text-2xl
         mt-4 sm:mt-8 md:mt-10"
         >
-          <h2>Email: Dennis@Lonoshchuk.com</h2>
+          <h2>Email: dennis@lonoshchuk.com</h2>
           <h2>Phone: +1(747)273-9768</h2>
           <h2>Discord: LAYTORT#0325</h2>
         </div>

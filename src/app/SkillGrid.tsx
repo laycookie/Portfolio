@@ -28,14 +28,14 @@ export default function SkillGrid({}: Props) {
 
   return (
     <div
-      className={`grid_hover_effect dark:grid_hover_effect p-[2px]`}
+      className={`grid_hover_effect dark:grid_hover_effect p-[2px] w-[100%] m-auto`}
       ref={gridRef}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 gap-[2px]">
         <h2
           className={
             styles.grid_col_Title_prep +
-            " bg-main dark:bg-dark-main flex text-2xl sm:text-3xl"
+            " bg-main dark:bg-dark-main flex text-center text-2xl sm:text-3xl"
           }
         >
           Familiar technologies
