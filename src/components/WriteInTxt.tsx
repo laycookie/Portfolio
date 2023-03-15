@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import "./WriteInTxt.css";
 
 type Props = {
@@ -9,12 +9,13 @@ type Props = {
 };
 
 export default function WriteInTxt({ text, className }: Props) {
-  const [winWidth, setWinWidth] = React.useState(window.innerWidth);
+  const [winWidth, setWinWidth] = React.useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       setWinWidth(window.innerWidth);
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
