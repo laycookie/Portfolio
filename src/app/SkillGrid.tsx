@@ -35,7 +35,7 @@ export default function SkillGrid({}: Props) {
         <h2
           className={
             styles.grid_col_Title_prep +
-            " bg-main dark:bg-dark-main flex text-center text-2xl sm:text-3xl"
+            " bg-main dark:bg-dark-main flex text-center text-3xl sm:text-4xl px-2"
           }
         >
           Familiar technologies
@@ -43,7 +43,7 @@ export default function SkillGrid({}: Props) {
         <h2
           className={
             styles.grid_col_Title_prep +
-            " bg-main dark:bg-dark-main hidden lg:flex text-3xl "
+            " bg-main dark:bg-dark-main hidden lg:flex text-4xl "
           }
         >
           Fun demos
