@@ -63,27 +63,32 @@ export default function SideNav({ children }: Props) {
   else {
     return (
       <>
-        <ul
+        <div
           className="fixed right-6
-      flex flex-col h-[100vh] justify-center "
+      flex flex-col h-[100vh] justify-center"
         >
-          {sections.map((section, index) => (
-            <li key={index} className="mt-2">
-              <button
-                onClick={() => {
-                  scrollTo(0, section.position);
-                }}
-                className="side-btn text-sm sm:text-lg w-full "
-              >
-                <p className="w-full text-right">{section.name}</p>
-                <div>
-                  {" "}
-                  <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
-                </div>
-              </button>
-            </li>
-          ))}
-        </ul>
+          <ul
+            className={`relative before:content-[""] before:absolute before:-left-6
+           before:h-full before:w-[0.125rem]
+            before:bg-dark-main dark:before:bg-main before:rounded-xl`}
+          >
+            {sections.map((section, index) => (
+              <li key={index} className="mt-2">
+                <button
+                  onClick={() => {
+                    scrollTo(0, section.position);
+                  }}
+                  className="side-btn text-sm sm:text-lg w-full "
+                >
+                  <p className="w-full text-right">{section.name}</p>
+                  <div>
+                    <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
+                  </div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
         {children}
       </>
     );

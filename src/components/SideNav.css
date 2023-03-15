@@ -11,9 +11,8 @@
 .side-btn > div {
   @apply absolute left-full
   flex items-center
-          h-full w-0
-          
-          transition-all duration-200 ease-in-out;
+  h-full w-0
+  transition-all duration-200 ease-in-out;
 }
 
 .side-btn:hover > div {

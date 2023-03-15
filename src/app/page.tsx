@@ -37,7 +37,7 @@ export default function Home() {
             <WriteInTxt
               text="I’m a front-end web developer based in California."
               className="h-10 w-full mt-4
-           text-2xl font-light
+              text-lg sm:text-2xl font-light
            stroke-1 stroke-black fill-black
             dark:stroke-white dark:fill-white"
             />
