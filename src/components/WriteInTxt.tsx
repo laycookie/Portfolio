@@ -11,7 +11,7 @@ type Props = {
 export default function WriteInTxt({ text, className }: Props) {
   const [winWidth, setWinWidth] = React.useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleResize = () => {
       setWinWidth(window.innerWidth);
     };
