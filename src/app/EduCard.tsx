@@ -10,23 +10,17 @@ type Props = {
 };
 
 export default function EduCard({ title, description, certID, link }: Props) {
+  const elHtml = (
+    <div className={"neumorphic_card dark:neumorphic_card"}>
+      <h4 className="mb-4 text-3xl font-semibold">{title}</h4>
+      <h5 className="mb-2 text-xl">{description}</h5>
+      {certID ? <p className="text-sm">{certID}</p> : null}
+    </div>
+  );
+
   if (link === undefined) {
-    return (
-      <div className={"neumorphic_card dark:neumorphic_card"}>
-        <h4 className="mb-4 text-3xl font-semibold">{title}</h4>
-        <h5 className="mb-2 text-xl">{description}</h5>
-        <p className="text-sm">{certID}</p>
-      </div>
-    );
+    return elHtml;
   } else {
-    return (
-      <Link href={link}>
-        <div className={"neumorphic_card dark:neumorphic_card"}>
-          <h4 className="mb-4 text-3xl font-semibold">{title}</h4>
-          <h5 className="mb-2 text-xl">{description}</h5>
-          <p className="text-sm">{certID}</p>
-        </div>
-      </Link>
-    );
+    return <Link href={link}>{elHtml}</Link>;
   }
 }
