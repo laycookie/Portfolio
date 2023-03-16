@@ -10,16 +10,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // type themeObj = {
-  //   isDark: boolean | null;
-  //   setIsDark: (isDark: boolean) => void;
-  // };
-  // const ThemeContext = createContext({
-  //   isDark: false,
-  //   setIsDark: (isDark: boolean) => {},
-  // } as themeObj);
-  // const ThemeContext = useContext(ThemeContext)
-
   const [isDark, setIsDark] = useState<boolean | null>(null);
   // sets the theme to dark or light
   useEffect(() => {
@@ -41,7 +31,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en" className={(isDark ? "dark" : "") + " scroll-smooth"}>
+    <html lang="en" className={(isDark ? "dark" : "") + " scroll-smooth js"}>
       <body className="defaults">
         <ThemeContext.Provider value={{ isDark, setIsDark }}>
           {children}
