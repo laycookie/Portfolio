@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     siteName: "Dennis Lonoshchuk portfolio",
     images: [
       {
-        url: "https://nextjs.org/og.png",
-        width: 256,
-        height: 256,
+        url: "face.jpg",
+        width: 686,
+        height: 916,
       },
     ],
     locale: "en-US",
