@@ -11,6 +11,22 @@ export const metadata: Metadata = {
   title: "Home",
   description:
     "Hello, my name is Dennis Lonoshchuk, I’m a front-end web developer based in California, and this is my web portfolio.",
+  openGraph: {
+    title: "Home",
+    description:
+      "Hello, my name is Dennis Lonoshchuk, I’m a front-end web developer based in California, and this is my web portfolio.",
+    url: "https://Lonoshchuk.org",
+    siteName: "Dennis Lonoshchuk portfolio",
+    images: [
+      {
+        url: "https://nextjs.org/og.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
 };
 
 export default function Home() {
