@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://nextjs.org/og.png",
-        width: 800,
-        height: 600,
+        width: 256,
+        height: 256,
       },
     ],
     locale: "en-US",
