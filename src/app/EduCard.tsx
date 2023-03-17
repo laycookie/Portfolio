@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import { motion } from "framer-motion";
 import "./EduCard.css";
 
 type Props = {
@@ -20,24 +21,36 @@ export default function EduCard({ title, description, certID, link }: Props) {
 
   if (link === undefined) {
     return (
-      <div
-        className={`neumorphic_card_shadow
+      <>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ amount: 1 }}
+          className={`neumorphic_card_shadow
         transition-all neumorphic_card dark:neumorphic_card`}
-      >
-        {elHtml}
-      </div>
+        >
+          {elHtml}
+        </motion.div>
+      </>
     );
   } else {
     return (
-      <Link href={link}>
-        <div
-          className={`neumorphic_card_shadow
+      <>
+        <Link href={link}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ amount: 1 }}
+            className={`neumorphic_card_shadow
           transition-all neumorphic_card dark:neumorphic_card
           hover:neumorphic_card_pressed hover:dark:neumorphic_card_pressed`}
-        >
-          {elHtml}
-        </div>
-      </Link>
+          >
+            {elHtml}
+          </motion.div>
+        </Link>
+      </>
     );
   }
 }

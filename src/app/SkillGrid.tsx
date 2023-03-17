@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import styles from "./SkillGrid.module.css";
 
 type Props = {};
@@ -27,7 +28,11 @@ export default function SkillGrid({}: Props) {
   }, []);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.2 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.1 }}
       className={`grid_hover_effect dark:grid_hover_effect p-[2px] w-[100%] m-auto`}
       ref={gridRef}
     >
@@ -96,6 +101,6 @@ export default function SkillGrid({}: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
