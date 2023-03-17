@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Dennis Lonoshchuk portfolio",
     images: [
       {
-        url: "face.jpg",
+        url: "https://www.lonoshchuk.com/face.jpg",
         width: 686,
         height: 916,
       },
