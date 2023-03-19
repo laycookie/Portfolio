@@ -6,6 +6,7 @@ import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
 import WriteInTxt from "@/components/WriteInTxt";
 import AboutT from "./AboutT";
+import TypeIn from "./TypeIn";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -37,20 +38,7 @@ export default function Home() {
       <SideNav>
         <main className="contain">
           <section id="Intro." className="h-[100vh]">
-            <h1
-              className="font-semibold text-4xl sm:text-6xl md:text-7xl
-           text-stroke-2 pt-[max(76px,32vh)]"
-            >
-              Hello, my name is{" "}
-              <Link
-                href="/contact"
-                className="text-transparent dark:text-stroke-white text-stroke-black text-stroke-2
-            dark:hover:text-white hover:text-black
-          transition-all ease-in-out duration-300"
-              >
-                Dennis Lonoshchuk
-              </Link>
-            </h1>
+            <TypeIn />
             <WriteInTxt
               text="I’m a front-end web developer based in California."
               className="h-10 w-full mt-4
