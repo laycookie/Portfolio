@@ -6,6 +6,7 @@ import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
 import WriteInTxt from "@/components/WriteInTxt";
 import AboutT from "./AboutT";
+import TypeIn from "./TypeIn";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -35,39 +36,31 @@ export default function Home() {
     <>
       <Navbar pageTitle="Home" />
       <SideNav>
-        <main className="contain">
+        <main>
           <section id="Intro." className="h-[100vh]">
-            <h1
-              className="font-semibold text-4xl sm:text-6xl md:text-7xl
-           text-stroke-2 pt-[max(76px,32vh)]"
-            >
-              Hello, my name is{" "}
-              <Link
-                href="/contact"
-                className="text-transparent dark:text-stroke-white text-stroke-black text-stroke-2
-            dark:hover:text-white hover:text-black
-          transition-all ease-in-out duration-300"
-              >
-                Dennis Lonoshchuk
-              </Link>
-            </h1>
-            <WriteInTxt
-              text="I’m a front-end web developer based in California."
-              className="h-10 w-full mt-4
+            <div className="contain">
+              <TypeIn />
+              <WriteInTxt
+                text="I’m a front-end web developer based in California."
+                className="h-10 w-full mt-4
               text-lg sm:text-2xl font-light
            stroke-1 stroke-black fill-black
             dark:stroke-white dark:fill-white"
-            />
+              />
+            </div>
           </section>
-          <section id="Skills" className="min-h-[100vh] flex justify-center">
-            <SkillGrid />
+          <section id="Skills" className="contain">
+            <div className="min-h-[100vh] flex justify-center">
+              <SkillGrid />
+            </div>
           </section>
-          <section id="About me" className="min-h-[100vh]">
+          <section id="About me" className="min-h-[100vh] contain">
             <div>
               <h2 className="text-5xl pt-36 pb-24 font-bold text-center">
                 About me
               </h2>
               <AboutT
+                offSet={-50}
                 innerClassName={"text-lg pb-12 w-[65%]"}
                 text={`Hello there! My name is Dennis Lonoshchuk, and I am a front-end
               web developer based in California. I am passionate about
@@ -75,6 +68,7 @@ export default function Home() {
               help businesses and individuals achieve their goals.`}
               />
               <AboutT
+                offSet={50}
                 outerClassName={"w-full flex justify-end"}
                 innerClassName={"text-lg pb-12 w-[65%]"}
                 text={`Hello there! My name is Dennis Lonoshchuk, and I am a front-end
@@ -84,6 +78,7 @@ export default function Home() {
               />
 
               <AboutT
+                offSet={-50}
                 innerClassName={"text-lg pb-12 w-[65%]"}
                 text={`Tools I have experimented with includes React, Tailwind,
                 Three.js, Pixi.js, Websocket, and other front-end technologies.
@@ -94,7 +89,10 @@ export default function Home() {
               />
             </div>
           </section>
-          <section id="Edu." className="min-h-[100vh] flex justify-center">
+          <section
+            id="Edu."
+            className="min-h-[100vh] flex justify-center contain"
+          >
             <div className="my-16">
               <h3 className="text-5xl text-center mb-16 font-bold">
                 My coding related education
