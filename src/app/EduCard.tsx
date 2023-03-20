@@ -28,7 +28,7 @@ export default function EduCard({ title, description, certID, link }: Props) {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ amount: 1 }}
           className={`neumorphic_card_shadow
-        transition-all neumorphic_card dark:neumorphic_card`}
+        transition-all neumorphic_card`}
         >
           {elHtml}
         </motion.div>
@@ -44,8 +44,8 @@ export default function EduCard({ title, description, certID, link }: Props) {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ amount: 1 }}
             className={`neumorphic_card_shadow
-          transition-all neumorphic_card dark:neumorphic_card
-          hover:neumorphic_card_pressed hover:dark:neumorphic_card_pressed`}
+          transition-all neumorphic_card 
+          hover:neumorphic_card_pressed`}
           >
             {elHtml}
           </motion.div>
