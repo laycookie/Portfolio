@@ -36,21 +36,25 @@ export default function Home() {
     <>
       <Navbar pageTitle="Home" />
       <SideNav>
-        <main className="contain">
+        <main>
           <section id="Intro." className="h-[100vh]">
-            <TypeIn />
-            <WriteInTxt
-              text="I’m a front-end web developer based in California."
-              className="h-10 w-full mt-4
+            <div className="contain">
+              <TypeIn />
+              <WriteInTxt
+                text="I’m a front-end web developer based in California."
+                className="h-10 w-full mt-4
               text-lg sm:text-2xl font-light
            stroke-1 stroke-black fill-black
             dark:stroke-white dark:fill-white"
-            />
+              />
+            </div>
           </section>
-          <section id="Skills" className="min-h-[100vh] flex justify-center">
-            <SkillGrid />
+          <section id="Skills" className="contain">
+            <div className="min-h-[100vh] flex justify-center">
+              <SkillGrid />
+            </div>
           </section>
-          <section id="About me" className="min-h-[100vh]">
+          <section id="About me" className="min-h-[100vh] contain">
             <div>
               <h2 className="text-5xl pt-36 pb-24 font-bold text-center">
                 About me
@@ -85,7 +89,10 @@ export default function Home() {
               />
             </div>
           </section>
-          <section id="Edu." className="min-h-[100vh] flex justify-center">
+          <section
+            id="Edu."
+            className="min-h-[100vh] flex justify-center contain"
+          >
             <div className="my-16">
               <h3 className="text-5xl text-center mb-16 font-bold">
                 My coding related education
