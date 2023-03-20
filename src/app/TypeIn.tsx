@@ -1,7 +1,7 @@
 "use client";
 import Style from "./page.module.css";
 import Link from "next/link";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {};
 
@@ -68,32 +68,6 @@ export default function TypeIn({}: Props) {
       setIter(iter + 1);
     }
   }, delay);
-
-  // useEffect(() => {
-  //   let i = 1;
-  //   const interval = setInterval(() => {
-  //     if (i <= text[0].length) {
-  //       setDisplayedText([fullText.slice(0, i), "", ""]);
-  //     } else if (i <= text[0].length + text[1].length) {
-  //       setDisplayedText([
-  //         displayedText[0],
-  //         fullText.slice(text[0].length, i),
-  //         "",
-  //       ]);
-  //     } else if (i <= text[0].length + text[1].length + text[2].length) {
-  //       setDisplayedText([
-  //         displayedText[0],
-  //         displayedText[1],
-  //         fullText.slice(text[0].length + text[1].length, i),
-  //       ]);
-  //     }
-  //     if (i >= iterAmount) {
-  //       clearInterval(interval);
-  //     } else {
-  //       i++;
-  //     }
-  //   }, nextIter);
-  // }, []);
 
   return (
     <>

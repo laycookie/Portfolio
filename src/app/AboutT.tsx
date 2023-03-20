@@ -5,17 +5,19 @@ type Props = {
   innerClassName?: string;
   outerClassName?: string;
   text: string;
+  offSet: number;
 };
 
 export default function AboutT({
+  text,
   innerClassName,
   outerClassName,
-  text,
+  offSet,
 }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, x: offSet }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
       viewport={{ amount: 1 }}
       className={outerClassName}

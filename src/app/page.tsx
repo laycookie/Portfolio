@@ -56,6 +56,7 @@ export default function Home() {
                 About me
               </h2>
               <AboutT
+                offSet={-50}
                 innerClassName={"text-lg pb-12 w-[65%]"}
                 text={`Hello there! My name is Dennis Lonoshchuk, and I am a front-end
               web developer based in California. I am passionate about
@@ -63,6 +64,7 @@ export default function Home() {
               help businesses and individuals achieve their goals.`}
               />
               <AboutT
+                offSet={50}
                 outerClassName={"w-full flex justify-end"}
                 innerClassName={"text-lg pb-12 w-[65%]"}
                 text={`Hello there! My name is Dennis Lonoshchuk, and I am a front-end
@@ -72,6 +74,7 @@ export default function Home() {
               />
 
               <AboutT
+                offSet={-50}
                 innerClassName={"text-lg pb-12 w-[65%]"}
                 text={`Tools I have experimented with includes React, Tailwind,
                 Three.js, Pixi.js, Websocket, and other front-end technologies.
