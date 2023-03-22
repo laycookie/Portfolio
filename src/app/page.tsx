@@ -6,7 +6,7 @@ import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
 import WriteInTxt from "@/components/WriteInTxt";
 import AboutT from "./AboutT";
-import TypeIn from "./TypeIn";
+import TypeIn from "../components/TypeIn";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function Home() {
         <main>
           <section id="Intro." className="h-[100vh]">
             <div className="contain">
-              <TypeIn />
+              <TypeIn text={["Hello, my name is ", "Dennis Lonoshchuk"]} />
               <WriteInTxt
                 text="I’m a front-end web developer based in California."
                 className="h-10 w-full mt-4

@@ -3,24 +3,17 @@ import Style from "./page.module.css";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-type Props = {};
+type Props = { text: string[] };
 
-export default function TypeIn({}: Props) {
+export default function TypeIn({ text }: Props) {
   // Animation length in ms
   const aniLength = 2000;
-  const text: [string, string, string] = [
-    "Hello, my name is",
-    " ",
-    "Dennis Lonoshchuk",
-  ];
-  const fullText = text[0] + text[1] + text[2];
-  const [displayedText, setDisplayedText] = useState<[string, string, string]>([
-    "",
-    "",
-    "",
-  ]);
+  const fullText = text.join("");
+  const [displayedText, setDisplayedText] = useState<string[]>(text);
 
   function useInterval(callback: any, delay: number | null) {
+    if (text.length === 0) throw Error("CAN NOT TYPE IN NOTHING");
+
     const savedCallback: any = useRef();
 
     // Remember the latest callback.
@@ -40,32 +33,31 @@ export default function TypeIn({}: Props) {
     }, [delay]);
   }
 
-  const iterAmount = fullText.length;
-  const [iter, setIter] = useState<number>(1);
+  const [wordNum, setWordNum] = useState<number>(0);
+  const [stringNum, setStringNum] = useState<number>(0);
   const [delay, setDelay] = useState<number | null>(
     aniLength / fullText.length
   );
+
   useInterval(() => {
-    if (iter <= text[0].length) {
-      setDisplayedText([fullText.slice(0, iter), "", ""]);
-    } else if (iter <= text[0].length + text[1].length) {
-      setDisplayedText([
-        displayedText[0],
-        fullText.slice(text[0].length, iter),
-        "",
-      ]);
-    } else if (iter <= text[0].length + text[1].length + text[2].length) {
-      setDisplayedText([
-        displayedText[0],
-        displayedText[1],
-        fullText.slice(text[0].length + text[1].length, iter),
-      ]);
-    }
-    if (iter >= iterAmount) {
-      console.log("loop stop");
-      setDelay(null);
+    if (wordNum < text[stringNum].length) {
+      const tempNewText = new Array(text.length).fill("");
+      tempNewText[stringNum] = text[stringNum].slice(0, wordNum + 1);
+      for (let i = 0; i < stringNum; i++) {
+        tempNewText[i] = text[i];
+      }
+      setDisplayedText(tempNewText);
+
+      console.log(text[stringNum][wordNum]);
+      setWordNum(wordNum + 1);
     } else {
-      setIter(iter + 1);
+      // subtract one to compensate for 0 index
+      if (stringNum >= text.length - 1) {
+        setDelay(null);
+      } else {
+        setWordNum(0);
+        setStringNum(stringNum + 1);
+      }
     }
   }, delay);
 
@@ -76,7 +68,7 @@ export default function TypeIn({}: Props) {
         className={`font-semibold text-4xl sm:text-6xl md:text-7xl
 text-stroke-2 pt-[max(76px,32vh)]`}
       >
-        {displayedText[0] + displayedText[1]}
+        {displayedText[0]}
 
         <Link
           href="/contact"
@@ -84,7 +76,7 @@ text-stroke-2 pt-[max(76px,32vh)]`}
 dark:hover:text-white hover:text-black
 transition-all ease-in-out duration-300"
         >
-          {displayedText[2]}
+          {displayedText[1]}
         </Link>
       </p>
     </>
