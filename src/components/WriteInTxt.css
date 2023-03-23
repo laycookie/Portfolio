@@ -1,9 +1,14 @@
+:root {
+  --dasharray-val: 500;
+}
+
 .text-line {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   fill-opacity: 0;
-  animation: dash 8s linear forwards, filling 2s ease-in forwards;
-  animation-delay: 0.5s;
+  animation: dash var(--ani-length-weighted) linear forwards,
+    var(--ani-delay) filling 200ms ease-in forwards;
+  animation-delay: var(--ani-delay);
 }
 
 @keyframes dash {
@@ -13,8 +18,7 @@
 }
 
 @keyframes filling {
-  0%,
-  90% {
+  0% {
     fill-opacity: 0;
   }
   100% {

@@ -4,9 +4,8 @@ import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
-import WriteInTxt from "@/components/WriteInTxt";
+import Intro from "./Intro";
 import AboutT from "./AboutT";
-import TypeIn from "./TypeIn";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -39,14 +38,7 @@ export default function Home() {
         <main>
           <section id="Intro." className="h-[100vh]">
             <div className="contain">
-              <TypeIn />
-              <WriteInTxt
-                text="I’m a front-end web developer based in California."
-                className="h-10 w-full mt-4
-              text-lg sm:text-2xl font-light
-           stroke-1 stroke-black fill-black
-            dark:stroke-white dark:fill-white"
-              />
+              <Intro firstAniLength={2000} secondAniLength={1000} />
             </div>
           </section>
           <section id="Skills" className="contain">
