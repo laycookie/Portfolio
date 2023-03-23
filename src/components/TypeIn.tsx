@@ -3,11 +3,10 @@ import Style from "./page.module.css";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-type Props = { text: string[] };
+type Props = { text: string[]; aniLength: number };
 
-export default function TypeIn({ text }: Props) {
+export default function TypeIn({ text, aniLength }: Props) {
   // Animation length in ms
-  const aniLength = 2000;
   const fullText = text.join("");
   const [displayedText, setDisplayedText] = useState<string[]>(text);
 
@@ -43,12 +42,11 @@ export default function TypeIn({ text }: Props) {
     if (wordNum < text[stringNum].length) {
       const tempNewText = new Array(text.length).fill("");
       tempNewText[stringNum] = text[stringNum].slice(0, wordNum + 1);
+      // writes the strings that where already printed
       for (let i = 0; i < stringNum; i++) {
         tempNewText[i] = text[i];
       }
       setDisplayedText(tempNewText);
-
-      console.log(text[stringNum][wordNum]);
       setWordNum(wordNum + 1);
     } else {
       // subtract one to compensate for 0 index
@@ -63,8 +61,7 @@ export default function TypeIn({ text }: Props) {
 
   return (
     <>
-      <h1 className="hidden">{fullText}</h1>
-      <p
+      <h1
         className={`font-semibold text-4xl sm:text-6xl md:text-7xl
 text-stroke-2 pt-[max(76px,32vh)]`}
       >
@@ -78,7 +75,7 @@ transition-all ease-in-out duration-300"
         >
           {displayedText[1]}
         </Link>
-      </p>
+      </h1>
     </>
   );
 }
