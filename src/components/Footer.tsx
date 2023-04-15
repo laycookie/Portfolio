@@ -1,12 +1,12 @@
 "use client";
 import { useContext } from "react";
-import { ThemeContext } from "@/context/ThemeContext";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 type Props = {};
 
 export default function Footer({}: Props) {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useTheme();
   return (
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
@@ -20,11 +20,17 @@ export default function Footer({}: Props) {
         <li>
           <button
             onClick={() => {
-              setTheme(theme === "dark" ? "light" : "dark");
-              localStorage.setItem(
-                "theme",
-                `${theme === "dark" ? "light" : "dark"}`
-              );
+              switch (theme) {
+                case "light":
+                  setTheme("dark");
+                  break;
+                case "dark":
+                  setTheme("light");
+                  break;
+                case "system":
+                  setTheme("dark");
+                  break;
+              }
             }}
           >
             Theme mode
