@@ -6,7 +6,7 @@ import Image from "next/image";
 type Props = {};
 
 export default function Footer({}: Props) {
-  const { isDark, setIsDark } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
@@ -20,8 +20,11 @@ export default function Footer({}: Props) {
         <li>
           <button
             onClick={() => {
-              setIsDark(!isDark);
-              localStorage.setItem("isDark", `${!isDark}`);
+              setTheme(theme === "dark" ? "light" : "dark");
+              localStorage.setItem(
+                "theme",
+                `${theme === "dark" ? "light" : "dark"}`
+              );
             }}
           >
             Theme mode

@@ -10,30 +10,55 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isDark, setIsDark] = useState<boolean | null>(null);
-  // sets the theme to dark or light
+  const [theme, setTheme] = useState<string | (() => string)>(() => {
+    // sets the theme to dark or light
+    const initialTheme: () => string = () => {
+      const themeL = localStorage.getItem("theme");
+      if (themeL === "dark") {
+        return "dark";
+      } else if (themeL === "light") {
+        return "light";
+      } else {
+        localStorage.setItem("theme", "system");
+        // check if the user has os set to dark mode if no theme was chosen before
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        } else {
+          return "light";
+        }
+      }
+    };
+    return initialTheme();
+  });
+
+  /*
+  before:
   useEffect(() => {
-    const isDarkL = localStorage.getItem("isDark");
-    if (isDarkL === "true") {
-      setIsDark(true);
-    } else if (isDarkL === "false") {
-      setIsDark(false);
-    } else if (isDarkL === null) {
+    const themeL = localStorage.getItem("theme");
+    if (themeL === "dark") {
+      setTheme("dark");
+    } else if (themeL === "light") {
+      setTheme("light");
+    } else if (themeL === "system") {
       // check if the user has os set to dark mode if no theme was chosen before
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setIsDark(true);
-        localStorage.setItem("isDark", "true");
+        setTheme("dark");
+        localStorage.setItem("theme", "dark");
       } else {
-        setIsDark(false);
-        localStorage.setItem("isDark", "false");
+        setTheme("light");
+        localStorage.setItem("theme", "light");
       }
     }
   }, []);
+  */
 
   return (
-    <html lang="en" className={(isDark ? "dark" : "") + " scroll-smooth js"}>
+    <html
+      lang="en"
+      className={(theme === "dark" ? "dark" : "") + " scroll-smooth js"}
+    >
       <body className="defaults">
-        <ThemeContext.Provider value={{ isDark, setIsDark }}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
           {children}
         </ThemeContext.Provider>
         <AnalyticsWrapper />

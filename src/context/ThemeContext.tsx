@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
 type themeObj = {
-  isDark: boolean | null;
-  setIsDark: (isDark: boolean) => void;
+  theme: string | (() => string);
+  setTheme: (isDark: string) => void;
 };
 
 export const ThemeContext = createContext({
-  isDark: false,
-  setIsDark: (isDark: boolean) => {},
+  theme: "light",
+  setTheme: (isDark: string) => {},
 } as themeObj);
