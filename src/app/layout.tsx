@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ThemeProvider } from "next-themes";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
-import { ThemeContext } from "@/context/ThemeContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -10,32 +9,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isDark, setIsDark] = useState<boolean | null>(null);
-  // sets the theme to dark or light
-  useEffect(() => {
-    const isDarkL = localStorage.getItem("isDark");
-    if (isDarkL === "true") {
-      setIsDark(true);
-    } else if (isDarkL === "false") {
-      setIsDark(false);
-    } else if (isDarkL === null) {
-      // check if the user has os set to dark mode if no theme was chosen before
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setIsDark(true);
-        localStorage.setItem("isDark", "true");
-      } else {
-        setIsDark(false);
-        localStorage.setItem("isDark", "false");
-      }
-    }
-  }, []);
-
   return (
-    <html lang="en" className={(isDark ? "dark" : "") + " scroll-smooth js"}>
+    <html lang="en">
       <body className="defaults">
-        <ThemeContext.Provider value={{ isDark, setIsDark }}>
+        <ThemeProvider defaultTheme="system" attribute="class">
           {children}
-        </ThemeContext.Provider>
+        </ThemeProvider>
         <AnalyticsWrapper />
       </body>
     </html>

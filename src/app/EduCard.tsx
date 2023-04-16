@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import "./EduCard.css";
 
@@ -19,37 +18,42 @@ export default function EduCard({ title, description, certID, link }: Props) {
     </>
   );
 
-  if (link === undefined) {
+  const addMotionDiv = (child: JSX.Element) => {
     return (
-      <>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ amount: 1 }}
-          className={`neumorphic_card_shadow
-        transition-all neumorphic_card`}
-        >
-          {elHtml}
-        </motion.div>
-      </>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ amount: 1, once: true }}
+      >
+        {child}
+      </motion.div>
+    );
+  };
+
+  if (link === undefined) {
+    return addMotionDiv(
+      <div
+        className={`neumorphic_card_shadow
+    transition-all neumorphic_card`}
+      >
+        {elHtml}
+      </div>
     );
   } else {
     return (
       <>
-        <Link href={link}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ amount: 1 }}
-            className={`neumorphic_card_shadow
-          transition-all neumorphic_card 
-          hover:neumorphic_card_pressed`}
-          >
-            {elHtml}
-          </motion.div>
-        </Link>
+        <a href={link} target="_blank" rel="noreferrer">
+          {addMotionDiv(
+            <div
+              className={`neumorphic_card_shadow
+            transition-all neumorphic_card 
+            hover:neumorphic_card_pressed`}
+            >
+              {elHtml}
+            </div>
+          )}
+        </a>
       </>
     );
   }
