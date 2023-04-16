@@ -1,12 +1,12 @@
 "use client";
 import { useContext } from "react";
-import { useTheme } from "next-themes";
+import { ThemeContext } from "@/context/ThemeContext";
 import Image from "next/image";
 
 type Props = {};
 
 export default function Footer({}: Props) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
@@ -28,7 +28,7 @@ export default function Footer({}: Props) {
                   setTheme("light");
                   break;
                 case "system":
-                  setTheme("dark");
+                  setTheme("light");
                   break;
               }
             }}
