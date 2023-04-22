@@ -14,7 +14,7 @@ export default async function page({}: Props) {
   return (
     <main className="defaults">
       <Navbar pageTitle="Portfolio" />
-      <h1>Portfolio</h1>
+      <h1 className="mt-32 flex justify-center w-full">Portfolio</h1>
     </main>
   );
 }

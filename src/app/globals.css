@@ -28,6 +28,10 @@ body::-webkit-scrollbar-thumb {
   background: #000;
 }
 
+h1 {
+  @apply font-semibold text-4xl sm:text-6xl md:text-7xl;
+}
+
 input[type="text"] {
   @apply bg-transparent border-2 border-white rounded-lg pl-2;
 }

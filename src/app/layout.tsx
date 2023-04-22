@@ -27,8 +27,7 @@ export default function RootLayout({
       setCookie("theme", "system");
       return "dark"; // due to the fact that cookies are not yet properly supported in Safari on next.js this will be the default theme
     };
-    const val = initialTheme();
-    return val;
+    return initialTheme();
   });
 
   function setTheme(theme: "dark" | "light" | "system") {

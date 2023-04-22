@@ -61,10 +61,7 @@ export default function TypeIn({ text, aniLength }: Props) {
 
   return (
     <>
-      <h1
-        className={`font-semibold text-4xl sm:text-6xl md:text-7xl
-text-stroke-2 pt-[max(76px,32vh)]`}
-      >
+      <h1 className={`text-stroke-2 pt-[max(76px,32vh)]`}>
         {displayedText[0]}
 
         <Link

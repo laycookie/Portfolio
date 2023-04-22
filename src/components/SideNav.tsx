@@ -57,7 +57,7 @@ export default function SideNav({ children }: Props) {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [children]);
 
   if (!visible) return <>{children}</>;
   else {

@@ -14,14 +14,19 @@ export default function Navbar({ pageTitle, hideUntil = 50 }: Props) {
   const [isDropDownVis, setIsDropDownVis] = useState<boolean>(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    function handleResize() {
       if (window.pageYOffset > hideUntil) {
         setIsNavHidden(true);
       } else {
         setIsNavHidden(false);
       }
-    });
-  }, []);
+    }
+
+    window.addEventListener("scroll", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [hideUntil]);
 
   const [dropOffSet, setDropOffSet] = useState(0);
   useEffect(() => {

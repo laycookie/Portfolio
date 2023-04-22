@@ -1,9 +1,10 @@
 .nav-btn {
   @apply relative
       px-1
+      text-xl
       hover:text-black text-black md:text-gray-700
       hover:dark:text-white dark:text-white dark:md:text-gray-300
-       transition-all duration-200 ease-in-out;
+      transition-all duration-200 ease-in-out;
 }
 .nav-btn::after {
   @apply content-[''] absolute

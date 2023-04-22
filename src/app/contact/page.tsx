@@ -18,9 +18,7 @@ export default function page({}: Props) {
     <>
       <Navbar pageTitle="Contact" />
       <main className="contain pt-[max(76px,20vh)]">
-        <h1 className="font-semibold text-4xl sm:text-6xl md:text-7xl">
-          Contact information
-        </h1>
+        <h1>Contact information</h1>
         <div
           className="text-lg sm:text-xl md:text-2xl
         mt-4 sm:mt-8 md:mt-10"
