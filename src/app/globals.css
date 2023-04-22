@@ -28,6 +28,14 @@ body::-webkit-scrollbar-thumb {
   background: #000;
 }
 
+input[type="text"] {
+  @apply bg-transparent border-2 border-white rounded-lg pl-2;
+}
+
+textarea {
+  @apply bg-transparent border-2 border-white rounded-lg pl-2 resize-none;
+}
+
 .defaults {
   @apply min-h-[100vh]
   text-black bg-main

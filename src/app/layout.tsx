@@ -11,9 +11,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setThemeValue] = useState<string | (() => string)>(() => {
+  const [theme, setThemeValue] = useState<"dark" | "light" | "system">(() => {
     // sets the theme to dark or light
-    const initialTheme: () => string = () => {
+    const initialTheme = () => {
       const themeC =
         typeof window !== "undefined" ? getCookie("theme") : getCookie("theme");
 
@@ -27,10 +27,11 @@ export default function RootLayout({
       setCookie("theme", "system");
       return "dark"; // due to the fact that cookies are not yet properly supported in Safari on next.js this will be the default theme
     };
-    return initialTheme();
+    const val = initialTheme();
+    return val;
   });
 
-  function setTheme(theme: string) {
+  function setTheme(theme: "dark" | "light" | "system") {
     setThemeValue(theme);
     setCookie("theme", theme);
   }

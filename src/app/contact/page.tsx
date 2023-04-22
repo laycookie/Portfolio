@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import CallForm from "./CallForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
@@ -32,17 +33,8 @@ export default function page({}: Props) {
           className="sm:text-lg md:text-xl font-light
         mt-1 sm:mt-2 md:mt-4"
         >
-          If you want to quickly fire me a message here is a{" "}
-          <Link
-            href="/contact"
-            className="font-semibold
-          dark:text-gray-300 dark:hover:text-white
-          text-gray-700 hover:text-black
-          transition-all ease-in-out duration-200"
-          >
-            form
-          </Link>{" "}
-          you can fill out.
+          If you want to quickly fire me a message here is a <CallForm /> you
+          can fill out.
         </h3>
       </main>
       <Footer />
