@@ -33,11 +33,11 @@ h1 {
 }
 
 input[type="text"] {
-  @apply bg-transparent border-2 border-white rounded-lg pl-2;
+  @apply bg-transparent border-2 border-black dark:border-white rounded-lg pl-2;
 }
 
 textarea {
-  @apply bg-transparent border-2 border-white rounded-lg pl-2 resize-none;
+  @apply bg-transparent border-2 border-black dark:border-white rounded-lg pl-2 resize-none;
 }
 
 .defaults {
