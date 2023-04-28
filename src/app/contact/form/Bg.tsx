@@ -32,6 +32,15 @@ export default function Bg({}: Props) {
       );
       camera.position.z = 5;
 
+      // create sphere
+      const geometry = new THREE.SphereGeometry(1, 32, 32);
+      const material = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        wireframe: true,
+      });
+      const sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
+
       // Render the scene
       const animate = () => {
         requestAnimationFrame(animate);

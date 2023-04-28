@@ -6,7 +6,6 @@ import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
 import Intro from "./Intro";
 import AboutT from "./AboutT";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -38,6 +37,7 @@ export default function Home() {
         <main>
           <section id="Intro." className="h-[100vh]">
             <div className="contain">
+              {/* This is a component purely to make the code more compact */}
               <Intro firstAniLength={2000} secondAniLength={1000} />
             </div>
           </section>

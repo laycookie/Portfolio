@@ -1,7 +1,8 @@
 "use client";
 import Style from "./page.module.css";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { useInterval } from "src/hooks/setInterval";
 
 type Props = { text: string[]; aniLength: number };
 
@@ -9,34 +10,18 @@ export default function TypeIn({ text, aniLength }: Props) {
   // Animation length in ms
   const fullText = text.join("");
   const [displayedText, setDisplayedText] = useState<string[]>(text);
-
-  function useInterval(callback: any, delay: number | null) {
-    if (text.length === 0) throw Error("CAN NOT TYPE IN NOTHING");
-
-    const savedCallback: any = useRef();
-
-    // Remember the latest callback.
-    useEffect(() => {
-      savedCallback.current = callback;
-    }, [callback]);
-
-    // Set up the interval.
-    useEffect(() => {
-      function tick() {
-        savedCallback.current();
-      }
-      if (delay !== null) {
-        let id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
-    }, [delay]);
-  }
-
   const [wordNum, setWordNum] = useState<number>(0);
   const [stringNum, setStringNum] = useState<number>(0);
   const [delay, setDelay] = useState<number | null>(
     aniLength / fullText.length
   );
+
+  useEffect(() => {
+    if (text.length <= 0)
+      throw Error(
+        "CAN NOT TYPE IN NOTHING (Latterly no point in fixing error in this case just dont use this element if you don't want anything typed in.) "
+      );
+  }, [text]);
 
   useInterval(() => {
     if (wordNum < text[stringNum].length) {
