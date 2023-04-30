@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 
+// Setting delay to null will stop the interval
+
 export function useInterval(callback: any, delay: number | null) {
   const savedCallback: any = useRef();
 
