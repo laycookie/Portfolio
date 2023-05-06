@@ -1,12 +1,28 @@
-"use client";
-import { useContext } from "react";
-import { ThemeContext } from "@/context/ThemeContext";
 import Image from "next/image";
+import { cookies } from "next/headers";
 
 type Props = {};
 
+async function setTheme(formData: FormData) {
+  "use server";
+
+  switch (cookies().get("theme")?.value) {
+    case "light":
+      await cookies().set("theme", "dark");
+      break;
+    case "dark":
+      await cookies().set("theme", "light");
+      break;
+    case "system":
+      await cookies().set("theme", "system");
+      break;
+    default:
+      await cookies().set("theme", "system");
+      break;
+  }
+}
+
 export default function Footer({}: Props) {
-  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
@@ -18,23 +34,9 @@ export default function Footer({}: Props) {
        mx-auto "
       >
         <li>
-          <button
-            onClick={() => {
-              switch (theme) {
-                case "light":
-                  setTheme("dark");
-                  break;
-                case "dark":
-                  setTheme("light");
-                  break;
-                case "system":
-                  setTheme("light");
-                  break;
-              }
-            }}
-          >
-            Theme mode
-          </button>
+          <form action={setTheme}>
+            <input type="submit" value="Theme mode" />
+          </form>
         </li>
         <li>
           <ul className="flex items-center space-x-4">

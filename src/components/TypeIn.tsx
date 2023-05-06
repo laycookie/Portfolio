@@ -7,8 +7,6 @@ type Props = { text: string[]; aniLength: number };
 
 export default function TypeIn({ text, aniLength }: Props) {
   const fullText = text.join("");
-  const [numPrintedLetter, setNumPrintedLetter] = useState<number>(0);
-  const [numPrintedStrings, setNumPrintedStrings] = useState<number>(0);
   const [delay, setDelay] = useState<number | null>(
     aniLength / fullText.length
   );
@@ -27,6 +25,8 @@ export default function TypeIn({ text, aniLength }: Props) {
     if (text.length <= 0) throw Error("CAN NOT TYPE IN NOTHING");
   }, [text]);
 
+  const [numPrintedLetter, setNumPrintedLetter] = useState<number>(0);
+  const [numPrintedStrings, setNumPrintedStrings] = useState<number>(0);
   useInterval(() => {
     if (numPrintedLetter < text[numPrintedStrings].length) {
       // Here is the place where code per character is executed

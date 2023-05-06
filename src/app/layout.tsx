@@ -1,59 +1,35 @@
-"use client";
-
 import { getCookie, setCookie } from "cookies-next";
-import { useState } from "react";
+import { cookies } from "next/headers";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
-import { ThemeContext } from "@/context/ThemeContext";
 import "./globals.css";
+import { browser } from "process";
+
+async function setTheme(setTheme: string) {
+  "use server";
+
+  await cookies().set("theme", setTheme);
+}
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setThemeValue] = useState<"dark" | "light" | "system">(() => {
-    // sets the theme to dark or light
-    const initialTheme = () => {
-      const themeC =
-        typeof window !== "undefined" ? getCookie("theme") : getCookie("theme");
+  const temp = () => {
+    const theme: string | undefined = cookies().get("theme")?.value;
 
-      if (themeC === "dark") {
-        return "dark";
-      } else if (themeC === "light") {
-        return "light";
-      } else if (themeC === "system") {
-        return "system";
-      }
-      setCookie("theme", "system");
-      return "dark"; // due to the fact that cookies are not yet properly supported in Safari on next.js this will be the default theme
-    };
-    return initialTheme();
-  });
-
-  function setTheme(theme: "dark" | "light" | "system") {
-    setThemeValue(theme);
-    setCookie("theme", theme);
-  }
-
-  function classTheme() {
-    switch (theme) {
-      case "light":
-        return "";
-      case "dark":
-        return "dark";
-      case "system":
-        return "system";
-      default:
-        return "";
+    if (typeof theme === undefined) {
+      setTheme("system");
+      return "system" as string;
     }
-  }
+
+    return theme as string;
+  };
 
   return (
-    <html lang="en" className={classTheme()}>
+    <html lang="en" className={temp()}>
       <body className="defaults">
-        <ThemeContext.Provider value={{ theme, setTheme }}>
-          {children}
-        </ThemeContext.Provider>
+        {children}
         <AnalyticsWrapper />
       </body>
     </html>

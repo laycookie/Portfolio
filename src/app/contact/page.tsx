@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import CallForm from "./CallForm";
 import Navbar from "@/components/Navbar";
@@ -35,7 +34,6 @@ export default function page({}: Props) {
           can fill out.
         </h3>
       </main>
-      <Footer />
     </>
   );
 }
