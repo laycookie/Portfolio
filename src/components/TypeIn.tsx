@@ -62,8 +62,7 @@ export default function TypeIn({ text, aniLength }: Props) {
   return (
     <>
       <h1 className={`text-stroke-2 pt-[max(76px,32vh)]`}>
-        {displayedText[0]}
-
+        <span>{displayedText[0]}</span>
         <Link
           href="/contact"
           className="text-transparent dark:text-stroke-white text-stroke-black text-stroke-2
