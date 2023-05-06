@@ -1,10 +1,9 @@
-import { getCookie, setCookie } from "cookies-next";
+import LayoutBody from "./LayoutBody";
 import { cookies } from "next/headers";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
 import "./globals.css";
-import { browser } from "process";
 
-async function setTheme(setTheme: string) {
+async function setCookieTheme(setTheme: string) {
   "use server";
 
   await cookies().set("theme", setTheme);
@@ -15,23 +14,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const temp = () => {
-    const theme: string | undefined = cookies().get("theme")?.value;
-
-    if (typeof theme === undefined) {
-      setTheme("system");
-      return "system" as string;
+  function getTheme(): string {
+    const theme = cookies().get("theme")?.value;
+    if (!theme) {
+      setCookieTheme("system");
+      return "system";
     }
 
-    return theme as string;
-  };
+    return theme;
+  }
 
   return (
-    <html lang="en" className={temp()}>
-      <body className="defaults">
-        {children}
-        <AnalyticsWrapper />
-      </body>
-    </html>
+    <LayoutBody initialTheme={getTheme()} setCookieTheme={setCookieTheme}>
+      {children}
+      <AnalyticsWrapper />
+    </LayoutBody>
   );
 }

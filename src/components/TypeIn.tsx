@@ -55,10 +55,6 @@ export default function TypeIn({ text, aniLength }: Props) {
     }
   }, delay);
 
-  useEffect(() => {
-    console.log("displayedText", displayedText);
-  }, [displayedText]);
-
   return (
     <>
       <h1 className={`text-stroke-2 pt-[max(76px,32vh)]`}>
