@@ -65,7 +65,7 @@ export default function SideNav({ children }: Props) {
       <>
         <div
           className="fixed right-6
-      flex flex-col h-[100vh] justify-center"
+      flex flex-col h-[100vh] justify-center fadeIn"
         >
           <ul
             className={`relative before:content-[""] before:absolute before:-left-6
