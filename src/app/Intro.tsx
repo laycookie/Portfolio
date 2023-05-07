@@ -1,6 +1,5 @@
 import TypeIn from "@/components/TypeIn";
 import WriteInTxt from "@/components/WriteInTxt";
-import { useState, useEffect } from "react";
 
 type Props = {
   firstAniLength: number;
@@ -21,7 +20,8 @@ export default function Intro({ firstAniLength, secondAniLength }: Props) {
         className={`h-10 w-full mt-4
     text-lg sm:text-2xl font-light
  stroke-1 stroke-black fill-black
-  dark:stroke-white dark:fill-white`}
+  dark:stroke-white dark:fill-white
+  opacity-0`}
       />
     </>
   );
