@@ -28,7 +28,7 @@ export default function LayoutBody({
         setTheme: setThemeUniversally,
       }}
     >
-      <html lang="en" className={theme}>
+      <html lang="en" className={theme + " scroll-smooth"}>
         <body className="defaults">{children}</body>
       </html>
     </ThemeCtx.Provider>

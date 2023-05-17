@@ -65,7 +65,7 @@ export default function SideNav({ children }: Props) {
       <>
         <div
           className="fixed right-6
-      flex flex-col h-[100vh] justify-center fadeIn"
+      flex flex-col h-[100dvh] justify-center fadeIn"
         >
           <ul
             className={`relative before:content-[""] before:absolute before:-left-6
@@ -73,7 +73,7 @@ export default function SideNav({ children }: Props) {
             before:bg-dark-main dark:before:bg-main before:rounded-xl`}
           >
             {sections.map((section, index) => (
-              <li key={index} className="mt-2">
+              <li key={crypto.randomUUID()} className="mt-2">
                 <button
                   onClick={() => {
                     scrollTo(0, section.position);

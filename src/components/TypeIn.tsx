@@ -14,7 +14,7 @@ export default function TypeIn({ text, aniLength }: Props) {
   const [displayedText, setDisplayedText] = useState<JSX.Element[][]>(() =>
     text.map((stringArr) =>
       stringArr.split("").map((letter, i) => (
-        <span key={i} style={{ opacity: "0" }}>
+        <span key={crypto.randomUUID()} style={{ opacity: "0" }}>
           {letter}
         </span>
       ))
