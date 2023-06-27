@@ -1,13 +1,8 @@
 import LayoutBody from "./LayoutBody";
 import { cookies } from "next/headers";
+import { setCookieTheme } from "@/components/setCookieTheme";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
 import "./globals.css";
-
-async function setCookieTheme(setTheme: string) {
-  "use server";
-
-  await cookies().set("theme", setTheme);
-}
 
 export default function RootLayout({
   children,
@@ -25,7 +20,7 @@ export default function RootLayout({
   }
 
   return (
-    <LayoutBody initialTheme={getTheme()} setCookieTheme={setCookieTheme}>
+    <LayoutBody initialTheme={getTheme()}>
       {children}
       <AnalyticsWrapper />
     </LayoutBody>

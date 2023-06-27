@@ -2,18 +2,14 @@
 
 import { useState } from "react";
 import { ThemeCtx } from "@/context/ThemeCtx";
+import { setCookieTheme } from "@/components/setCookieTheme";
 
 type Props = {
   children: React.ReactNode;
   initialTheme: string;
-  setCookieTheme: (setTheme: string) => Promise<void> | void;
 };
 
-export default function LayoutBody({
-  children,
-  initialTheme,
-  setCookieTheme,
-}: Props) {
+export default function LayoutBody({ children, initialTheme }: Props) {
   const [theme, setTheme] = useState<string>(initialTheme);
 
   function setThemeUniversally(value: string) {
