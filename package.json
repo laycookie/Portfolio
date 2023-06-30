@@ -18,12 +18,12 @@
     "eslint": "^8.39.0",
     "eslint-config-next": "^13.4.0",
     "framer-motion": "^10.12.7",
-    "next": "^13.4.3",
+    "next": "^13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.59.3",
-    "three": "^0.152.2",
-    "typescript": "5.0.4"
+    "three": "^0.154.0",
+    "typescript": "5.1.6"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.0",
