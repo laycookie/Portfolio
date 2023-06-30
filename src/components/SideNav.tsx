@@ -59,38 +59,37 @@ export default function SideNav({ children }: Props) {
     };
   }, [children]);
 
-  if (!visible) return <>{children}</>;
-  else {
-    return (
-      <>
-        <div
-          className="fixed right-6
+  return visible ? (
+    <>
+      <div
+        className="fixed right-6
       flex flex-col h-[100dvh] justify-center fadeIn"
-        >
-          <ul
-            className={`relative before:content-[""] before:absolute before:-left-6
+      >
+        <ul
+          className={`relative before:content-[""] before:absolute before:-left-6
            before:h-full before:w-[0.125rem]
             before:bg-dark-main dark:before:bg-main before:rounded-xl`}
-          >
-            {sections.map((section, index) => (
-              <li key={crypto.randomUUID()} className="mt-2">
-                <button
-                  onClick={() => {
-                    scrollTo(0, section.position);
-                  }}
-                  className="side-btn text-sm sm:text-lg w-full "
-                >
-                  <p className="w-full text-right">{section.name}</p>
-                  <div>
-                    <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {children}
-      </>
-    );
-  }
+        >
+          {sections.map((section, index) => (
+            <li key={crypto.randomUUID()} className="mt-2">
+              <button
+                onClick={() => {
+                  scrollTo(0, section.position);
+                }}
+                className="side-btn text-sm sm:text-lg w-full "
+              >
+                <p className="w-full text-right">{section.name}</p>
+                <div>
+                  <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
+                </div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {children}
+    </>
+  ) : (
+    <>{children}</>
+  );
 }
