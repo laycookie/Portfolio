@@ -7,7 +7,7 @@
 }
 
 .outer_grid_e {
-  @apply bg-dark-main flex flex-col justify-center;
+  @apply flex flex-col justify-center;
 }
 
 .inner_grid_text {

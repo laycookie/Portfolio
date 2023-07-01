@@ -10,6 +10,7 @@ type Props = { pageTitle: string; hideUntil?: number };
 export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
+
   const [isNavMobile, setIsNavMobile] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [navOpacity, setNavOpacity] = useState<number>(0);
@@ -45,6 +46,7 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
     function handleResize() {
       if (window.innerWidth > 768) {
         setIsNavMobile(false);
+        setIsDropdownOpen(false);
       } else {
         setIsNavMobile(true);
       }
@@ -60,19 +62,19 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
   return (
     <nav
       ref={navRef}
-      className="fixed w-full transition-all"
+      className="fixed z-20 w-full"
       style={{ opacity: navOpacity }}
     >
       <ul
         className="relative z-10 bg-tertiary dark:bg-dark-tertiary
-      flex justify-between px-16 py-2"
+      flex justify-between px-24 py-2"
       >
         <li>
           {isNavMobile ? (
-            <p>{pageTitle}</p>
+            <p className="nav-text">{pageTitle}</p>
           ) : (
-            <Link href="/" className="nav-btn">
-              Home
+            <Link href="/" className="nav-text nav-btn">
+              <p>Home</p>
             </Link>
           )}
         </li>
@@ -88,20 +90,20 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
               </button>
             </>
           ) : (
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-6">
               <li>
-                <Link href="/blog" className="nav-btn">
-                  Blog
+                <Link href="/blog" className="nav-text nav-btn">
+                  <p>Blog</p>
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="nav-btn">
-                  Portfolio
+                <Link href="/portfolio" className="nav-text nav-btn">
+                  <p>Portfolio</p>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="nav-btn">
-                  Contact
+                <Link href="/contact" className="nav-text nav-btn">
+                  <p>Contact</p>
                 </Link>
               </li>
             </ul>
@@ -114,23 +116,23 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
         flex flex-col items-center w-full space-y-2 pb-4 transition-all"
       >
         <li>
-          <Link href="/" className="nav-btn">
-            Home
+          <Link href="/" className="nav-text nav-btn">
+            <p>Home</p>
           </Link>
         </li>
         <li>
-          <Link href="/blog" className="nav-btn">
-            Blog
+          <Link href="/blog" className="nav-text nav-btn">
+            <p>Blog</p>
           </Link>
         </li>
         <li>
-          <Link href="/portfolio" className="nav-btn">
-            Portfolio
+          <Link href="/portfolio" className="nav-text nav-btn">
+            <p>Portfolio</p>
           </Link>
         </li>
         <li>
-          <Link href="/contact" className="nav-btn">
-            Contact
+          <Link href="/contact" className="nav-text nav-btn">
+            <p>Contact</p>
           </Link>
         </li>
       </ul>
