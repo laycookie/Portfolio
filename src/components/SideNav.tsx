@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, Children, isValidElement } from "react";
+import React, { useEffect, Children, isValidElement, useState } from "react";
 import "./SideNav.css";
 
 type Props = { children: React.ReactNode };
@@ -18,8 +18,8 @@ type SectionPrepNav = { name: string; position: number };
 */
 
 export default function SideNav({ children }: Props) {
-  const [visible, setVisible] = React.useState(false);
-  const [sections, setSections] = React.useState<SectionPrepNav[]>(
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+  const [sections, setSections] = useState<SectionPrepNav[]>(
     [] as SectionPrepNav[]
   );
   useEffect(() => {
@@ -53,12 +53,22 @@ export default function SideNav({ children }: Props) {
     };
   }, [children]);
 
+  useEffect(() => {
+    setIsPageLoaded(true);
+  }, []);
+
   return (
     <>
       <div
-        className="fixed right-6
-        hidden
-        md:flex flex-col h-[100dvh] justify-center fadeIn"
+        className={`fixed
+        flex flex-col h-[100dvh] justify-center 
+        md:visible invisible
+        md:transition-all md:duration-500 md:ease-in-out`}
+        style={
+          isPageLoaded
+            ? { opacity: 1, right: "1.5rem" }
+            : { opacity: 0, right: "0" }
+        }
       >
         <ul
           className={`relative before:content-[""] before:absolute before:-left-6

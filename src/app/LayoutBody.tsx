@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ThemeCtx } from "@/context/ThemeCtx";
+import Navbar from "@/components/Navbar";
 import { setCookieTheme } from "@/components/setCookieTheme";
 
 type Props = {
@@ -10,9 +11,9 @@ type Props = {
 };
 
 export default function LayoutBody({ children, initialTheme }: Props) {
+  // theming engine
   const [theme, setTheme] = useState<string>(initialTheme);
-
-  function setThemeUniversally(value: string) {
+  function setThemeEverywhere(value: string) {
     setTheme(value);
     setCookieTheme(value);
   }
@@ -21,7 +22,7 @@ export default function LayoutBody({ children, initialTheme }: Props) {
     <ThemeCtx.Provider
       value={{
         theme: theme,
-        setTheme: setThemeUniversally,
+        setTheme: setThemeEverywhere,
       }}
     >
       <html lang="en" className={theme + " scroll-smooth"}>

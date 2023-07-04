@@ -1,6 +1,11 @@
+import { Metadata } from "next";
 import Bg from "./Bg";
 
 type Props = {};
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 export default function page({}: Props) {
   return (

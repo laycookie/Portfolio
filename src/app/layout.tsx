@@ -3,7 +3,6 @@ import { cookies } from "next/headers";
 import { setCookieTheme } from "@/components/setCookieTheme";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,
@@ -21,7 +20,6 @@ export default function RootLayout({
 
   return (
     <LayoutBody initialTheme={getTheme()}>
-      <Navbar />
       {children}
       <AnalyticsWrapper />
     </LayoutBody>

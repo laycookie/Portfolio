@@ -27,21 +27,30 @@ export default function SkillGrid({}: Props) {
     });
   }, []);
 
+  const borderThickness = "2px";
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.2 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className={`grid_hover_effect dark:grid_hover_effect p-[2px] w-[100%] m-auto`}
+      className={`grid_hover_effect dark:grid_hover_effect p-[${borderThickness}] w-[100%] m-auto`}
+      style={{ padding: borderThickness }}
       ref={gridRef}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 gap-[2px]">
+      <div
+        className={`grid grid-cols-1 lg:grid-cols-2 grid-rows-4`}
+        style={{ gap: borderThickness }}
+      >
         <h2
           className={
             styles.grid_col_Title_prep +
-            " bg-main dark:bg-dark-main flex text-center text-3xl sm:text-4xl px-2"
+            ` bg-main dark:bg-dark-main flex text-center text-3xl sm:text-4xl`
           }
+          style={{
+            paddingLeft: borderThickness,
+            paddingRight: borderThickness,
+          }}
         >
           Familiar technologies
         </h2>

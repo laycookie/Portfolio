@@ -75,7 +75,7 @@ export default function Navbar({ hideUntil = 250 }: Props) {
     <nav ref={navRef} className="fixed z-20 w-full">
       <ul
         className="relative z-10 bg-tertiary dark:bg-dark-tertiary
-      flex justify-between px-24 py-2 transition-all duration-300"
+      flex justify-between px-24 py-2 transition-all duration-500"
         style={isPageLoaded ? { opacity: "1" } : { opacity: "0" }}
       >
         <li>
