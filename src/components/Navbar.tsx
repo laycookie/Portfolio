@@ -1,20 +1,23 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import "./Navbar.css";
 import { useEffect, useRef, useState } from "react";
-import { on } from "events";
 
-type Props = { pageTitle: string; hideUntil?: number };
+type Props = { hideUntil?: number };
 
-export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
+export default function Navbar({ hideUntil = 250 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
 
+  const [pageTitle, setPageTitle] = useState<string>("" as string);
+
+  const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
   const [isNavMobile, setIsNavMobile] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-  const [navOpacity, setNavOpacity] = useState<number>(0);
 
+  // Hides navbar when scrolling down and shows it when scrolling up
   useEffect(() => {
     function onScroll() {
       if (window.scrollY > hideUntil) {
@@ -33,6 +36,7 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
     };
   }, [hideUntil]);
 
+  // Controls dropdown animation
   useEffect(() => {
     if (isDropdownOpen) {
       dropDownRef.current?.style.setProperty("top", "0");
@@ -42,8 +46,17 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
     }
   }, [isDropdownOpen]);
 
+  // sets new title every time the page is changed
+  const pathname = usePathname();
   useEffect(() => {
-    function handleResize() {
+    setPageTitle(document.title);
+  }, [pathname]);
+
+  useEffect(() => {
+    setIsPageLoaded(true);
+
+    // Controls how nav bar looks when switching between mobile and desktop
+    function navbarAdaptivityController() {
       if (window.innerWidth > 768) {
         setIsNavMobile(false);
         setIsDropdownOpen(false);
@@ -51,23 +64,19 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
         setIsNavMobile(true);
       }
     }
-    handleResize();
-    addEventListener("resize", handleResize);
-    setNavOpacity(1);
+    navbarAdaptivityController();
+    addEventListener("resize", navbarAdaptivityController);
     return () => {
-      removeEventListener("resize", handleResize);
+      removeEventListener("resize", navbarAdaptivityController);
     };
   }, []);
 
   return (
-    <nav
-      ref={navRef}
-      className="fixed z-20 w-full"
-      style={{ opacity: navOpacity }}
-    >
+    <nav ref={navRef} className="fixed z-20 w-full">
       <ul
         className="relative z-10 bg-tertiary dark:bg-dark-tertiary
-      flex justify-between px-24 py-2"
+      flex justify-between px-24 py-2 transition-all duration-300"
+        style={isPageLoaded ? { opacity: "1" } : { opacity: "0" }}
       >
         <li>
           {isNavMobile ? (
@@ -114,6 +123,11 @@ export default function Navbar({ pageTitle, hideUntil = 250 }: Props) {
         ref={dropDownRef}
         className="relative z-0 bg-tertiary dark:bg-dark-tertiary
         flex flex-col items-center w-full space-y-2 pb-4 transition-all"
+        style={
+          isPageLoaded && isDropdownOpen
+            ? { visibility: "visible" }
+            : { visibility: "collapse" }
+        }
       >
         <li>
           <Link href="/" className="nav-text nav-btn">

@@ -32,7 +32,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Navbar pageTitle="Home" />
       <SideNav>
         <main>
           <section id="Intro." className="h-[100vh]">

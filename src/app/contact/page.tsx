@@ -1,7 +1,4 @@
-import Link from "next/link";
 import CallForm from "./CallForm";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,7 +12,6 @@ type Props = {};
 export default function page({}: Props) {
   return (
     <>
-      <Navbar pageTitle="Contact" />
       <main className="contain pt-[max(76px,20vh)]">
         <h1>Contact information</h1>
         <div

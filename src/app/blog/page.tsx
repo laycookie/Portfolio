@@ -13,7 +13,6 @@ type Props = {};
 export default function page({}: Props) {
   return (
     <main className="defaults">
-      <Navbar pageTitle="Blog" />
       <main className="defaults">
         <h1 className="mt-32 flex justify-center w-full">Blogs</h1>
       </main>

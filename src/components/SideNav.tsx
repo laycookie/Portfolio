@@ -23,13 +23,7 @@ export default function SideNav({ children }: Props) {
     [] as SectionPrepNav[]
   );
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-
+    const recalculatePositionsOfSections = () => {
       // Changes position cord of sections
       const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
       if (!children) return;
@@ -52,25 +46,26 @@ export default function SideNav({ children }: Props) {
       }
       setSections(sectionsCli);
     };
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    recalculatePositionsOfSections();
+    window.addEventListener("resize", recalculatePositionsOfSections);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", recalculatePositionsOfSections);
     };
   }, [children]);
 
-  return visible ? (
+  return (
     <>
       <div
         className="fixed right-6
-      flex flex-col h-[100dvh] justify-center fadeIn"
+        hidden
+        md:flex flex-col h-[100dvh] justify-center fadeIn"
       >
         <ul
           className={`relative before:content-[""] before:absolute before:-left-6
            before:h-full before:w-[0.125rem]
             before:bg-dark-main dark:before:bg-main before:rounded-xl`}
         >
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <li key={crypto.randomUUID()} className="mt-2">
               <button
                 onClick={() => {
@@ -89,7 +84,5 @@ export default function SideNav({ children }: Props) {
       </div>
       {children}
     </>
-  ) : (
-    <>{children}</>
   );
 }
