@@ -21,13 +21,15 @@ export default function Bg({}: Props) {
       const scene = new THREE.Scene();
 
       // Create a camera
+      const FOV = 75;
       const camera = new THREE.PerspectiveCamera(
-        75,
+        FOV,
         canvasRef.current.clientWidth / canvasRef.current.clientHeight,
         0.1,
         1000
       );
-      camera.position.z = 5;
+      const cameraZoffSet = 5;
+      camera.position.z = cameraZoffSet;
 
       // create sphere
       const geometry = new THREE.SphereGeometry(1, 32, 32);
@@ -41,13 +43,15 @@ export default function Bg({}: Props) {
       scene.add(sphere);
 
       // track cursor
-      const cursor: { x: number; y: number } = {
-        x: 0,
-        y: 0,
-      };
+      const cursor = new THREE.Vector2(0, 0);
       const onMouseMove = (event: MouseEvent) => {
-        cursor.x = event.clientX;
-        cursor.y = event.clientY;
+        // FOV for the hight will always be the set FOV
+        // However for width if your aspect ratio is not 1:1
+        // triangle of your vision will be skewed
+        // this is why we have widthScaler and we aren't just using FOV
+        const widthScaler = window.innerWidth / window.innerHeight;
+        cursor.x = ((event.clientX / window.innerWidth) * 2 - 1) * widthScaler;
+        cursor.y = -(event.clientY / window.innerHeight) * 2 + 1;
         console.log(cursor);
       };
       addEventListener("mousemove", onMouseMove);
@@ -57,9 +61,14 @@ export default function Bg({}: Props) {
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
 
-        // move sphere
-        sphere.position.x = cursor.x * 0.01 - (window.innerWidth * 0.01) / 2;
-        sphere.position.y = -cursor.y * 0.01 + (window.innerHeight * 0.01) / 2;
+        // moving sphere
+        const alpha = FOV / 2;
+        // cameraZoffSet is "b" of the triangle
+        // vectorScaler is "a" of the triangle
+        const vectorScaler = Math.tan(alpha * (Math.PI / 180)) * cameraZoffSet;
+
+        sphere.position.x = cursor.x * vectorScaler;
+        sphere.position.y = cursor.y * vectorScaler;
       };
       animate();
 
