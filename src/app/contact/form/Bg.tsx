@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { render } from "react-dom";
 import * as THREE from "three";
 
 type Props = {};
@@ -15,10 +16,6 @@ export default function Bg({}: Props) {
         alpha: true, // Enable transparency
       });
       renderer.setClearColor(0x000000);
-      renderer.setSize(
-        canvasRef.current.clientWidth,
-        canvasRef.current.clientHeight
-      );
 
       // Create a scene
       const scene = new THREE.Scene();
@@ -39,14 +36,47 @@ export default function Bg({}: Props) {
         wireframe: true,
       });
       const sphere = new THREE.Mesh(geometry, material);
+      sphere.position.x = 0;
+      sphere.position.y = 0;
       scene.add(sphere);
+
+      // track cursor
+      const cursor: { x: number; y: number } = {
+        x: 0,
+        y: 0,
+      };
+      const onMouseMove = (event: MouseEvent) => {
+        cursor.x = event.clientX;
+        cursor.y = event.clientY;
+        console.log(cursor);
+      };
+      addEventListener("mousemove", onMouseMove);
 
       // Render the scene
       const animate = () => {
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
+
+        // move sphere
+        sphere.position.x = cursor.x * 0.01 - (window.innerWidth * 0.01) / 2;
+        sphere.position.y = -cursor.y * 0.01 + (window.innerHeight * 0.01) / 2;
       };
       animate();
+
+      // Resize the canvas
+      const resizeCanvasOnWindowResize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      };
+      resizeCanvasOnWindowResize();
+      addEventListener("resize", resizeCanvasOnWindowResize);
+
+      // remove event listener
+      return () => {
+        removeEventListener("resize", resizeCanvasOnWindowResize);
+        removeEventListener("mousemove", onMouseMove);
+      };
     }
   }, [canvasRef]);
 

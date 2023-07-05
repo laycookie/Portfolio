@@ -12,16 +12,16 @@ export default function page({}: Props) {
     <>
       <Bg />
       <div
-        className="flex flex-col justify-center
-    h-[100vh] mx-8 relative
+        className="relative flex flex-col justify-center
+    h-[100vh] mx-16
     z-10"
       >
         <div
-          className="p-2 bg-secondary dark:bg-dark-secondary
-      rounded-xl shadow-lg shadow-tertiary/70 dark:shadow-dark-tertiary/70"
+          className="px-8 py-4 bg-secondary/50 dark:bg-dark-secondary/50 backdrop-blur-sm
+      rounded-xl"
         >
           <h1 className="flex justify-center w-full my-8">Contact form</h1>
-          <form action="">
+          <form>
             <div className="flex mb-4 space-x-4">
               <input type="text" placeholder="Name" className="w-full" />
               <input type="text" placeholder="Last name" className="w-full" />
