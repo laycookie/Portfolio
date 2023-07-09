@@ -13,7 +13,7 @@ export default function page({}: Props) {
       <Bg />
       <div
         className="relative flex flex-col justify-center
-    h-[100vh] mx-16
+    h-[100vh] m-auto w-[min(85vw,48rem)]
     z-10"
       >
         <div
@@ -23,7 +23,7 @@ export default function page({}: Props) {
           <h1 className="flex justify-center w-full my-8">Contact form</h1>
           <form>
             <div className="flex mb-4 space-x-4">
-              <input type="text" placeholder="Name" className="w-full" />
+              <input type="text" placeholder="First name" className="w-full" />
               <input type="text" placeholder="Last name" className="w-full" />
             </div>
             <div className="flex flex-col h-full">
