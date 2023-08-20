@@ -1,6 +1,6 @@
 import LayoutBody from "./LayoutBody";
 import { cookies } from "next/headers";
-import { setCookieTheme } from "@/components/setCookieTheme";
+import {  } from "next/font";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -23,12 +23,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  function getTheme(): string {
+  function getTheme(): string | undefined {
     const theme = cookies().get("theme")?.value;
-    if (!theme) {
-      setCookieTheme("system");
-      return "system";
-    }
+    // if there is no theme cookie, we assume the user is using the system theme
     return theme;
   }
 

@@ -2,17 +2,16 @@
 
 import { useState } from "react";
 import { ThemeCtx } from "@/context/ThemeCtx";
-import Navbar from "@/components/Navbar";
 import { setCookieTheme } from "@/components/setCookieTheme";
 
 type Props = {
   children: React.ReactNode;
-  initialTheme: string;
+  initialTheme: string | undefined;
 };
 
 export default function LayoutBody({ children, initialTheme }: Props) {
   // theming engine
-  const [theme, setTheme] = useState<string>(initialTheme);
+  const [theme, setTheme] = useState<string>(initialTheme ?? "dark");
   function setThemeEverywhere(value: string) {
     setTheme(value);
     setCookieTheme(value);

@@ -10,10 +10,6 @@
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
-    "@next/font": "^13.4.0",
-    "@types/node": "^20.1.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.3",
     "@vercel/analytics": "^1.0.1",
     "eslint": "^8.39.0",
     "eslint-config-next": "^13.4.0",
@@ -28,6 +24,9 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.0",
     "@types/three": "^0.152.0",
+    "@types/node": "^20.1.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.3",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "postcss": "^8.4.21",
