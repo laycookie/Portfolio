@@ -5,6 +5,10 @@ type Props = {};
 
 export const metadata: Metadata = {
   title: "Contact",
+  robots: {
+    follow: false,
+    index: false,
+  },
 };
 
 export default function page({}: Props) {

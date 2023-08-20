@@ -148,7 +148,7 @@ export default function Bg({}: Props) {
         // move sphere to attraction point
         const sphereMass: number = 1;
         const attractionPointMass: number = 1000;
-        const gravityConst: number = 6.67e-7;
+        const gravityConst: number = 6.67e-6;
         for (const sphere of spheres) {
           // calculate gravity force with newtons
           const distance = sphere.position.distanceTo(
@@ -171,7 +171,7 @@ export default function Bg({}: Props) {
            */
           const forceMagnitude =
             gravityConst *
-            ((attractionPointMass * sphereMass) / Math.pow(distance, 0.25));
+            ((attractionPointMass * sphereMass) / Math.pow(distance, 0.2));
 
           // calculate direction of gravity force
           const force = new THREE.Vector3(

@@ -1,32 +1,12 @@
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
 import Intro from "./Intro";
 import AboutT from "./AboutT";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Home",
-  description:
-    "Hello, my name is Dennis Lonoshchuk, I’m a front-end web developer based in California, and this is my web portfolio.",
-  openGraph: {
-    title: "Home",
-    description:
-      "Hello, my name is Dennis Lonoshchuk, I’m a front-end web developer based in California, and this is my web portfolio.",
-    url: "https://Lonoshchuk.org",
-    siteName: "Dennis Lonoshchuk portfolio",
-    images: [
-      {
-        url: "https://www.lonoshchuk.com/face.jpg",
-        width: 686,
-        height: 916,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
 };
 
 export default function Home() {
