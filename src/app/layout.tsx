@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import LayoutBody from "./LayoutBody";
 import { cookies } from "next/headers";
-import {  } from "next/font";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -18,11 +19,9 @@ export const metadata: Metadata = {
   keywords: ["Portfolio", "Dennis", "Lonoshchuk"],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const roboto = Roboto({ subsets: ["latin"], weight: "400" });
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   function getTheme(): string | undefined {
     const theme = cookies().get("theme")?.value;
     // if there is no theme cookie, we assume the user is using the system theme
@@ -30,7 +29,7 @@ export default function RootLayout({
   }
 
   return (
-    <LayoutBody initialTheme={getTheme()}>
+    <LayoutBody initialTheme={getTheme()} font={roboto.className}>
       {children}
       <AnalyticsWrapper />
     </LayoutBody>

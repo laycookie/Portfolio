@@ -14,7 +14,7 @@
     -webkit-text-stroke-width: 0;
   }
   .text-stroke-2 {
-    -webkit-text-stroke-width: 0.05rem;
+    -webkit-text-stroke-width: 0.01em;
   }
 }
 

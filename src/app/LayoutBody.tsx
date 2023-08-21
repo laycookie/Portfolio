@@ -1,15 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { ThemeCtx } from "@/context/ThemeCtx";
 import { setCookieTheme } from "@/components/setCookieTheme";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   initialTheme: string | undefined;
+  font: string;
 };
 
-export default function LayoutBody({ children, initialTheme }: Props) {
+export default function LayoutBody({ children, initialTheme, font }: Props) {
   // theming engine
   const [theme, setTheme] = useState<string>(initialTheme ?? "dark");
   function setThemeEverywhere(value: string) {
@@ -25,7 +26,7 @@ export default function LayoutBody({ children, initialTheme }: Props) {
       }}
     >
       <html lang="en" className={theme + " scroll-smooth"}>
-        <body className="defaults">{children}</body>
+        <body className={"defaults " + font}>{children}</body>
       </html>
     </ThemeCtx.Provider>
   );
