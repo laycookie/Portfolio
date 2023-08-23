@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import LayoutBody from "./LayoutBody";
 import { cookies } from "next/headers";
 import { AnalyticsWrapper } from "@/components/AnalyticsWrapper";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   keywords: ["Portfolio", "Dennis", "Lonoshchuk"],
 };
 
-const roboto = Roboto({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   function getTheme(): string | undefined {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   }
 
   return (
-    <LayoutBody initialTheme={getTheme()} font={roboto.className}>
+    <LayoutBody initialTheme={getTheme()} font={inter.className}>
       {children}
       <AnalyticsWrapper />
     </LayoutBody>
