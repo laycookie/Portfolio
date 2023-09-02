@@ -72,10 +72,10 @@ export default function Navbar({ hideUntil = 250 }: Props) {
   }, []);
 
   return (
-    <nav ref={navRef} className="fixed z-20 w-full">
+    <nav ref={navRef} className="fixed z-20 w-full transition-all">
       <ul
         className="relative z-10 bg-tertiary dark:bg-dark-tertiary
-      flex justify-between px-24 py-2 transition-all duration-500"
+      flex justify-between px-24 py-2 duration-500"
         style={isPageLoaded ? { opacity: "1" } : { opacity: "0" }}
       >
         <li>
@@ -121,13 +121,15 @@ export default function Navbar({ hideUntil = 250 }: Props) {
       </ul>
       <ul
         ref={dropDownRef}
-        className="relative z-0 bg-tertiary dark:bg-dark-tertiary
-        flex flex-col items-center w-full space-y-2 pb-4 transition-all"
-        style={
-          isPageLoaded && isDropdownOpen
-            ? { visibility: "visible" }
-            : { visibility: "collapse" }
-        }
+        className={`relative z-0 bg-tertiary dark:bg-dark-tertiary
+        flex flex-col items-center w-full space-y-2 pb-4 
+        transition-all after:transition-all
+        ${isPageLoaded && isDropdownOpen ? "visible" : "collapse"}
+        after:contents-[] after:absolute after:inset-x-0 
+        after:-bottom-[2px] after:h-0.5 after:z-50
+        after:bg-dark-tertiary after:dark:bg-tertiary ${
+          isPageLoaded ? "after:visible" : "after:collapse"
+        }`}
       >
         <li>
           <Link href="/" className="nav-text nav-btn">

@@ -24,20 +24,23 @@ export function areSpheresColliding(
 export function pullSpheresApartData(
   [sphereRadius, spherePosition]: SphereData,
   [sphere2Radius, sphere2Position]: SphereData,
-  distance: number
+  magnitudeMultiplier = 10,
+  logBase = 5
 ) {
+  const distance = spherePosition.distanceTo(sphere2Position);
   // calculate the direction of the collision
   const direction = new THREE.Vector3();
   direction.subVectors(spherePosition, sphere2Position);
   direction.normalize();
   // calculate half of the distance the spheres are overlapping
   const halfOverlapDistance = (sphereRadius + sphere2Radius - distance) / 4;
-  // move spheres away from each other
 
-  // This const is just to move the spheres away from
-  // each other  enough to not be triggering the collision
+  // halfOverlapDistance log of logBase
+  let magnitude =
+    (Math.log(halfOverlapDistance + 1) / Math.log(logBase)) *
+    magnitudeMultiplier;
 
-  return { direction, magnitude: halfOverlapDistance };
+  return { direction, magnitude };
 }
 
 export class Sphere extends THREE.Mesh {

@@ -9,6 +9,12 @@ import {
 } from "./utils";
 
 import * as THREE from "three";
+import {
+  SphereBuilder,
+  ifSpheresColliding,
+  moveTheta,
+  oscillator,
+} from "./util";
 
 type Props = {};
 
@@ -26,6 +32,7 @@ export default function Bg({}: Props) {
 
       // Create a scene
       const scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x000000, 0.075);
 
       // Create a camera
       const FOV = 45;
@@ -37,43 +44,20 @@ export default function Bg({}: Props) {
         1000
       );
       camera.position.z = cameraZoffSet;
-      // spheres setup
-
-      const geometry = new THREE.SphereGeometry(1, 24, 16);
-      const material = new THREE.MeshBasicMaterial({
-        color: 0xffffff,
-        wireframe: true,
-      });
-
+      // create spheres
       const spheres: Sphere[] = [];
-      const testSphere: Sphere = new Sphere(geometry, material);
-      testSphere.geometry.computeBoundingSphere();
-      testSphere.position.x = -2;
-      testSphere.position.y = 0;
 
-      spheres.push(testSphere);
-      const testSphere1 = new Sphere(geometry, material);
-      testSphere1.geometry.computeBoundingSphere();
-      testSphere1.position.x = 2;
-      testSphere1.position.y = 0;
-
-      spheres.push(testSphere1);
+      const sphereBuilder = new SphereBuilder();
+      sphereBuilder.changeMaterial(0xff0000);
+      spheres.push(sphereBuilder.createSphere({ x: 2, y: 0, z: -25 }));
+      sphereBuilder.changeMaterial(0x00ff00);
+      spheres.push(sphereBuilder.createSphere({ x: -2, y: 0, z: -25 }));
+      sphereBuilder.changeMaterial(0x0000ff);
+      spheres.push(sphereBuilder.createSphere({ x: 0, y: 2, z: -25 }));
 
       spheres.forEach((sphere) => {
         scene.add(sphere);
       });
-
-      // point of attraction for the spheres
-
-      const attractionPoint = {
-        x: 0,
-        y: 0,
-        z: 0,
-      };
-
-      // used to move sphere back and forth in a loop
-      let theta = -Math.PI;
-      const sinAmplitude = 3;
 
       // track cursor
       const cursor = new THREE.Vector2(0, 0);
@@ -88,64 +72,58 @@ export default function Bg({}: Props) {
       };
       addEventListener("mousemove", onMouseMove);
 
+      // === Vars for the animation (they are out of the function so they don't get reset) ===
+      // theta is the angle of the sin wave
+      let theta = -Math.PI;
+      const sinAmplitude = 3;
+      // point of attraction for the spheres
+      const attractionPoint = {
+        x: 0,
+        y: 0,
+        z: 0,
+      };
+      const clock = new THREE.Clock();
       // Render the scene
       const animate = () => {
-        // moving sphere
-        const alpha = FOV / 2;
+        console.log(clock.getDelta());
+        // === moving the attraction point back and forth ===
+        attractionPoint.z = oscillator(theta, sinAmplitude, 1, 0);
+
+        const alpha = (FOV / 2) * (Math.PI / 180);
         // cameraZoffSet is "b" of the triangle
         // vectorScaler is "a" of the triangle
         const vectorScaler =
-          Math.tan(alpha * (Math.PI / 180)) *
-          (cameraZoffSet - Math.sin(theta) * sinAmplitude);
+          Math.tan(alpha) * (cameraZoffSet - attractionPoint.z);
 
-        attractionPoint.x = cursor.x * vectorScaler;
-        attractionPoint.y = cursor.y * vectorScaler;
+        [attractionPoint.x, attractionPoint.y] = [cursor.x, cursor.y].map(
+          (coord) => {
+            return (coord = coord * vectorScaler);
+          }
+        );
 
         // moves sphere back and forth in a sin wave
-        attractionPoint.z = Math.sin(theta) * sinAmplitude;
-        theta += 0.01;
-        if (theta > Math.PI) {
-          theta = -Math.PI;
-        }
+        const thetaSpeed = 1;
+        theta = moveTheta(theta, thetaSpeed, clock.getDelta());
 
-        // collision detection system
+        // === collision detection system ===
         for (const sphere of spheres) {
           for (const sphere2 of spheres) {
-            const [sphereRadius, spherePosition] =
-              getSphereDataForCollision(sphere);
-            const [sphere2Radius, sphere2Position] =
-              getSphereDataForCollision(sphere2);
-            if (sphere !== sphere2) {
-              const distance = spherePosition.distanceTo(sphere2Position);
-              if (
-                areSpheresColliding(
-                  [sphereRadius, spherePosition],
-                  [sphere2Radius, sphere2Position]
-                )
-              ) {
-                // === Move spheres away from each other ===
-                const bounceForceMultiplier = 10;
-                let { direction, magnitude } = pullSpheresApartData(
-                  [sphereRadius, spherePosition],
-                  [sphere2Radius, sphere2Position],
-                  distance
-                );
+            if (sphere === sphere2) continue;
+            ifSpheresColliding(sphere, sphere2, (sphereData, sphere2Data) => {
+              // === Adds force to spheres ===
+              const { direction, magnitude } = pullSpheresApartData(
+                sphereData,
+                sphere2Data
+              );
 
-                // makes spheres bounce off each other
-                sphere.velocity.addScaledVector(
-                  direction,
-                  magnitude * bounceForceMultiplier
-                );
-
-                // === Move spheres away from each other ===
-                sphere.position.addScaledVector(direction, magnitude);
-                sphere2.position.addScaledVector(direction, -magnitude);
-              }
-            }
+              // we don't reference sphere2 because on the second
+              // passing the sphere and sphere2 are switched
+              sphere.velocity.addScaledVector(direction, magnitude);
+            });
           }
         }
 
-        // move sphere to attraction point
+        // move sphere to attraction point (Based on newtons law of gravity)
         const sphereMass: number = 1;
         const attractionPointMass: number = 1000;
         const gravityConst: number = 6.67e-6;

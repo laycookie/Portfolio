@@ -42,18 +42,20 @@ export default function SkillGrid({}: Props) {
         className={`grid grid-cols-1 lg:grid-cols-2 grid-rows-4`}
         style={{ gap: borderThickness }}
       >
-        <h2
-          className={
-            styles.grid_col_Title_prep +
-            ` bg-main dark:bg-dark-main flex text-center text-3xl sm:text-4xl`
-          }
-          style={{
-            paddingLeft: borderThickness,
-            paddingRight: borderThickness,
-          }}
-        >
-          Familiar technologies
-        </h2>
+        <div className="bg-main dark:bg-dark-main px-2">
+          <h2
+            className={
+              styles.grid_col_Title_prep +
+              ` flex text-center text-3xl sm:text-4xl h-full`
+            }
+            style={{
+              paddingLeft: borderThickness,
+              paddingRight: borderThickness,
+            }}
+          >
+            Familiar technologies
+          </h2>
+        </div>
         <h2
           className={
             styles.grid_col_Title_prep +
@@ -64,7 +66,7 @@ export default function SkillGrid({}: Props) {
         </h2>
 
         <div className={`${styles.outer_grid_e} bg-main dark:bg-dark-main`}>
-          <div className="sm:flex sm:py-4">
+          <div className={styles.text_container}>
             <h3 className={styles.bold_text}>Lang.</h3>
             <div className={styles.inner_grid_text}>
               <p>Python</p>
@@ -79,11 +81,13 @@ export default function SkillGrid({}: Props) {
         <div
           className="row-span-3 py-4 hidden lg:block
           bg-main dark:bg-dark-main"
-        ></div>
-        <div
-          className={`${styles.outer_grid_e} bg-main dark:bg-dark-main outer_grid_e py-4`}
         >
-          <div className="sm:flex pb-2">
+          123
+        </div>
+        <div
+          className={`${styles.outer_grid_e} bg-main dark:bg-dark-main gap-1 sm:gap-2`}
+        >
+          <div className={styles.text_container}>
             <h3 className={styles.bold_text}>Front-end</h3>
             <div className={styles.inner_grid_text}>
               <p>React</p>
@@ -92,7 +96,7 @@ export default function SkillGrid({}: Props) {
             </div>
           </div>
 
-          <div className="sm:flex">
+          <div className={styles.text_container}>
             <h3 className={styles.bold_text}>Back-end</h3>
             <div className={styles.inner_grid_text}>
               <p>Express</p>
@@ -101,7 +105,7 @@ export default function SkillGrid({}: Props) {
           </div>
         </div>
         <div className={`${styles.outer_grid_e} bg-main dark:bg-dark-main`}>
-          <div className="sm:flex py-auto sm:py-4 ">
+          <div className={styles.text_container}>
             <h3 className={styles.bold_text}>Misc</h3>
             <div className={styles.inner_grid_text}>
               <p>Prisma</p>

@@ -2,8 +2,12 @@
   @apply font-semibold justify-center items-center;
 }
 
+.text_container {
+  @apply sm:flex justify-between sm:px-6 xl:px-16;
+}
+
 .bold_text {
-  @apply sm:w-32 my-auto sm:pl-4 text-xl text-center sm:text-left font-semibold;
+  @apply sm:w-32 text-xl text-center sm:text-left font-semibold sm:flex sm:items-center;
 }
 
 .outer_grid_e {
@@ -11,5 +15,5 @@
 }
 
 .inner_grid_text {
-  @apply pl-0 sm:pl-32 my-auto text-center sm:text-left;
+  @apply my-auto text-center sm:text-left sm:w-24;
 }

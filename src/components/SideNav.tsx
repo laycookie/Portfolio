@@ -62,8 +62,7 @@ export default function SideNav({ children }: Props) {
       <div
         className={`fixed
         flex flex-col h-[100dvh] justify-center 
-        md:visible invisible
-        md:transition-all md:duration-500 md:ease-in-out`}
+        md:visible invisible`}
         style={
           isPageLoaded
             ? { opacity: 1, right: "1.5rem" }
@@ -73,7 +72,8 @@ export default function SideNav({ children }: Props) {
         <ul
           className={`relative before:content-[""] before:absolute before:-left-6
            before:h-full before:w-[0.125rem]
-            before:bg-dark-main dark:before:bg-main before:rounded-xl`}
+            before:bg-dark-main dark:before:bg-main before:rounded-xl
+            md:transition-all md:duration-500 md:ease-in-out`}
         >
           {sections.map((section) => (
             <li key={crypto.randomUUID()} className="mt-2">

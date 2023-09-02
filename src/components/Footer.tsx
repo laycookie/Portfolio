@@ -12,7 +12,8 @@ export default function Footer({}: Props) {
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
     sticky top-[100vh]
-    holder py-8"
+    holder py-8
+    border-t-2 border-black dark:border-white"
     >
       <ul
         className="flex justify-between items-center
