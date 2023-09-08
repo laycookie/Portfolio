@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function page({}: Props) {
   return (
     <div
-      className="min-h-[100vh]
+      className="min-h-[100dvh]
     text-black bg-main
     dark:text-white dark:bg-black"
     >
