@@ -32,10 +32,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <body className={"defaults"}>
       <Navbar />
       {children}
       <Footer />
-    </>
+    </body>
   );
 }

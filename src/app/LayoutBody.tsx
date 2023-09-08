@@ -25,8 +25,8 @@ export default function LayoutBody({ children, initialTheme, font }: Props) {
         setTheme: setThemeEverywhere,
       }}
     >
-      <html lang="en" className={theme + " scroll-smooth"}>
-        <body className={"defaults " + font}>{children}</body>
+      <html lang="en" className={theme + " scroll-smooth " + font}>
+        {children}
       </html>
     </ThemeCtx.Provider>
   );

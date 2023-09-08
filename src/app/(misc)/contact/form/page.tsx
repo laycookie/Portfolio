@@ -13,11 +13,15 @@ export const metadata: Metadata = {
 
 export default function page({}: Props) {
   return (
-    <>
+    <div
+      className="min-h-[100vh]
+    text-black bg-main
+    dark:text-white dark:bg-black"
+    >
       <Bg />
       <div
         className="relative flex flex-col justify-center
-    h-[100vh] m-auto w-[min(85vw,48rem)]
+    h-[100dvh] m-auto w-[min(85vw,48rem)]
     z-10"
       >
         <div
@@ -44,6 +48,6 @@ export default function page({}: Props) {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }

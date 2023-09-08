@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+export default {
   darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -27,13 +28,13 @@ module.exports = {
         tertiary: "#EBEBEB",
       },
       opacity: {
-        glass: 0.25,
+        glass: "0.25",
       },
     },
   },
   plugins: [
-    ({ addVariant }) => {
+    ({ addVariant }: any) => {
       addVariant("child", "& > *");
     },
   ],
-};
+} satisfies Config;
