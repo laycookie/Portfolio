@@ -1,43 +1,22 @@
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 import SkillGrid from "./SkillGrid";
 import EduCard from "./EduCard";
 import Intro from "./Intro";
 import AboutT from "./AboutT";
-import Link from "next/link";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Home",
-  description:
-    "Hello, my name is Dennis Lonoshchuk, I’m a front-end web developer based in California, and this is my web portfolio.",
-  openGraph: {
-    title: "Home",
-    description:
-      "Hello, my name is Dennis Lonoshchuk, I’m a front-end web developer based in California, and this is my web portfolio.",
-    url: "https://Lonoshchuk.org",
-    siteName: "Dennis Lonoshchuk portfolio",
-    images: [
-      {
-        url: "https://www.lonoshchuk.com/face.jpg",
-        width: 686,
-        height: 916,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
 };
 
 export default function Home() {
   return (
     <>
-      <Navbar pageTitle="Home" />
       <SideNav>
         <main>
           <section id="Intro." className="h-[100vh]">
             <div className="contain">
+              {/* This is a component purely to make the code more compact */}
               <Intro firstAniLength={2000} secondAniLength={1000} />
             </div>
           </section>
@@ -107,7 +86,6 @@ export default function Home() {
           </section>
         </main>
       </SideNav>
-      <Footer />
     </>
   );
 }

@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+export default {
   darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -18,22 +19,22 @@ module.exports = {
         white: "#FFFFFF",
         black: "#000000",
 
-        "dark-main": "#28252C",
-        "dark-secondary": "#232127",
-        "dark-tertiary": "#19171C",
+        "dark-main": "#111",
+        "dark-secondary": "#202020",
+        "dark-tertiary": "#0a0a0a",
 
         main: "#FFFFFF",
         secondary: "#FFFFFF",
         tertiary: "#EBEBEB",
       },
       opacity: {
-        glass: 0.25,
+        glass: "0.25",
       },
     },
   },
   plugins: [
-    ({ addVariant }) => {
+    ({ addVariant }: any) => {
       addVariant("child", "& > *");
     },
   ],
-};
+} satisfies Config;

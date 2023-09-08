@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./WriteInTxt.css";
 
 type Props = {
@@ -43,7 +43,7 @@ export default function WriteInTxt({
 
   if (winWidth > 1023) {
     return (
-      <svg className={className}>
+      <svg className={className} style={{ opacity: "1" }}>
         <text ref={textRef} y="50%" className={"text-line"}>
           {text}
         </text>

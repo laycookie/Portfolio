@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, Children, isValidElement } from "react";
+import React, { useEffect, Children, isValidElement, useState } from "react";
 import "./SideNav.css";
 
 type Props = { children: React.ReactNode };
@@ -18,18 +18,12 @@ type SectionPrepNav = { name: string; position: number };
 */
 
 export default function SideNav({ children }: Props) {
-  const [visible, setVisible] = React.useState(false);
-  const [sections, setSections] = React.useState<SectionPrepNav[]>(
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+  const [sections, setSections] = useState<SectionPrepNav[]>(
     [] as SectionPrepNav[]
   );
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-
+    const recalculatePositionsOfSections = () => {
       // Changes position cord of sections
       const sectionsCli: SectionPrepNav[] = [] as SectionPrepNav[];
       if (!children) return;
@@ -52,45 +46,53 @@ export default function SideNav({ children }: Props) {
       }
       setSections(sectionsCli);
     };
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    recalculatePositionsOfSections();
+    window.addEventListener("resize", recalculatePositionsOfSections);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", recalculatePositionsOfSections);
     };
+  }, [children]);
+
+  useEffect(() => {
+    setIsPageLoaded(true);
   }, []);
 
-  if (!visible) return <>{children}</>;
-  else {
-    return (
-      <>
-        <div
-          className="fixed right-6
-      flex flex-col h-[100dvh] justify-center"
-        >
-          <ul
-            className={`relative before:content-[""] before:absolute before:-left-6
+  return (
+    <>
+      <div
+        className={`fixed
+        flex flex-col h-[100dvh] justify-center 
+        md:visible invisible`}
+        style={
+          isPageLoaded
+            ? { opacity: 1, right: "1.5rem" }
+            : { opacity: 0, right: "0" }
+        }
+      >
+        <ul
+          className={`relative before:content-[""] before:absolute before:-left-6
            before:h-full before:w-[0.125rem]
-            before:bg-dark-main dark:before:bg-main before:rounded-xl`}
-          >
-            {sections.map((section, index) => (
-              <li key={index} className="mt-2">
-                <button
-                  onClick={() => {
-                    scrollTo(0, section.position);
-                  }}
-                  className="side-btn text-sm sm:text-lg w-full "
-                >
-                  <p className="w-full text-right">{section.name}</p>
-                  <div>
-                    <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {children}
-      </>
-    );
-  }
+            before:bg-dark-main dark:before:bg-main before:rounded-xl
+            md:transition-all md:duration-500 md:ease-in-out`}
+        >
+          {sections.map((section) => (
+            <li key={crypto.randomUUID()} className="mt-2">
+              <button
+                onClick={() => {
+                  scrollTo(0, section.position);
+                }}
+                className="side-btn text-sm sm:text-lg w-full "
+              >
+                <p className="w-full text-right">{section.name}</p>
+                <div>
+                  <div className="h-1 w-full bg-black dark:bg-white rounded-xl" />
+                </div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {children}
+    </>
+  );
 }

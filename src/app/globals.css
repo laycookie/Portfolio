@@ -3,18 +3,24 @@
 @tailwind utilities;
 
 @layer utilities {
-  .text-stroke-white {
-    -webkit-text-stroke-color: white;
+  .text-stroke {
+    @apply text-main;
+    --main: theme(colors.main);
+    --dark-main: theme(colors.dark-main);
+    text-shadow: -1px -1px 0 var(--dark-main), 1px -1px 0 var(--dark-main),
+      -1px 1px 0 var(--dark-main), 1px 1px 0 var(--dark-main);
   }
-  .text-stroke-black {
-    -webkit-text-stroke-color: black;
+  .dark .text-stroke {
+    @apply text-dark-main;
+    --main: theme(colors.main);
+    --dark-main: theme(colors.dark-main);
+    text-shadow: -1px -1px 0 var(--main), 1px -1px 0 var(--main),
+      -1px 1px 0 var(--main), 1px 1px 0 var(--main);
   }
 
-  .text-stroke-0 {
-    -webkit-text-stroke-width: 0;
-  }
-  .text-stroke-2 {
-    -webkit-text-stroke-width: 0.05rem;
+  .text-stroke:hover {
+    @apply dark:text-main text-dark-main;
+    text-shadow: none;
   }
 }
 
@@ -28,6 +34,18 @@ body::-webkit-scrollbar-thumb {
   background: #000;
 }
 
+h1 {
+  @apply font-semibold text-4xl sm:text-6xl md:text-7xl;
+}
+
+input[type="text"] {
+  @apply bg-transparent border-2 border-black dark:border-white rounded-lg pl-2;
+}
+
+textarea {
+  @apply bg-transparent border-2 border-black dark:border-white rounded-lg pl-2 resize-none;
+}
+
 .defaults {
   @apply min-h-[100vh]
   text-black bg-main
@@ -35,7 +53,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contain {
-  @apply container mx-auto px-6 sm:px-16 md:px-40;
+  @apply container mx-auto px-6 sm:px-16 md:px-36;
 }
 
 .holder {

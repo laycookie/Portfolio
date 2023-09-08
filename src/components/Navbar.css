@@ -1,39 +1,25 @@
+.nav-text {
+  @apply relative h-full
+   text-black dark:text-white
+   transition-all duration-200 ease-in-out;
+}
+
+.nav-text::after {
+  @apply content-[''] absolute
+     bg-black dark:bg-white
+      h-0.5 w-[100%]
+      left-0 bottom-0
+      rounded-xl
+      transition-all duration-300 ease-in-out;
+}
+
 .nav-btn {
-  @apply relative
-      px-1
-      hover:text-black text-black md:text-gray-700
-      hover:dark:text-white dark:text-white dark:md:text-gray-300
-       transition-all duration-200 ease-in-out;
+  @apply hover:text-black hover:dark:text-white;
 }
 .nav-btn::after {
-  @apply content-[''] absolute
-     bg-black dark:bg-white 
-      h-1 md:w-[0%] w-[100%]
-      left-0 -bottom-2
-      rounded-xl
-      transition-all duration-200 ease-in-out;
+  @apply w-[0%];
 }
+
 .nav-btn:hover::after {
   @apply w-[100%];
-}
-
-.nav-btn-minimized {
-  @apply relative
-      hover:text-black text-gray-800
-      dark:hover:text-white dark:text-gray-300
-       transition-all duration-200 ease-in-out;
-}
-.nav-btn-minimized::after {
-  @apply content-[''] absolute bg-black dark:bg-white
-      h-1 w-[0%]
-      left-0 -bottom-2
-      rounded-xl
-      transition-all duration-200 ease-in-out;
-}
-.nav-btn-minimized:hover::after {
-  @apply w-[100%];
-}
-
-.nav-hide {
-  @apply hidden md:inline;
 }

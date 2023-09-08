@@ -1,17 +1,19 @@
 "use client";
-import { useContext } from "react";
-import { useTheme } from "next-themes";
+
 import Image from "next/image";
+import { ThemeCtx } from "@/context/ThemeCtx";
+import { useContext } from "react";
 
 type Props = {};
 
 export default function Footer({}: Props) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useContext(ThemeCtx);
   return (
     <footer
       className="bg-tertiary dark:bg-dark-tertiary
     sticky top-[100vh]
-    holder py-8"
+    holder py-8
+    border-t-2 border-black dark:border-white"
     >
       <ul
         className="flex justify-between items-center
@@ -21,14 +23,17 @@ export default function Footer({}: Props) {
           <button
             onClick={() => {
               switch (theme) {
+                case "system":
+                  setTheme("light");
+                  break;
                 case "light":
                   setTheme("dark");
                   break;
                 case "dark":
                   setTheme("light");
                   break;
-                case "system":
-                  setTheme("dark");
+                default:
+                  setTheme("system");
                   break;
               }
             }}

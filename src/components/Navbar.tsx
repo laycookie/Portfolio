@@ -1,136 +1,154 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import "./Navbar.css";
+import { useEffect, useRef, useState } from "react";
 
-type Props = { pageTitle: string; hideUntil?: number };
+type Props = { hideUntil?: number };
 
-export default function Navbar({ pageTitle, hideUntil = 50 }: Props) {
+export default function Navbar({ hideUntil = 250 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
 
-  const [isNavHidden, setIsNavHidden] = useState<boolean>(false);
-  const [isDropDownVis, setIsDropDownVis] = useState<boolean>(false);
+  const [pageTitle, setPageTitle] = useState<string>("" as string);
+
+  const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
+  const [isNavMobile, setIsNavMobile] = useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+
+  // Hides navbar when scrolling down and shows it when scrolling up
+  useEffect(() => {
+    function onScroll() {
+      if (window.scrollY > hideUntil) {
+        const navHight = navRef.current?.offsetHeight || 0;
+        navRef.current?.style.setProperty("top", `-${navHight}px`);
+        setIsDropdownOpen(false);
+      } else {
+        navRef.current?.style.setProperty("top", "0");
+      }
+    }
+    onScroll();
+    addEventListener("scroll", onScroll);
+
+    return () => {
+      removeEventListener("scroll", onScroll);
+    };
+  }, [hideUntil]);
+
+  // Controls dropdown animation
+  useEffect(() => {
+    if (isDropdownOpen) {
+      dropDownRef.current?.style.setProperty("top", "0");
+    } else {
+      const dropDownHight = dropDownRef.current?.offsetHeight || 0;
+      dropDownRef.current?.style.setProperty("top", `-${dropDownHight}px`);
+    }
+  }, [isDropdownOpen]);
+
+  // sets new title every time the page is changed
+  const pathname = usePathname();
+  useEffect(() => {
+    setPageTitle(document.title);
+  }, [pathname]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > hideUntil) {
-        setIsNavHidden(true);
+    setIsPageLoaded(true);
+
+    // Controls how nav bar looks when switching between mobile and desktop
+    function navbarAdaptivityController() {
+      if (window.innerWidth > 768) {
+        setIsNavMobile(false);
+        setIsDropdownOpen(false);
       } else {
-        setIsNavHidden(false);
+        setIsNavMobile(true);
       }
-    });
+    }
+    navbarAdaptivityController();
+    addEventListener("resize", navbarAdaptivityController);
+    return () => {
+      removeEventListener("resize", navbarAdaptivityController);
+    };
   }, []);
 
-  const [dropOffSet, setDropOffSet] = useState(0);
-  useEffect(() => {
-    setDropOffSet(
-      dropDownRef?.current?.clientHeight
-        ? dropDownRef?.current?.clientHeight
-        : 0
-    );
-  }, [dropDownRef?.current?.clientHeight]);
-
   return (
-    <nav
-      ref={navRef}
-      className={`
-    text-xl font-semibold transition-all w-full fixed 
-    backdrop-blur-sm`}
-      style={{
-        top: `${isNavHidden ? "-" + navRef?.current?.clientHeight : 0}px`,
-      }}
-    >
+    <nav ref={navRef} className="fixed z-20 w-full transition-all">
       <ul
-        className=" bg-tertiary/50 dark:bg-dark-tertiary/50
-        relative flex justify-between py-4 z-30 
-        holder"
+        className="relative z-10 bg-tertiary dark:bg-dark-tertiary
+      flex justify-between px-24 py-2 duration-500"
+        style={isPageLoaded ? { opacity: "1" } : { opacity: "0" }}
       >
         <li>
-          {/* Those elements might be not probably align please check */}
-          <Link href="/" className="nav-btn md:inline hidden">
-            Home
-          </Link>
-          <h1 className="nav-btn md:hidden">{pageTitle}</h1>
+          {isNavMobile ? (
+            <p className="nav-text">{pageTitle}</p>
+          ) : (
+            <Link href="/" className="nav-text nav-btn">
+              <p>Home</p>
+            </Link>
+          )}
         </li>
         <li>
-          <ul className="flex space-x-4">
-            <li className="nav-btn nav-hide">
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li className="nav-btn nav-hide">
-              <Link href="/portfolio">Portfolio</Link>
-            </li>
-            <li className="nav-btn nav-hide">
-              <Link href="/contact">Contact</Link>
-            </li>
-            <li className="">
+          {isNavMobile ? (
+            <>
               <button
-                className="md:hidden"
                 onClick={() => {
-                  setIsDropDownVis(!isDropDownVis);
+                  setIsDropdownOpen(!isDropdownOpen);
                 }}
               >
                 X
               </button>
-            </li>
-          </ul>
+            </>
+          ) : (
+            <ul className="flex space-x-6">
+              <li>
+                <Link href="/blog" className="nav-text nav-btn">
+                  <p>Blog</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="nav-text nav-btn">
+                  <p>Portfolio</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="nav-text nav-btn">
+                  <p>Contact</p>
+                </Link>
+              </li>
+            </ul>
+          )}
         </li>
       </ul>
-
       <ul
         ref={dropDownRef}
-        className={`bg-tertiary/50 dark:bg-dark-tertiary/50
-        grid justify-center
-        md:hidden
-        space-y-6 pb-8
-        transition-all ease-in-out duration-200 ${
-          isDropDownVis ? "delay-0" : "delay-200"
-        }
-        relative z-0`}
-        style={{
-          marginTop: isDropDownVis ? `0px` : `-${dropOffSet}px`,
-        }}
+        className={`relative z-0 bg-tertiary dark:bg-dark-tertiary
+        flex flex-col items-center w-full space-y-2 pb-4 
+        transition-all after:transition-all
+        ${isPageLoaded && isDropdownOpen ? "visible" : "collapse"}
+        after:contents-[] after:absolute after:inset-x-0 
+        after:-bottom-[2px] after:h-0.5 after:z-50
+        after:bg-dark-tertiary after:dark:bg-tertiary ${
+          isPageLoaded ? "after:visible" : "after:collapse"
+        }`}
       >
         <li>
-          <Link
-            href="/"
-            className={`nav-btn-minimized ${
-              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
-            }`}
-          >
-            Home
+          <Link href="/" className="nav-text nav-btn">
+            <p>Home</p>
           </Link>
         </li>
         <li>
-          <Link
-            href="/blog"
-            className={`nav-btn-minimized ${
-              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
-            }`}
-          >
-            Blog
+          <Link href="/blog" className="nav-text nav-btn">
+            <p>Blog</p>
           </Link>
         </li>
         <li>
-          <Link
-            href="/portfolio"
-            className={`nav-btn-minimized ${
-              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
-            }`}
-          >
-            Portfolio
+          <Link href="/portfolio" className="nav-text nav-btn">
+            <p>Portfolio</p>
           </Link>
         </li>
         <li>
-          <Link
-            href="/contact"
-            className={`nav-btn-minimized ${
-              isDropDownVis ? "opacity-100 delay-200" : "opacity-0"
-            }`}
-          >
-            Contact
+          <Link href="/contact" className="nav-text nav-btn">
+            <p>Contact</p>
           </Link>
         </li>
       </ul>
