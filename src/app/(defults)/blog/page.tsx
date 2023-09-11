@@ -1,4 +1,4 @@
-import React from "react";
+import BlogPrev from "./BlogPrev";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +9,11 @@ type Props = {};
 
 export default function page({}: Props) {
   return (
-    <main className="defaults">
-      <main className="defaults">
-        <h1 className="mt-32 flex justify-center w-full">Blogs</h1>
-      </main>
+    <main className="defaults contain">
+      <h1 className="mt-32 flex justify-center w-full">Blogs</h1>
+      <div className="mt-8">
+        <BlogPrev />
+      </div>
     </main>
   );
 }
