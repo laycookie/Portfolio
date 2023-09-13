@@ -1,4 +1,4 @@
-import BlogPrev from "./BlogPrev";
+import InfoCard from "@/components/InfoCard/InfoCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,11 @@ export default function page({}: Props) {
     <main className="defaults contain">
       <h1 className="mt-32 flex justify-center w-full">Blogs</h1>
       <div className="mt-8">
-        <BlogPrev />
+        <InfoCard link="test">
+          <InfoCard.Title title="Test" />
+          <InfoCard.Text text="Lorem Ipsum" />
+          <InfoCard.Footer text="Certification" />
+        </InfoCard>
       </div>
     </main>
   );
