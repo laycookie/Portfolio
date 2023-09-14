@@ -67,20 +67,20 @@ export default function Home() {
             <h3 className="text-5xl text-center mb-16 font-bold">
               My coding related education
             </h3>
-
-            <EduCard
-              title="CS50X Certificate"
-              description="CS50x is a self-paced online computer science course that
+            <div className="space-y-16">
+              <EduCard
+                title="CS50X Certificate"
+                description="CS50x is a self-paced online computer science course that
                   covers a wide range of topics, including algorithms, data
                   structures, internet technologies, and more."
-              certID="Certificate ID: 218d13be-02e7-4a50-81da-355c991e4609"
-              link="https://certificates.cs50.io/218d13be-02e7-4a50-81da-355c991e4609.pdf?size=letter"
-            />
-
-            <EduCard
-              title="AP computer science"
-              description="AP Computer Science is a college-level course that covers fundamentals of computer science; Course uses Java programming language and involves the development of a variety of programs to solve problems."
-            />
+                footer="Certificate ID: 218d13be-02e7-4a50-81da-355c991e4609"
+                link="https://certificates.cs50.io/218d13be-02e7-4a50-81da-355c991e4609.pdf?size=letter"
+              />
+              <EduCard
+                title="AP computer science"
+                description="AP Computer Science is a college-level course that covers fundamentals of computer science; Course uses Java programming language and involves the development of a variety of programs to solve problems."
+              />
+            </div>
           </div>
         </section>
       </main>

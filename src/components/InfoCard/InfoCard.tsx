@@ -5,7 +5,7 @@ import Link from "next/link";
 
 type Props = {
   children: React.ReactNode;
-  link?: string;
+  link?: string | null;
 };
 
 function InfoCard({ children, link }: Props) {
