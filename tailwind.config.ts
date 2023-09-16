@@ -21,7 +21,7 @@ export default {
 
         "dark-main": "#111",
         "dark-secondary": "#202020",
-        "dark-tertiary": "#0a0a0a",
+        "dark-tertiary": "#0A0A0A",
 
         main: "#EBEBEB",
         secondary: "#FFFFFF",

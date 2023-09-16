@@ -1,5 +1,6 @@
 import InfoCard from "@/components/InfoCard/InfoCard";
 import type { Metadata } from "next";
+import { sql } from "@vercel/postgres";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -7,16 +8,22 @@ export const metadata: Metadata = {
 
 type Props = {};
 
-export default function page({}: Props) {
+export default async function page({}: Props) {
+  const { rows } = await sql`SELECT * FROM blogs`;
+
   return (
     <main className="defaults contain">
       <h1 className="mt-32 flex justify-center w-full">Blogs</h1>
       <div className="mt-8">
-        <InfoCard link="test">
-          <InfoCard.Title title="Test" />
-          <InfoCard.Text text="Lorem Ipsum" />
-          <InfoCard.Footer text="Certification" />
-        </InfoCard>
+        {rows.map((blog, index) => (
+          <InfoCard link={blog.link} key={index}>
+            <InfoCard.Title title={blog.title} />
+            <InfoCard.Text text={blog.description} />
+            <InfoCard.Footer
+              text={`Time to read: ~${blog.readtimeinmin} min.`}
+            />
+          </InfoCard>
+        ))}
       </div>
     </main>
   );
