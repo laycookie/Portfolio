@@ -1,7 +1,7 @@
 "use client";
 import React, {useState} from "react";
-import {ElementsData} from "@/types/blog";
-import EditElement from "./EditElement";
+// import {ElementsData} from "@/types/blog";
+// import EditElement from "./EditElement";
 
 import "@/styles/blogStyles.css";
 
@@ -10,13 +10,13 @@ type Props = {};
 export default function Page({}: Props) {
 
 
-    const [elementsData, setElementData]
-        = useState<ElementsData[]>([]);
-
-
-    function generateRandomKey() {
-        return Math.random().toString(36).slice(2, 11);
-    }
+    // const [elementsData, setElementData]
+    //     = useState<ElementsData[]>([]);
+    //
+    //
+    // function generateRandomKey() {
+    //     return Math.random().toString(36).slice(2, 11);
+    // }
 
     return (
         <main className="defaults contain pt-[10vh]">
