@@ -34,32 +34,32 @@ export default function Page({}: Props) {
             {/*</div>*/}
 
 
-            <button
-                className="block"
-                onClick={() => setElementData(prev => {
-                        let maxContinuesNum = 0n;
-                        for (const _ in prev) {
-                            for (const value of prev) {
-                                if (value.index === maxContinuesNum) {
-                                    maxContinuesNum++
-                                    break
-                                }
-                            }
-                        }
+            {/*<button*/}
+            {/*    className="block"*/}
+            {/*    onClick={() => setElementData(prev => {*/}
+            {/*            let maxContinuesNum = 0n;*/}
+            {/*            for (const _ in prev) {*/}
+            {/*                for (const value of prev) {*/}
+            {/*                    if (value.index === maxContinuesNum) {*/}
+            {/*                        maxContinuesNum++*/}
+            {/*                        break*/}
+            {/*                    }*/}
+            {/*                }*/}
+            {/*            }*/}
 
-                        return [
-                            ...prev,
-                            {
-                                index: maxContinuesNum,
-                                content: "a", // this is a default content
-                                type: "text", // this is a default type
-                                key: generateRandomKey()
-                            }
-                        ]
-                    }
-                )}
-            >+
-            </button>
+            {/*            return [*/}
+            {/*                ...prev,*/}
+            {/*                {*/}
+            {/*                    index: maxContinuesNum,*/}
+            {/*                    content: "a", // this is a default content*/}
+            {/*                    type: "text", // this is a default type*/}
+            {/*                    key: generateRandomKey()*/}
+            {/*                }*/}
+            {/*            ]*/}
+            {/*        }*/}
+            {/*    )}*/}
+            {/*>+*/}
+            {/*</button>*/}
             <button>Publish</button>
         </main>
     );
