@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="test deployment3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="test deployment5">
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditElement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditElement.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,7 @@
       <workItem from="1694904678953" duration="16364000" />
       <workItem from="1694978142450" duration="12692000" />
       <workItem from="1694998317487" duration="28890000" />
-      <workItem from="1695214102980" duration="9328000" />
+      <workItem from="1695214102980" duration="9580000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -166,7 +164,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695356061715</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test deployment4">
+      <option name="closed" value="true" />
+      <created>1695356595537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356595537</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test deployment5">
+      <option name="closed" value="true" />
+      <created>1695356709351</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356709351</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +210,8 @@
     <MESSAGE value="test deployment" />
     <MESSAGE value="test deployment2" />
     <MESSAGE value="test deployment3" />
-    <option name="LAST_COMMIT_MESSAGE" value="test deployment3" />
+    <MESSAGE value="test deployment4" />
+    <MESSAGE value="test deployment5" />
+    <option name="LAST_COMMIT_MESSAGE" value="test deployment5" />
   </component>
 </project>
