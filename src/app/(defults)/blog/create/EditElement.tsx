@@ -1,7 +1,7 @@
 // import "@/styles/blogStyles.css";
 // import {useDrag} from "@use-gesture/react";
 // import React from "react";
-// import {ElementsData} from "@/types/blog.d";
+import {ElementsData} from "@/types/blog.d";
 
 type Props = {
     index: bigint;
