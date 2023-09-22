@@ -1,16 +1,16 @@
 // import "@/styles/blogStyles.css";
 // import {useDrag} from "@use-gesture/react";
 // import React from "react";
-import {ElementsData} from "@/types/blog.d";
+// import {ElementsData} from "@/types/blog.d";
 
 type Props = {
-    index: bigint;
-    id: string;
-    elementsData: ElementsData;
-    setElementsIndexes: React.Dispatch<React.SetStateAction<ElementsData[]>>;
+    // index: bigint;
+    // id: string;
+    // elementsData: ElementsData;
+    // setElementsIndexes: React.Dispatch<React.SetStateAction<ElementsData[]>>;
 };
 
-export default function EditElement({index, id, elementsData, setElementsIndexes}: Props) {
+export default function EditElement({}: Props) {
     // const [contents, setContents]
     //     = React.useState<string>(elementsData.content);
     //
