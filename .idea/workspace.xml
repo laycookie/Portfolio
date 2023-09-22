@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="test deployment12">
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/page.tsx" afterDir="false" />
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="test deployment13">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1694904678953" duration="16364000" />
       <workItem from="1694978142450" duration="12692000" />
       <workItem from="1694998317487" duration="28890000" />
-      <workItem from="1695214102980" duration="12027000" />
+      <workItem from="1695214102980" duration="12154000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -253,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695358977898</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test deployment13">
+      <option name="closed" value="true" />
+      <created>1695359417873</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695359417873</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +299,7 @@
     <MESSAGE value="test deployment10" />
     <MESSAGE value="test deployment11" />
     <MESSAGE value="test deployment12" />
-    <option name="LAST_COMMIT_MESSAGE" value="test deployment12" />
+    <MESSAGE value="test deployment13" />
+    <option name="LAST_COMMIT_MESSAGE" value="test deployment13" />
   </component>
 </project>
