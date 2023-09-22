@@ -23,15 +23,15 @@ export default function Page({}: Props) {
             <textarea placeholder="Title" className="w-full title"/>
 
 
-            <div className="w-full space-y-2">
-                {elementsData.map((data) => <EditElement
-                    id={"BlogCols"}
-                    elementsData={elementsData[Number(data.index)]}
-                    setElementsIndexes={setElementData}
-                    index={data.index}
-                    key={data.key}
-                />)}
-            </div>
+            {/*<div className="w-full space-y-2">*/}
+            {/*    {elementsData.map((data) => <EditElement*/}
+            {/*        id={"BlogCols"}*/}
+            {/*        elementsData={elementsData[Number(data.index)]}*/}
+            {/*        setElementsIndexes={setElementData}*/}
+            {/*        index={data.index}*/}
+            {/*        key={data.key}*/}
+            {/*    />)}*/}
+            {/*</div>*/}
 
 
             <button
