@@ -5,9 +5,9 @@
 //
 // import "@/styles/blogStyles.css";
 //
-// type Props = {};
+type Props = {};
 //
-// export default function Page({}: Props) {
+export default function Page({}: Props) {
 //
 //
 //     const [elementsData, setElementData]
@@ -63,4 +63,4 @@
 //             <button>Publish</button>
 //         </main>
 //     );
-// }
+}

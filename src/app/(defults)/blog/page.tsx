@@ -6,11 +6,11 @@
 //     title: "Blog",
 // };
 //
-// type Props = {
+type Props = {
+
+};
 //
-// };
-//
-// export default async function Page({}: Props) {
+export default async function Page({}: Props) {
 //     const {rows} = await sql`SELECT * FROM blogs`;
 //
 //     return (
@@ -29,4 +29,5 @@
 //             </div>
 //         </main>
 //     );
-// }
+    return <div></div>
+}
