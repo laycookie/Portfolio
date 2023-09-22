@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="test deployment5">
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditElement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditElement.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="test deployment9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +128,7 @@
       <workItem from="1694904678953" duration="16364000" />
       <workItem from="1694978142450" duration="12692000" />
       <workItem from="1694998317487" duration="28890000" />
-      <workItem from="1695214102980" duration="9580000" />
+      <workItem from="1695214102980" duration="9895000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -180,7 +178,39 @@
       <option name="project" value="LOCAL" />
       <updated>1695356709351</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test deployment6">
+      <option name="closed" value="true" />
+      <created>1695356854206</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356854206</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test deployment7">
+      <option name="closed" value="true" />
+      <created>1695356896369</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356896369</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test deployment8">
+      <option name="closed" value="true" />
+      <created>1695357034760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357034760</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test deployment9">
+      <option name="closed" value="true" />
+      <created>1695357144365</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357144365</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +242,10 @@
     <MESSAGE value="test deployment3" />
     <MESSAGE value="test deployment4" />
     <MESSAGE value="test deployment5" />
-    <option name="LAST_COMMIT_MESSAGE" value="test deployment5" />
+    <MESSAGE value="test deployment6" />
+    <MESSAGE value="test deployment7" />
+    <MESSAGE value="test deployment8" />
+    <MESSAGE value="test deployment9" />
+    <option name="LAST_COMMIT_MESSAGE" value="test deployment9" />
   </component>
 </project>
