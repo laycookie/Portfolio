@@ -50,7 +50,7 @@ export default function Page({}: Props) {
                             ...prev,
                             {
                                 index: maxContinuesNum,
-                                content: "a", // this is a default content
+                                content: "", // this is a default content
                                 type: "text", // this is a default type
                                 key: generateRandomKey()
                             }
