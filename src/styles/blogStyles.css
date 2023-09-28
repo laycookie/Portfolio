@@ -1,7 +1,3 @@
 .title {
   @apply text-6xl font-bold;
 }
-
-.draggable {
-  touch-action: none;
-}

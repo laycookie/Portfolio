@@ -1,6 +1,6 @@
 export type ElementsData = {
-    index: bigint;
-    content: string;
-    type: "text" | "image" | "video" | "audio | code";
+    type: BlogBlockTypes;
     key: string;
 };
+
+export type BlogBlockTypes = "text" | "image" | "video" | "audio" | "code";

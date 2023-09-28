@@ -1,15 +1,17 @@
 "use client";
 import React, {useState} from "react";
 import type {ElementsData} from "@/types/blog";
-import EditElement from "./EditElement";
 import "@/styles/blogStyles.css";
+import TextBlock from "@/app/(defults)/blog/create/TextBlock";
+import EditBlock from "@/app/(defults)/blog/create/EditBlock";
+import {BlogBlockTypes} from "@/types/blog";
 
 type Props = {};
 
 export default function Page({}: Props) {
 
 
-    const [elementsData, setElementData]
+    const [blocksData, setBlocksData]
         = useState<ElementsData[]>([]);
 
 
@@ -23,39 +25,35 @@ export default function Page({}: Props) {
 
 
             <div className="w-full space-y-2">
-                {elementsData.map((data) => <EditElement
-                    id={"BlogCols"}
-                    elementsData={elementsData[Number(data.index)]}
-                    setElementsIndexes={setElementData}
-                    index={data.index}
-                    key={data.key}
-                />)}
+                {blocksData.map((data, index) => {
+                    switch (data.type) {
+                        case "text":
+                            return (
+                                <EditBlock key={data.key}
+                                           keyVal={data.key}
+                                           setBlocksData={setBlocksData}
+                                           index={index}
+                                >
+                                    <EditBlock.Text/>
+                                </EditBlock>
+                            )
+                        default:
+                            return null
+                    }
+                })}
             </div>
 
 
             <button
                 className="block"
-                onClick={() => setElementData(prev => {
-                        let maxContinuesNum = 0n;
-                        for (const _ in prev) {
-                            for (const value of prev) {
-                                if (value.index === maxContinuesNum) {
-                                    maxContinuesNum++
-                                    break
-                                }
-                            }
+                onClick={() => setBlocksData(prev =>
+                    [
+                        ...prev,
+                        {
+                            type: "text", // this is a default type
+                            key: generateRandomKey()
                         }
-
-                        return [
-                            ...prev,
-                            {
-                                index: maxContinuesNum,
-                                content: "", // this is a default content
-                                type: "text", // this is a default type
-                                key: generateRandomKey()
-                            }
-                        ]
-                    }
+                    ]
                 )}
             >+
             </button>
