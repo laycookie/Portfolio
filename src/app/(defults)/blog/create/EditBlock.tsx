@@ -1,16 +1,17 @@
 import {BlogBlockTypes, ElementsData} from "@/types/blog";
-import {useDrag, useGesture, useHover} from "@use-gesture/react";
-import {useRef} from "react";
+import {useGesture} from "@use-gesture/react";
+import React, {useRef, createContext} from "react";
 import TextBlock from "@/app/(defults)/blog/create/TextBlock";
 
 type props = {
+    blocksData: ElementsData[];
     setBlocksData: React.Dispatch<React.SetStateAction<ElementsData[]>>;
     index: number;
     keyVal: string;
     children?: React.ReactNode;
 }
 
-function EditBlock({setBlocksData, index, keyVal, children}: props) {
+function EditBlock({blocksData, setBlocksData, index, keyVal, children}: props) {
     const thisElement = useRef<HTMLDivElement>(null);
     const attr = {keyval: keyVal}
 
@@ -26,7 +27,7 @@ function EditBlock({setBlocksData, index, keyVal, children}: props) {
                 const newBlocksData = [...prev];
 
                 const thisElementIndex = prev[index];
-                const elementUnderCursorIndex = prev.find((element, index) =>
+                const elementUnderCursorIndex = prev.find((element) =>
                     element.key === elementUnderCursor.getAttribute("keyval")) as ElementsData;
 
                 // swap
@@ -68,12 +69,17 @@ function EditBlock({setBlocksData, index, keyVal, children}: props) {
              ref={thisElement} {...attr}>
             <button {...bind()}
                     className="pr-2"
-                    style={{touchAction: "none"}}>=
+                    style={{touchAction: "none"}}
+                    onContextMenu={(event) => {
+                        event.preventDefault();
+                        console.log(blocksData)
+                    }}
+            >=
             </button>
             {children}
         </div>
     )
-};
+}
 
 
 EditBlock.Text = TextBlock;

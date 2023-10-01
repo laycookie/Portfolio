@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Drag and drop pre-alpha">
-      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" afterDir="false" />
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Final drag and drop structure">
+      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditElement.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/blogStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/blogStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/blog.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/blog.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -120,9 +118,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.analyze" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.analyze" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +138,7 @@
       <workItem from="1694978142450" duration="12692000" />
       <workItem from="1694998317487" duration="28890000" />
       <workItem from="1695214102980" duration="35451000" />
-      <workItem from="1695696737764" duration="14641000" />
+      <workItem from="1695696737764" duration="32957000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -286,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695445151823</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Final drag and drop structure">
+      <option name="closed" value="true" />
+      <created>1695911145427</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695911145427</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +334,7 @@
     <MESSAGE value="test deployment13" />
     <MESSAGE value="test deployment14" />
     <MESSAGE value="Drag and drop pre-alpha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Drag and drop pre-alpha" />
+    <MESSAGE value="Final drag and drop structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final drag and drop structure" />
   </component>
 </project>

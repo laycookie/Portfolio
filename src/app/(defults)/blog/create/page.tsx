@@ -1,15 +1,13 @@
 "use client";
 import React, {useState} from "react";
-import type {ElementsData} from "@/types/blog";
+import type {BlogBlockTypes, ElementsData} from "@/types/blog";
 import "@/styles/blogStyles.css";
-import TextBlock from "@/app/(defults)/blog/create/TextBlock";
 import EditBlock from "@/app/(defults)/blog/create/EditBlock";
-import {BlogBlockTypes} from "@/types/blog";
+import ContextMenu from "@/app/(defults)/blog/create/ContextMenu";
 
 type Props = {};
 
 export default function Page({}: Props) {
-
 
     const [blocksData, setBlocksData]
         = useState<ElementsData[]>([]);
@@ -22,8 +20,7 @@ export default function Page({}: Props) {
     return (
         <main className="defaults contain pt-[10vh]">
             <textarea placeholder="Title" className="w-full title"/>
-
-
+            <ContextMenu />
             <div className="w-full space-y-2">
                 {blocksData.map((data, index) => {
                     switch (data.type) {
@@ -31,10 +28,11 @@ export default function Page({}: Props) {
                             return (
                                 <EditBlock key={data.key}
                                            keyVal={data.key}
+                                           blocksData={blocksData}
                                            setBlocksData={setBlocksData}
                                            index={index}
                                 >
-                                    <EditBlock.Text/>
+                                    <EditBlock.Text />
                                 </EditBlock>
                             )
                         default:
