@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import type {BlogBlockTypes, ElementsData} from "@/types/blog";
+import type {ElementsData} from "@/types/blog";
 import "@/styles/blogStyles.css";
 import EditBlock from "@/app/(defults)/blog/create/EditBlock";
 import ContextMenu from "@/app/(defults)/blog/create/ContextMenu";
@@ -11,6 +11,10 @@ export default function Page({}: Props) {
 
     const [blocksData, setBlocksData]
         = useState<ElementsData[]>([]);
+    const [contextMenuPosition, setContextMenuPosition]
+        = useState({x: 0, y: 0});
+    const [selectedBlockIndex, setSelectedBlockIndex]
+        = useState<number | null>(null);
 
 
     function generateRandomKey() {
@@ -20,24 +24,33 @@ export default function Page({}: Props) {
     return (
         <main className="defaults contain pt-[10vh]">
             <textarea placeholder="Title" className="w-full title"/>
-            <ContextMenu />
+            <ContextMenu
+                blocksData={blocksData}
+                selectedBlockIndex={selectedBlockIndex}
+                setBlocksData={setBlocksData}
+                contextMenuPosition={contextMenuPosition}
+                setSelectedBlockIndex={setSelectedBlockIndex}/>
+
             <div className="w-full space-y-2">
                 {blocksData.map((data, index) => {
-                    switch (data.type) {
-                        case "text":
-                            return (
-                                <EditBlock key={data.key}
-                                           keyVal={data.key}
-                                           blocksData={blocksData}
-                                           setBlocksData={setBlocksData}
-                                           index={index}
-                                >
-                                    <EditBlock.Text />
-                                </EditBlock>
-                            )
-                        default:
-                            return null
-                    }
+                    return <EditBlock key={data.key}
+                                      keyVal={data.key}
+                                      setBlocksData={setBlocksData}
+                                      index={index}
+                                      setSelectedBlockIndex={setSelectedBlockIndex}
+                                      setContextMenuPosition={setContextMenuPosition}
+                    >
+                        {(() => {
+                            switch (data.type) {
+                                case "text":
+                                    return (
+                                        <EditBlock.Text/>
+                                    )
+                                default:
+                                    return <p>This block is not implemented</p>
+                            }
+                        })()}
+                    </EditBlock>
                 })}
             </div>
 

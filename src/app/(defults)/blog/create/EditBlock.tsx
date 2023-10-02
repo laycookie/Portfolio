@@ -1,17 +1,18 @@
-import {BlogBlockTypes, ElementsData} from "@/types/blog";
+import {ElementsData} from "@/types/blog";
 import {useGesture} from "@use-gesture/react";
-import React, {useRef, createContext} from "react";
+import React, {useRef} from "react";
 import TextBlock from "@/app/(defults)/blog/create/TextBlock";
 
 type props = {
-    blocksData: ElementsData[];
     setBlocksData: React.Dispatch<React.SetStateAction<ElementsData[]>>;
+    setSelectedBlockIndex: React.Dispatch<React.SetStateAction<number | null>>;
+    setContextMenuPosition: React.Dispatch<React.SetStateAction<{ x: number; y: number; }>>;
     index: number;
     keyVal: string;
     children?: React.ReactNode;
 }
 
-function EditBlock({blocksData, setBlocksData, index, keyVal, children}: props) {
+function EditBlock({setBlocksData, setSelectedBlockIndex, setContextMenuPosition, index, keyVal, children}: props) {
     const thisElement = useRef<HTMLDivElement>(null);
     const attr = {keyval: keyVal}
 
@@ -72,7 +73,8 @@ function EditBlock({blocksData, setBlocksData, index, keyVal, children}: props) 
                     style={{touchAction: "none"}}
                     onContextMenu={(event) => {
                         event.preventDefault();
-                        console.log(blocksData)
+                        setSelectedBlockIndex(index)
+                        setContextMenuPosition({x: event.clientX, y: event.clientY})
                     }}
             >=
             </button>
