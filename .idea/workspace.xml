@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="ContextMenu basic logic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;laycookie&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b2cfa711-9d19-476e-a0f3-76d2baa9624a" />
+        <option name="url" value="https://github.com/laycookie/Portfolio.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2VURwoxlooojXvTfsZD0JEopLYT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/git-repos/Portfolio&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\git-repos\\Portfolio\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="analyze" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="analyze" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.analyze" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="" />
+      <created>1694888914058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694888914058</updated>
+      <workItem from="1694888916514" duration="8000" />
+      <workItem from="1694889004309" duration="5774000" />
+      <workItem from="1694904678953" duration="16364000" />
+      <workItem from="1694978142450" duration="12692000" />
+      <workItem from="1694998317487" duration="28890000" />
+      <workItem from="1695214102980" duration="35451000" />
+      <workItem from="1695696737764" duration="33357000" />
+      <workItem from="1696129934986" duration="542000" />
+      <workItem from="1696280634334" duration="4456000" />
+    </task>
+    <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
+      <option name="closed" value="true" />
+      <created>1695355287027</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695355287027</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test deployment">
+      <option name="closed" value="true" />
+      <created>1695355667677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695355667677</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test deployment2">
+      <option name="closed" value="true" />
+      <created>1695355872792</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695355872792</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test deployment3">
+      <option name="closed" value="true" />
+      <created>1695356061715</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356061715</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test deployment4">
+      <option name="closed" value="true" />
+      <created>1695356595537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356595537</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test deployment5">
+      <option name="closed" value="true" />
+      <created>1695356709351</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356709351</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test deployment6">
+      <option name="closed" value="true" />
+      <created>1695356854206</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356854206</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test deployment7">
+      <option name="closed" value="true" />
+      <created>1695356896369</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695356896369</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test deployment8">
+      <option name="closed" value="true" />
+      <created>1695357034760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357034760</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test deployment9">
+      <option name="closed" value="true" />
+      <created>1695357144365</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357144365</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test deployment9">
+      <option name="closed" value="true" />
+      <created>1695357191916</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357191916</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test deployment10">
+      <option name="closed" value="true" />
+      <created>1695357379294</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357379294</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test deployment10">
+      <option name="closed" value="true" />
+      <created>1695357497800</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357497800</updated>
+    </task>
+    <task id="LOCAL-00014" summary="test deployment11">
+      <option name="closed" value="true" />
+      <created>1695358675210</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695358675210</updated>
+    </task>
+    <task id="LOCAL-00015" summary="test deployment12">
+      <option name="closed" value="true" />
+      <created>1695358977898</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695358977898</updated>
+    </task>
+    <task id="LOCAL-00016" summary="test deployment13">
+      <option name="closed" value="true" />
+      <created>1695359417873</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695359417873</updated>
+    </task>
+    <task id="LOCAL-00017" summary="test deployment14">
+      <option name="closed" value="true" />
+      <created>1695359705774</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1695359705774</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Drag and drop pre-alpha">
+      <option name="closed" value="true" />
+      <created>1695445151823</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1695445151823</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Final drag and drop structure">
+      <option name="closed" value="true" />
+      <created>1695911145427</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695911145427</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ContextMenu basic logic">
+      <option name="closed" value="true" />
+      <created>1696124295686</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1696124295686</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:react" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:next" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:postcss" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Proper structure for dragging files (setup)" />
+    <MESSAGE value="test deployment" />
+    <MESSAGE value="test deployment2" />
+    <MESSAGE value="test deployment3" />
+    <MESSAGE value="test deployment4" />
+    <MESSAGE value="test deployment5" />
+    <MESSAGE value="test deployment6" />
+    <MESSAGE value="test deployment7" />
+    <MESSAGE value="test deployment8" />
+    <MESSAGE value="test deployment9" />
+    <MESSAGE value="test deployment10" />
+    <MESSAGE value="test deployment11" />
+    <MESSAGE value="test deployment12" />
+    <MESSAGE value="test deployment13" />
+    <MESSAGE value="test deployment14" />
+    <MESSAGE value="Drag and drop pre-alpha" />
+    <MESSAGE value="Final drag and drop structure" />
+    <MESSAGE value="ContextMenu basic logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="ContextMenu basic logic" />
+  </component>
+</project>

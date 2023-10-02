@@ -21,11 +21,11 @@ export default {
 
         "dark-main": "#111",
         "dark-secondary": "#202020",
-        "dark-tertiary": "#0a0a0a",
+        "dark-tertiary": "#0A0A0A",
 
-        main: "#FFFFFF",
+        main: "#EBEBEB",
         secondary: "#FFFFFF",
-        tertiary: "#EBEBEB",
+        tertiary: "#E5E5E5",
       },
       opacity: {
         glass: "0.25",
