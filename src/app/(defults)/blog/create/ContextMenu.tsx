@@ -45,7 +45,7 @@ function ContextMenu({blocksData, setBlocksData, selectedBlockIndex, setSelected
 
 
     return (
-        <div className="fixed left-4" id="context-menu"
+        <div className="fixed z-20" id="context-menu"
              style={{
                  visibility: type !== null ? "visible" : "hidden",
                  left: contextMenuPosition.x,
@@ -70,6 +70,16 @@ function ContextMenu({blocksData, setBlocksData, selectedBlockIndex, setSelected
                             </button>
                         </li>
                     )}
+                <li>
+                    <button className="pl-2 pr-2 py-1 hover:bg-dark-secondary w-24 text-left"
+                    onClick={() => {
+                        setBlocksData(prev => prev.filter((_, index) => index !== selectedBlockIndex))
+                        setSelectedBlockIndex(null);
+                        setType(null);
+                    }}>
+                        <p>Remove</p>
+                    </button>
+                </li>
             </ul>
         </div>
     );
