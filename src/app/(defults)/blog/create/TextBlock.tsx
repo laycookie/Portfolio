@@ -7,7 +7,10 @@ export default function TextBlock({}: props) {
         = useState<null | { char: bigint, line: bigint }>(null);
 
     return (
-        <div className="w-full" contentEditable>Hello</div>
+        <span className="w-full" contentEditable
+              onInput={() => {
+            console.log("test")
+        }}/>
     );
 };
 

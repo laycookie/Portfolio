@@ -1,18 +1,25 @@
 import {ElementsData} from "@/types/blog";
 import {useGesture} from "@use-gesture/react";
-import React, {useRef, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import TextBlock from "@/app/(defults)/blog/create/TextBlock";
+import ImageBlock from "@/app/(defults)/blog/create/ImageBlock";
+
+import {CreatedContentCtx} from "@/app/(defults)/blog/create/createdContentCtx";
 
 type props = {
-    setBlocksData: React.Dispatch<React.SetStateAction<ElementsData[]>>;
-    setSelectedBlockIndex: React.Dispatch<React.SetStateAction<number | null>>;
-    setContextMenuPosition: React.Dispatch<React.SetStateAction<{ x: number; y: number; }>>;
     index: number;
     keyVal: string;
     children?: React.ReactNode;
 }
 
-function EditBlock({setBlocksData, setSelectedBlockIndex, setContextMenuPosition, index, keyVal, children}: props) {
+function EditBlock({index, keyVal, children}: props) {
+
+    const {
+        setBlocksData,
+        setSelectedBlockIndex,
+        setContextMenuPosition
+    } = useContext(CreatedContentCtx)
+
     const thisElement = useRef<HTMLDivElement>(null);
     const attr = {keyval: keyVal}
 
@@ -105,8 +112,9 @@ function EditBlock({setBlocksData, setSelectedBlockIndex, setContextMenuPosition
                     }}
             >=
             </button>
-
+            <div className="w-full" id="content">
             {children}
+            </div>
 
         </div>
     )
@@ -114,4 +122,5 @@ function EditBlock({setBlocksData, setSelectedBlockIndex, setContextMenuPosition
 
 
 EditBlock.Text = TextBlock;
+EditBlock.Image = ImageBlock;
 export default EditBlock;

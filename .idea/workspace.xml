@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Block creation sample UI">
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Polish UI for EditBlock">
+      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/createdContentCtx.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/blog.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/blog.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +145,7 @@
       <workItem from="1696129934986" duration="542000" />
       <workItem from="1696280634334" duration="6345000" />
       <workItem from="1696556115040" duration="10621000" />
-      <workItem from="1697407277057" duration="9610000" />
+      <workItem from="1697407277057" duration="19508000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -311,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696286323869</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Polish UI for EditBlock">
+      <option name="closed" value="true" />
+      <created>1697465316998</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1697465316998</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +368,7 @@
     <MESSAGE value="Final drag and drop structure" />
     <MESSAGE value="ContextMenu basic logic" />
     <MESSAGE value="Block creation sample UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Block creation sample UI" />
+    <MESSAGE value="Polish UI for EditBlock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Polish UI for EditBlock" />
   </component>
 </project>

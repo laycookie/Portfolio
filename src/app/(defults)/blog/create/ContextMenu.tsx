@@ -1,15 +1,19 @@
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {BlogBlockTypes, ElementsData} from "@/types/blog";
 
-type props = {
-    blocksData: ElementsData[];
-    setBlocksData: React.Dispatch<React.SetStateAction<ElementsData[]>>;
-    selectedBlockIndex: number | null;
-    setSelectedBlockIndex: React.Dispatch<React.SetStateAction<number | null>>;
-    contextMenuPosition: { x: number, y: number };
-}
+import {CreatedContentCtx} from "@/app/(defults)/blog/create/createdContentCtx";
 
-function ContextMenu({blocksData, setBlocksData, selectedBlockIndex, setSelectedBlockIndex, contextMenuPosition}: props) {
+type props = {}
+
+function ContextMenu({}: props) {
+    const {
+        selectedBlockIndex,
+        setSelectedBlockIndex,
+        blocksData,
+        setBlocksData,
+        contextMenuPosition
+    } = useContext(CreatedContentCtx)
+
     const [type, setType]
         = useState<BlogBlockTypes | null>(null);
 
@@ -72,11 +76,11 @@ function ContextMenu({blocksData, setBlocksData, selectedBlockIndex, setSelected
                     )}
                 <li>
                     <button className="pl-2 pr-2 py-1 hover:bg-dark-secondary w-24 text-left"
-                    onClick={() => {
-                        setBlocksData(prev => prev.filter((_, index) => index !== selectedBlockIndex))
-                        setSelectedBlockIndex(null);
-                        setType(null);
-                    }}>
+                            onClick={() => {
+                                setBlocksData(prev => prev.filter((_, index) => index !== selectedBlockIndex))
+                                setSelectedBlockIndex(null);
+                                setType(null);
+                            }}>
                         <p>Remove</p>
                     </button>
                 </li>
