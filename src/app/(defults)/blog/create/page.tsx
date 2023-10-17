@@ -66,7 +66,8 @@ export default function Page({}: Props) {
                         ...prev,
                         {
                             type: "text", // this is a default type
-                            key: generateRandomKey()
+                            key: generateRandomKey(),
+                            content: null
                         }
                     ]
                 )}

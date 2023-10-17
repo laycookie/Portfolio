@@ -112,7 +112,7 @@ function EditBlock({index, keyVal, children}: props) {
                     }}
             >=
             </button>
-            <div className="w-full" id="content">
+            <div className="w-full" id="content" {...attr}>
             {children}
             </div>
 

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Polish UI for EditBlock">
-      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/createdContentCtx.tsx" afterDir="false" />
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="- Little refactor&#10;- ImageBlock">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/blog.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/blog.d.ts" afterDir="false" />
@@ -145,7 +143,8 @@
       <workItem from="1696129934986" duration="542000" />
       <workItem from="1696280634334" duration="6345000" />
       <workItem from="1696556115040" duration="10621000" />
-      <workItem from="1697407277057" duration="19508000" />
+      <workItem from="1697407277057" duration="19873000" />
+      <workItem from="1697502647639" duration="2523000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -323,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697465316998</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="- Little refactor&#10;- ImageBlock">
+      <option name="closed" value="true" />
+      <created>1697502294711</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1697502294711</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +376,7 @@
     <MESSAGE value="ContextMenu basic logic" />
     <MESSAGE value="Block creation sample UI" />
     <MESSAGE value="Polish UI for EditBlock" />
-    <option name="LAST_COMMIT_MESSAGE" value="Polish UI for EditBlock" />
+    <MESSAGE value="- Little refactor&#10;- ImageBlock" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Little refactor&#10;- ImageBlock" />
   </component>
 </project>
