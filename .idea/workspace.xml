@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="- Little refactor&#10;- ImageBlock">
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Blog editor sending content to server">
+      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/blogSubmit.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/serverSideBlogSubmit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/TextBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/blog.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/blog.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -37,6 +41,13 @@
   &quot;lastFilter&quot;: {
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -144,7 +155,8 @@
       <workItem from="1696280634334" duration="6345000" />
       <workItem from="1696556115040" duration="10621000" />
       <workItem from="1697407277057" duration="19873000" />
-      <workItem from="1697502647639" duration="2523000" />
+      <workItem from="1697502647639" duration="20421000" />
+      <workItem from="1697759604627" duration="17555000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -330,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697502294711</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Access to content">
+      <option name="closed" value="true" />
+      <created>1697505210292</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1697505210292</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,6 +397,8 @@
     <MESSAGE value="Block creation sample UI" />
     <MESSAGE value="Polish UI for EditBlock" />
     <MESSAGE value="- Little refactor&#10;- ImageBlock" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Little refactor&#10;- ImageBlock" />
+    <MESSAGE value="Access to content" />
+    <MESSAGE value="Blog editor sending content to server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blog editor sending content to server" />
   </component>
 </project>

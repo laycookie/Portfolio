@@ -161,6 +161,23 @@
     "@types/mdx" "^2.0.0"
     "@types/react" ">=16"
 
+"@memberstack/admin@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.npmjs.org/@memberstack/admin/-/admin-1.2.4.tgz"
+  integrity sha512-rPeRxEus7+n7JTiP5/vngcGjmJLwyc9dgBG8uViGW4yB/qJa1K5EnOwedl5kT5tRi4ywhTeLPXQKYEI67oWemg==
+  dependencies:
+    axios "^0.21.1"
+    jose "^3.19.0"
+
+"@memberstack/dom@^1.9.27":
+  version "1.9.27"
+  resolved "https://registry.npmjs.org/@memberstack/dom/-/dom-1.9.27.tgz"
+  integrity sha512-tf4qUvepbPqOTYRqVUhS8TneTn+D8pST5UI67nZ2kzAfs6iEPzw727pDrxbuEz0Ioi2E0T5hed0XcilqJ9x8bA==
+  dependencies:
+    axios "^0.27.2"
+    jose "^4.8.1"
+    js-cookie "^3.0.1"
+
 "@neondatabase/serverless@0.5.6":
   version "0.5.6"
   resolved "https://registry.npmjs.org/@neondatabase/serverless/-/serverless-0.5.6.tgz"
