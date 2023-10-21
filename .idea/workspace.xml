@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Blog editor sending content to server">
-      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/blogSubmit.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/serverSideBlogSubmit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Type fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ImageBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/blog.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/blog.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +148,7 @@
       <workItem from="1696556115040" duration="10621000" />
       <workItem from="1697407277057" duration="19873000" />
       <workItem from="1697502647639" duration="20421000" />
-      <workItem from="1697759604627" duration="17555000" />
+      <workItem from="1697759604627" duration="18422000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -350,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697505210292</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="NavBar fix&#10;&#10;- Fixes issue of navbar div not adjusting when the dropdown isnt open.">
+      <option name="closed" value="true" />
+      <created>1697856371853</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1697856371853</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +399,8 @@
     <MESSAGE value="- Little refactor&#10;- ImageBlock" />
     <MESSAGE value="Access to content" />
     <MESSAGE value="Blog editor sending content to server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blog editor sending content to server" />
+    <MESSAGE value="NavBar fix&#10;&#10;- Fixes issue of navbar div not adjusting when the dropdown isnt open." />
+    <MESSAGE value="Type fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Type fix" />
   </component>
 </project>
