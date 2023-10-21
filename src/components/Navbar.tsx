@@ -9,7 +9,7 @@ type Props = { hideUntil?: number };
 
 export default function Navbar({ hideUntil = 250 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
-  const staticNav = useRef<HTMLDivElement>(null);
+  const staticNav = useRef<HTMLUListElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
 
   const [pageTitle, setPageTitle] = useState<string>("" as string);
