@@ -5,7 +5,7 @@ import {CreatedContentCtx} from "@/app/(defults)/blog/create/createdContentCtx";
 
 type props = {}
 
-function ContextMenu({}: props) {
+export default function ContextMenu({}: props) {
     const {
         selectedBlockIndex,
         setSelectedBlockIndex,
@@ -88,5 +88,3 @@ function ContextMenu({}: props) {
         </div>
     );
 }
-
-export default ContextMenu;
