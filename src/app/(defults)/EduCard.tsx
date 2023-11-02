@@ -17,7 +17,7 @@ export default function EduCard({ title, description, footer, link }: Props) {
       transition={{ duration: 0.5, delay: 0.1 }}
       viewport={{ amount: 1, once: true }}
     >
-      <InfoCard link={link ? link : null}>
+      <InfoCard link={link ? link : null} openInNewTab={true}>
         <InfoCard.Title title={title} />
         <InfoCard.Text text={description} />
         {footer ? <InfoCard.Footer text={footer} /> : null}

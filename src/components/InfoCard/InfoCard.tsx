@@ -7,9 +7,10 @@ type Props = {
     children: React.ReactNode;
     link?: string | null;
     className?: string;
+    openInNewTab?: boolean;
 };
 
-function InfoCard({children, link}: Props) {
+function InfoCard({children, link, openInNewTab}: Props) {
     const shadredStyles: string = `rounded-xl p-6
     bg-secondary dark:bg-dark-secondary
     shadow-2xl`
@@ -22,7 +23,7 @@ function InfoCard({children, link}: Props) {
         `
 
     return link ? (
-        <Link href={link}>
+        <Link href={link} target={openInNewTab ? "_blank" : "_self"}>
             <div
                 className={`${shadredStyles} ${interactiveStyles}`}
             >
