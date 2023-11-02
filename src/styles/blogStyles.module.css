@@ -1,0 +1,7 @@
+.title {
+  @apply text-6xl font-bold;
+}
+
+.description {
+  @apply text-2xl font-extralight;
+}

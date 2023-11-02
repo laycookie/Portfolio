@@ -10,7 +10,7 @@ export default function TextBlock({}: props) {
     } = useContext(CreatedContentCtx)
 
     return (
-        <span ref={textHtmlRef} className="w-full block" contentEditable
+        <span ref={textHtmlRef} className="w-full block" contentEditable={true}
               onInput={() => {
                   const keyOfTheBlock = textHtmlRef.current?.parentElement?.getAttribute("keyval");
                   if (!keyOfTheBlock) return

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Type fix">
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Blog creation and reading (Alpha)">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -77,6 +77,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git-repos\Portfolio\src\app\(defults)\blog\[blogViewer]" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.dev">
     <configuration name="analyze" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -121,9 +126,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.analyze" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.analyze" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +152,10 @@
       <workItem from="1696556115040" duration="10621000" />
       <workItem from="1697407277057" duration="19873000" />
       <workItem from="1697502647639" duration="20421000" />
-      <workItem from="1697759604627" duration="19103000" />
+      <workItem from="1697759604627" duration="55946000" />
+      <workItem from="1698280936692" duration="91000" />
+      <workItem from="1698281042545" duration="33229000" />
+      <workItem from="1698668080277" duration="17328000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -357,7 +365,47 @@
       <option name="project" value="LOCAL" />
       <updated>1697909407784</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Type fix">
+      <option name="closed" value="true" />
+      <created>1697909555607</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1697909555607</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698930056796</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1698930056796</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698930240458</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1698930240458</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698930327213</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1698930327213</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698931439507</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1698931439507</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Proper structure for dragging files (setup)" />
     <MESSAGE value="test deployment" />
     <MESSAGE value="test deployment2" />
     <MESSAGE value="test deployment3" />
@@ -408,6 +455,7 @@
     <MESSAGE value="Blog editor sending content to server" />
     <MESSAGE value="NavBar fix&#10;&#10;- Fixes issue of navbar div not adjusting when the dropdown isnt open." />
     <MESSAGE value="Type fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Type fix" />
+    <MESSAGE value="Blog creation and reading (Alpha)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blog creation and reading (Alpha)" />
   </component>
 </project>

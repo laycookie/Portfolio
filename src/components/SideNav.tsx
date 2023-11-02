@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, Children, isValidElement, useState } from "react";
+import React, { useEffect, useState, Children } from "react";
 import "./SideNav.css";
 
 type Props = { children: React.ReactNode };
@@ -58,7 +58,7 @@ export default function SideNav({ children }: Props) {
   }, []);
 
   return (
-    <>
+    <aside>
       <div
         className={`fixed
         flex flex-col h-[100dvh] justify-center 
@@ -93,6 +93,6 @@ export default function SideNav({ children }: Props) {
         </ul>
       </div>
       {children}
-    </>
+    </aside>
   );
 }

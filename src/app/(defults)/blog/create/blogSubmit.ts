@@ -1,23 +1,36 @@
 import memberstackDOM from "@memberstack/dom";
 import {serverSideBlogSubmit} from "@/app/(defults)/blog/create/serverSideBlogSubmit";
 import {Content} from "@/types/blog";
+import process from "process";
 
-export function publishBlog({email, password}: { email: string, password: string }, content: Content[]) {
+export function publishBlog({email, password}: {
+    email: string,
+    password: string
+}, content: Content[], blogContentData: FormData) {
+    const tokenTurnstile = blogContentData.get("cf-turnstile-response") as string | undefined;
+    const memberstackPublicKey = process.env?.MEMBERSTACK_PUBLIC_KEY;
+    if (!memberstackPublicKey) throw new Error("MEMBERSTACK_PUBLIC_KEY is not defined");
     const memberstack = memberstackDOM.init({
-        publicKey: "pk_sb_cb0e919e87f946f4bb26",
+        publicKey: memberstackPublicKey,
     });
     memberstack.loginMemberEmailPassword({
         email: email,
         password: password
     }).then((res) => {
-        const dataToServer = new FormData();
+
         for (const i in content) {
-            const data = content[i]
+            const data = content[i];
             if (data === null) continue;
-            else if (typeof data === "string") dataToServer.append("content", data);
-            else if (data.file) dataToServer.append(i, new Blob([data.file], {type: "image/*"}), data.name ? data.name : "image");
+            else if (typeof data === "string") blogContentData.append("text", data);
+            else if (data.file) blogContentData.append("image", new Blob([data.file], {type: data.file.type}), data.name ? data.name : "image");
         }
-        serverSideBlogSubmit(res.data.tokens.accessToken, dataToServer).then();
+        if (!tokenTurnstile) {
+            console.error("tokenTurnstile is null");
+            return;
+        }
+        serverSideBlogSubmit(res.data.tokens.accessToken, blogContentData, tokenTurnstile).then(res => {
+            console.log(res)
+        });
     }).catch((error) => {
         console.log(error)
     });
