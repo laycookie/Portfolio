@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {ReactElement, useEffect, useState} from "react";
 import { useInterval } from "src/hooks/setInterval";
 
 type Props = { text: string[]; aniLength: number };
@@ -11,9 +11,9 @@ export default function TypeIn({ text, aniLength }: Props) {
     aniLength / fullText.length
   );
 
-  const [displayedText, setDisplayedText] = useState<JSX.Element[][]>(() =>
+  const [displayedText, setDisplayedText] = useState<ReactElement[][]>(() =>
     text.map((stringArr) =>
-      stringArr.split("").map((letter, i) => (
+      stringArr.split("").map((letter) => (
         <span key={crypto.randomUUID()} style={{ opacity: "0" }}>
           {letter}
         </span>
@@ -31,15 +31,14 @@ export default function TypeIn({ text, aniLength }: Props) {
     if (numPrintedLetter < text[numPrintedStrings].length) {
       // Here is the place where code per character is executed
       setDisplayedText((prevText) => {
-        let curNewElement = (
-          <span
-            key={prevText[numPrintedStrings][numPrintedLetter].key}
-            style={{ opacity: "1.0" }}
-          >
+        prevText[numPrintedStrings][numPrintedLetter] = (
+            <span
+                key={prevText[numPrintedStrings][numPrintedLetter].key}
+                style={{ opacity: "1.0" }}
+            >
             {prevText[numPrintedStrings][numPrintedLetter].props.children}
           </span>
         );
-        prevText[numPrintedStrings][numPrintedLetter] = curNewElement;
         return prevText;
       });
 

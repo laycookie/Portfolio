@@ -1,5 +1,5 @@
 import {useContext, useEffect, useState} from 'react';
-import {BlogBlockTypes, ElementsData} from "@/types/blog";
+import {BlogBlockTypes} from "@/types/blog";
 
 import {CreatedContentCtx} from "@/app/(defults)/blog/create/createdContentCtx";
 
@@ -45,7 +45,7 @@ export default function ContextMenu({}: props) {
         return () => {
             document.removeEventListener("click", handleContextMenuClosing);
         };
-    }, []);
+    }, [setSelectedBlockIndex]);
 
 
     return (

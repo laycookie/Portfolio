@@ -34,7 +34,7 @@ export function oscillateGravitationalPoint(
   const vectorScaler = Math.tan(alpha) * (cameraZoffSet - attractionPoint.z);
 
   [attractionPoint.x, attractionPoint.y] = [cursor.x, cursor.y].map((coord) => {
-    return (coord = coord * vectorScaler);
+    return coord * vectorScaler;
   });
 
   // moves sphere back and forth in a sin wave
