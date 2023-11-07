@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lonoshchuk.com/"),
   description: "This website is a portfolio created by Dennis Lonoshchuk.",
-  themeColor: "#000000",
   openGraph: {
     title: "Dennis Lonoshchuk Portfolio",
     description: "This website is a portfolio created by Dennis Lonoshchuk.",

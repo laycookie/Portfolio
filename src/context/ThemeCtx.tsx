@@ -7,5 +7,5 @@ type themeObj = {
 
 export const ThemeCtx = createContext({
   theme: "",
-  setTheme: (theme: string) => {},
+  setTheme: (_theme: string) => {},
 } as themeObj);

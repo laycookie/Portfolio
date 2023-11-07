@@ -10,8 +10,11 @@
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.433.0",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
+    "@memberstack/admin": "^1.2.4",
+    "@memberstack/dom": "^1.9.27",
     "@next/mdx": "^13.4.19",
     "@use-gesture/react": "^10.3.0",
     "@vercel/analytics": "^1.0.1",
@@ -19,9 +22,11 @@
     "eslint": "^8.39.0",
     "eslint-config-next": "^13.5.2",
     "framer-motion": "^10.12.7",
-    "next": "^13.5.2",
+    "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-turnstile": "^1.1.2",
+    "reading-time": "^1.5.0",
     "sass": "^1.59.3",
     "three": "^0.154.0",
     "typescript": "5.1.6"

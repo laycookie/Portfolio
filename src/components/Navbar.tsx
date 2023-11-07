@@ -9,6 +9,7 @@ type Props = { hideUntil?: number };
 
 export default function Navbar({ hideUntil = 250 }: Props) {
   const navRef = useRef<HTMLDivElement>(null);
+  const staticNav = useRef<HTMLUListElement>(null);
   const dropDownRef = useRef<HTMLUListElement>(null);
 
   const [pageTitle, setPageTitle] = useState<string>("" as string);
@@ -72,8 +73,10 @@ export default function Navbar({ hideUntil = 250 }: Props) {
   }, []);
 
   return (
-    <nav ref={navRef} className="fixed z-20 w-full transition-all">
+    <nav ref={navRef} className="fixed z-20 w-full transition-all"
+    style={{height: isDropdownOpen ? "auto" : staticNav.current?.clientHeight}}>
       <ul
+      ref={staticNav}
         className="relative z-10 bg-tertiary dark:bg-dark-tertiary
       flex justify-between px-24 py-2 duration-500"
         style={isPageLoaded ? { opacity: "1" } : { opacity: "0" }}

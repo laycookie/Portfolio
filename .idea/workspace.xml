@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="ContextMenu basic logic">
+    <list default="true" id="793472d3-0f19-4e81-a12e-6e426f1d9c0c" name="Changes" comment="Blog creation and reading (Alpha)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/ContextMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/EditBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/blog/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(defults)/EduCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(defults)/EduCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InfoCard/InfoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InfoCard/InfoCard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;history&quot;: [
@@ -35,6 +35,13 @@
   &quot;lastFilter&quot;: {
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -46,6 +53,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -54,25 +64,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/git-repos/Portfolio&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\git-repos\\Portfolio\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Development",
+    "last_opened_file_path": "D:/git-repos/Portfolio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\git-repos\\Portfolio\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\DENNIS~1\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="7d53d1ce-11b1-450b-b2ab-09b6b72b26ce" />
+        <option name="reportName" value="Portfolio/qodana/2023-11-02" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\DENNIS~1\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="7d53d1ce-11b1-450b-b2ab-09b6b72b26ce" reportId="Portfolio/qodana/2023-11-02" />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git-repos\Portfolio\src\app\(defults)\blog\[blogViewer]" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.dev">
     <configuration name="analyze" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -117,9 +149,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.analyze" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.analyze" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +171,14 @@
       <workItem from="1695214102980" duration="35451000" />
       <workItem from="1695696737764" duration="33357000" />
       <workItem from="1696129934986" duration="542000" />
-      <workItem from="1696280634334" duration="4456000" />
+      <workItem from="1696280634334" duration="6345000" />
+      <workItem from="1696556115040" duration="10621000" />
+      <workItem from="1697407277057" duration="19873000" />
+      <workItem from="1697502647639" duration="20421000" />
+      <workItem from="1697759604627" duration="55946000" />
+      <workItem from="1698280936692" duration="91000" />
+      <workItem from="1698281042545" duration="33229000" />
+      <workItem from="1698668080277" duration="19328000" />
     </task>
     <task id="LOCAL-00001" summary="Proper structure for dragging files (setup)">
       <option name="closed" value="true" />
@@ -301,7 +340,119 @@
       <option name="project" value="LOCAL" />
       <updated>1696124295686</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Block creation sample UI">
+      <option name="closed" value="true" />
+      <created>1696286323869</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1696286323869</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Polish UI for EditBlock">
+      <option name="closed" value="true" />
+      <created>1697465316998</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1697465316998</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- Little refactor&#10;- ImageBlock">
+      <option name="closed" value="true" />
+      <created>1697502294711</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1697502294711</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Access to content">
+      <option name="closed" value="true" />
+      <created>1697505210292</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1697505210292</updated>
+    </task>
+    <task id="LOCAL-00025" summary="NavBar fix&#10;&#10;- Fixes issue of navbar div not adjusting when the dropdown isnt open.">
+      <option name="closed" value="true" />
+      <created>1697856371853</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1697856371853</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Type fix">
+      <option name="closed" value="true" />
+      <created>1697909407784</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1697909407784</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Type fix">
+      <option name="closed" value="true" />
+      <created>1697909555607</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1697909555607</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698930056796</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1698930056796</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698930240458</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1698930240458</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698930327213</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1698930327213</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698931439507</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1698931439507</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698931477095</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1698931477095</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698932536266</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1698932536266</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Blog creation and reading (Alpha)">
+      <option name="closed" value="true" />
+      <created>1698933089516</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1698933089516</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Proper structure for dragging files (setup)" />
     <MESSAGE value="test deployment" />
     <MESSAGE value="test deployment2" />
     <MESSAGE value="test deployment3" />
@@ -345,6 +495,14 @@
     <MESSAGE value="Drag and drop pre-alpha" />
     <MESSAGE value="Final drag and drop structure" />
     <MESSAGE value="ContextMenu basic logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="ContextMenu basic logic" />
+    <MESSAGE value="Block creation sample UI" />
+    <MESSAGE value="Polish UI for EditBlock" />
+    <MESSAGE value="- Little refactor&#10;- ImageBlock" />
+    <MESSAGE value="Access to content" />
+    <MESSAGE value="Blog editor sending content to server" />
+    <MESSAGE value="NavBar fix&#10;&#10;- Fixes issue of navbar div not adjusting when the dropdown isnt open." />
+    <MESSAGE value="Type fix" />
+    <MESSAGE value="Blog creation and reading (Alpha)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blog creation and reading (Alpha)" />
   </component>
 </project>
